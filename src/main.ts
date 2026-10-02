@@ -132,16 +132,13 @@ function closeLayers() { $('layers').classList.remove('open'); $('layers-toggle'
 $('layers-toggle').onclick = () => { const open = $('layers').classList.toggle('open'); $('layers-toggle').setAttribute('aria-expanded', String(open)); };
 $('close-layers').onclick = () => { closeLayers(); $('layers-toggle').focus(); };
 document.addEventListener('keydown', event => {
-  if (event.key === '/' && event.target !== input && !$<HTMLDialogElement>('about').open) { event.preventDefault(); input.focus(); }
+  if (event.key === '/' && event.target !== input) { event.preventDefault(); input.focus(); }
   if (event.key === 'Escape') closeLayers();
 });
 $('close-selection').onclick = () => { $('selection').hidden = true; atlas?.clear(); };
 $('zoom-in').onclick = () => atlas?.map.zoomIn();
 $('zoom-out').onclick = () => atlas?.map.zoomOut();
 $('reset').onclick = () => { atlas?.reset(); atlas?.clear(); $('selection').hidden = true; input.value = ''; closeSearch(); };
-$('about-button').onclick = () => $<HTMLDialogElement>('about').showModal();
-$('close-about').onclick = () => $<HTMLDialogElement>('about').close();
-$<HTMLDialogElement>('about').addEventListener('click', event => { if (event.target === event.currentTarget) { const rect = (event.currentTarget as HTMLElement).getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $<HTMLDialogElement>('about').close(); } });
 async function boot() {
   // MapLibre v6 requires WebGL2. Release the probe context before creating the real map.
   const probe = document.createElement('canvas');
@@ -152,9 +149,8 @@ async function boot() {
     const data = await loadData(import.meta.env.BASE_URL);
     search = createSearch(data.places);
     catalogue = createCatalogueClient(data.catalogue, import.meta.env.BASE_URL);
-    $('catalogue-note').textContent = `${data.catalogue.total.toLocaleString()} physical-place records searchable worldwide`;
     for (const cat of categories) {
-      const label = document.createElement('label'); label.className = 'layer'; label.style.setProperty('--layer-color', cat.color);
+      const label = document.createElement('label'); label.className = 'layer';
       const icon = document.createElement('span'); icon.className = 'layer-icon'; icon.textContent = cat.icon; icon.setAttribute('aria-hidden', 'true');
       const name = document.createElement('span'); name.className = 'layer-name'; name.textContent = cat.name;
       const count = document.createElement('span'); count.className = 'layer-count'; count.textContent = (data.catalogue.counts[cat.id] ?? data.places.filter(p => p.category === cat.id).length).toLocaleString(); count.setAttribute('aria-hidden', 'true'); count.title = 'GeoNames records where available; additional Natural Earth map features are also shown.';
@@ -163,6 +159,17 @@ async function boot() {
       label.append(icon, name, count, check); $(['countries', 'capitals'].includes(cat.id) ? 'political-layers' : 'natural-layers').append(label);
     }
     atlas = createGlobe(data, select, message => showError('A small detour', message));
+    const coordinates = $('coordinates');
+    atlas.map.on('mousemove', event => {
+      if (!atlas!.map._camera.transform.isPointOnMapSurface(event.point)) { coordinates.hidden = true; return; }
+      coordinates.textContent = formatCoords([((event.lngLat.lng + 540) % 360) - 180, event.lngLat.lat]);
+      coordinates.hidden = false;
+      const width = atlas!.map.getContainer().clientWidth;
+      const height = atlas!.map.getContainer().clientHeight;
+      coordinates.style.left = `${event.point.x + coordinates.offsetWidth + 28 > width ? event.point.x - coordinates.offsetWidth - 14 : event.point.x + 14}px`;
+      coordinates.style.top = `${event.point.y + coordinates.offsetHeight + 28 > height ? event.point.y - coordinates.offsetHeight - 14 : event.point.y + 14}px`;
+    });
+    atlas.map.on('mouseout', () => { coordinates.hidden = true; });
     const timeout = window.setTimeout(() => { if (!ready) showError('The globe is taking too long', 'Check your connection, then reload the atlas.'); }, 30000);
     atlas.map.on('load', () => {
       clearTimeout(timeout);
@@ -171,7 +178,7 @@ async function boot() {
       ['zoom-in', 'zoom-out', 'reset'].forEach(id => { $<HTMLButtonElement>(id).disabled = false; });
       document.querySelectorAll<HTMLInputElement>('.layer input').forEach(el => { el.disabled = false; });
     });
-    atlas.map.on('moveend', () => { const c = atlas!.map.getCenter(); $('coordinates').textContent = formatCoords([((c.lng + 540) % 360) - 180, c.lat]); void refreshDetails(); });
+    atlas.map.on('moveend', () => { void refreshDetails(); });
   } catch (error) { console.error(error); showError('We couldn’t open the atlas', error instanceof Error ? error.message : 'Check your connection and reload to try again.'); }
 }
 void boot();
