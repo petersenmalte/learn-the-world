@@ -1,6 +1,6 @@
 # Included countries, territories and capitals
 
-Generated from the exact shipped snapshot. Countries means Natural Earth 50m admin-0 map units, including dependencies and disputed units; not a list of sovereign states. Capitals means GeoNames cities500 records with code PPLC, including capitals of dependent territories; not every seat of government.
+Generated from the exact shipped snapshot. Countries means Natural Earth admin-0 map units (50m list of 242, drawn with 10m boundaries), including dependencies and disputed units; not a list of sovereign states. Capitals means GeoNames cities500 records with code PPLC, including capitals of dependent territories; not every seat of government.
 
 ## Countries
 

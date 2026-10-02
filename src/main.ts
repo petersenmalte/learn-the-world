@@ -3,7 +3,6 @@ import type { Point } from 'maplibre-gl';
 import { categories, createSearch, type Place, type Category } from './search';
 import { createGlobe } from './globe';
 import { loadData, loadShapes } from './data';
-import { createCatalogueClient } from './catalogue-client';
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const input = $<HTMLInputElement>('search');
 const results = $('results');
@@ -12,10 +11,6 @@ const status = $('map-status');
 const enabled = new Set<Category>(['countries', 'capitals']);
 let atlas: ReturnType<typeof createGlobe> | undefined;
 let search: ReturnType<typeof createSearch>;
-let catalogue: ReturnType<typeof createCatalogueClient>;
-let searchVersion = 0;
-let detailVersion = 0;
-let searchTimer: ReturnType<typeof setTimeout>;
 let matches: Place[] = [];
 let active = -1;
 let ready = false;
@@ -41,7 +36,7 @@ function showError(title: string, message: string) {
   ['zoom-in', 'zoom-out', 'reset'].forEach(id => { $<HTMLButtonElement>(id).disabled = true; });
   document.querySelectorAll<HTMLInputElement>('.layer input').forEach(el => { el.disabled = true; });
 }
-function closeSearch() { searchVersion++; clearTimeout(searchTimer); panel.hidden = true; input.setAttribute('aria-expanded', 'false'); input.removeAttribute('aria-activedescendant'); active = -1; }
+function closeSearch() { panel.hidden = true; input.setAttribute('aria-expanded', 'false'); input.removeAttribute('aria-activedescendant'); active = -1; }
 function setActive(index: number) {
   active = index;
   [...results.children].forEach((el, i) => el.setAttribute('aria-selected', String(i === active)));
@@ -66,27 +61,10 @@ function select(place: Place) {
 }
 function renderResults() {
   if (!ready) return;
-  clearTimeout(searchTimer);
-  const version = ++searchVersion;
-  const query = input.value;
-  if (!query.trim()) { closeSearch(); return; }
-  matches = search(query);
+  if (!input.value.trim()) { closeSearch(); return; }
+  matches = search(input.value);
   panel.hidden = false; input.setAttribute('aria-expanded', 'true');
-  paintResults('');
-  searchTimer = setTimeout(async () => {
-    try {
-      const globalMatches = await catalogue.search(query);
-      if (version !== searchVersion) return;
-      const merged = new Map([...matches, ...globalMatches].map(p => [p.id, p]));
-      matches = createSearch([...merged.values()])(query);
-      // Worldwide word-prefix matching also handles omitted words such as "Mount".
-      if (!matches.length) matches = globalMatches.slice(0, 10);
-      paintResults(matches.length ? '' : 'No places found');
-    } catch {
-      if (version !== searchVersion) return;
-      paintResults('Worldwide search unavailable');
-    }
-  }, 200);
+  paintResults(matches.length ? '' : 'No places found');
 }
 function paintResults(message: string) {
   results.replaceChildren();
@@ -98,26 +76,6 @@ function paintResults(message: string) {
     item.append(meta); item.addEventListener('mousedown', e => e.preventDefault()); item.addEventListener('click', () => select(p)); results.append(item);
   });
   setActive(-1);
-}
-async function refreshDetails() {
-  if (!ready || !atlas) return;
-  const version = ++detailVersion;
-  const active = [...enabled].filter(cat => ['mountains', 'ranges', 'rivers', 'lakes'].includes(cat));
-  if (atlas.map.getZoom() < 4 || !active.length) {
-    atlas.setDetails([]);
-    $('detail-status').textContent = '';
-    return;
-  }
-  const b = atlas.map.getBounds();
-  $('detail-status').textContent = '';
-  try {
-    const places = await catalogue.map({ west: b.getWest(), east: b.getEast(), south: b.getSouth(), north: b.getNorth() }, active, innerWidth < 761 ? 14 : 22);
-    if (version !== detailVersion) return;
-    atlas.setDetails(places);
-  } catch {
-    if (version !== detailVersion) return;
-    $('detail-status').textContent = 'Local names unavailable';
-  }
 }
 input.addEventListener('input', renderResults);
 input.addEventListener('focus', renderResults);
@@ -148,12 +106,11 @@ async function boot() {
   try {
     const data = await loadData(import.meta.env.BASE_URL);
     search = createSearch(data.places);
-    catalogue = createCatalogueClient(data.catalogue, import.meta.env.BASE_URL);
     for (const cat of categories) {
       const label = document.createElement('label'); label.className = 'layer';
       const name = document.createElement('span'); name.className = 'layer-name'; name.textContent = cat.name;
       const check = document.createElement('input'); check.type = 'checkbox'; check.checked = enabled.has(cat.id); check.disabled = true; check.setAttribute('aria-label', cat.name);
-      check.onchange = () => { if (!ready) return; check.checked ? enabled.add(cat.id) : enabled.delete(cat.id); atlas?.toggle(cat.id, check.checked); $('active-count').textContent = String(enabled.size); if (check.checked && ['ranges', 'rivers', 'seas', 'lakes', 'deserts'].includes(cat.id)) void ensureShapes(); void refreshDetails(); };
+      check.onchange = () => { if (!ready) return; check.checked ? enabled.add(cat.id) : enabled.delete(cat.id); atlas?.toggle(cat.id, check.checked); $('active-count').textContent = String(enabled.size); if (check.checked && ['ranges', 'rivers', 'seas', 'lakes', 'deserts'].includes(cat.id)) void ensureShapes(); };
       label.append(name, check); $(['countries', 'capitals'].includes(cat.id) ? 'political-layers' : 'natural-layers').append(label);
     }
     atlas = createGlobe(data, select, message => showError('A small detour', message));
@@ -183,7 +140,6 @@ async function boot() {
       ['zoom-in', 'zoom-out', 'reset'].forEach(id => { $<HTMLButtonElement>(id).disabled = false; });
       document.querySelectorAll<HTMLInputElement>('.layer input').forEach(el => { el.disabled = false; });
     });
-    atlas.map.on('moveend', () => { void refreshDetails(); });
   } catch (error) { console.error(error); showError('We couldn’t open the atlas', error instanceof Error ? error.message : 'Check your connection and reload to try again.'); }
 }
 void boot();

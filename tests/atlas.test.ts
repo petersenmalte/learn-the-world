@@ -40,8 +40,28 @@ test('coverage follows the declared snapshots and every shape has a search entry
   const ids = new Set(places.map(p => p.id));
   for (const file of ['countries.geojson', 'physical.geojson']) {
     const data = JSON.parse(readFileSync(new URL(`../public/data/${file}`, import.meta.url), 'utf8'));
-    for (const f of data.features) assert.ok(ids.has(f.properties.id), f.properties.id);
+    // The sharper 10m boundaries include a few tiny or disputed units that are drawn but not listed.
+    for (const f of data.features) assert.ok(ids.has(f.properties.id) || f.properties.unlabelled, f.properties.id);
   }
+});
+test('the atlas keeps only the best-known rivers, lakes, mountains and other physical features', () => {
+  const count = (cat: string) => places.filter(p => p.category === cat).length;
+  // Per-country quotas plus world-famous features: a few hundred each, never thousands.
+  for (const [cat, max] of Object.entries({ rivers: 400, lakes: 250, mountains: 450, ranges: 150, volcanoes: 80, glaciers: 60, deserts: 50, seas: 150 })) {
+    assert.ok(count(cat) >= 15 && count(cat) <= max, `${cat}: ${count(cat)}`);
+  }
+  assert.ok(places.length < 2500, `${places.length} places`);
+  for (const [query, category] of Object.entries({ Nile: 'rivers', Amazon: 'rivers', Danube: 'rivers', Rhine: 'rivers', Rhein: 'rivers', Mississippi: 'rivers', 'Lake Victoria': 'lakes', 'Lake Baikal': 'lakes', 'Lake Constance': 'lakes', 'Mount Everest': 'mountains', 'Mont Blanc': 'mountains', Zugspitze: 'mountains', Aconcagua: 'mountains', 'Mount Fuji': 'volcanoes', Vesuvius: 'volcanoes', Alps: 'ranges', Himalayas: 'ranges', Sahara: 'deserts', 'Pacific Ocean': 'seas' })) {
+    assert.ok(search(query).some(p => p.category === category), `${query} should be a ${category} result`);
+  }
+  // Obscure local records from the old worldwide catalogue are gone.
+  assert.deepEqual(search('Tretterbaach'), []);
+});
+test('selection thresholds keep labels progressive: famous features appear before local ones', () => {
+  const zoom = (name: string) => places.find(p => p.name === name)!.minZoom;
+  assert.ok(zoom('Nile') < zoom('Rhine'));
+  assert.ok(zoom('Mount Everest') < zoom('Zugspitze'));
+  for (const p of places) assert.ok(Number.isFinite(p.minZoom) && p.minZoom >= 0 && p.minZoom <= 6, p.name);
 });
 test('data loader resolves all assets under the repository base path', async () => {
   const urls: string[] = [];
