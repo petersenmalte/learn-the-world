@@ -22,3 +22,10 @@ Limits: viewport checks are not a physical iPhone/Safari device test. Touch gest
 
 - Desktop browser: a worldwide-only Panke river search returned German and other matching records, selected correctly, flew to the location, and loaded surrounding local river labels. Runtime console had no errors.
 - Phone viewport 390 × 844: expanded seven-digit counters fit the layer sheet without horizontal overflow; sea/ocean toggle and ocean search checked. This remains viewport testing, not a physical iPhone test.
+
+## Monochrome redesign
+
+- Interface reduced to search and layer switches; no logo, info button, mode badge, headings, hint texts or layer counters. Only error states keep explanatory text.
+- Desktop 1440 × 900 (Chromium, SwiftShader WebGL): cursor latitude/longitude shows over the globe only, follows the cursor, stays correct while dragging, and hides over the sidebar or the black background. Search, layer switches, selection card and fly-to checked.
+- Phone 390 × 844: no horizontal overflow; layer sheet opens and closes.
+- Known: labels of places near the globe's horizon can extend slightly past the globe's edge (MapLibre globe behaviour). In headless SwiftShader screenshots the selection card can leave a transient black ghost rectangle until the next repaint; it also occurred before the redesign and disappears on repaint.
