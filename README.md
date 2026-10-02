@@ -18,26 +18,37 @@ Open the printed URL ending in `/learn-the-world/`. All geographic assets and th
 
 ## Features
 
-- A rotatable, zoomable 3D globe, touch gestures, keyboard map navigation, zoom buttons and reset.
+- A rotatable, zoomable 3D globe (zoom up to level 10), touch gestures, keyboard map navigation, zoom buttons and reset.
 - A flat black-and-white interface with the globe in the centre and search plus layer switches beside it; only the globe carries colour. Latitude and longitude appear, dimmed, next to the cursor whenever it is over the globe.
 - Countries and capitals enabled initially; independent switches for all ten categories.
-- Local search across names and aliases, insensitive to case and diacritics, with keyboard result selection. Hidden layers and collision-hidden labels remain searchable. Search highlights the selected location and available geometry without changing your layer preferences.
-- Ranked labels, zoom thresholds, collision detection and extra mobile spacing. A phone-sized layer sheet, safe-area spacing, reduced-motion support, loading/failure messages and a WebGL2 compatibility message.
-- A self-hosted, generalized Natural Earth basemap. No external tile, font or geocoding requests at runtime. Learning points and physical shapes are separate sources from the basemap; country borders remain visible when country labels are off.
+- A deliberately small, well-known selection: for rivers, lakes and mountains the few longest, largest and highest of each country plus the world-famous ones; the best-known ranges, deserts, seas, volcanoes and glaciers. About 1,500 learning points instead of millions of local records.
+- Local search across names and aliases (including common local names such as "Rhein" for the Rhine), insensitive to case and diacritics, with keyboard result selection. Hidden layers and collision-hidden labels remain searchable. Search highlights the selected location and available geometry without changing your layer preferences.
+- Ranked labels that appear progressively with zoom, collision detection and extra mobile spacing. A phone-sized layer sheet, safe-area spacing, reduced-motion support, loading/failure messages and a WebGL2 compatibility message.
+- A self-hosted Natural Earth basemap at 1:10 million with seven country colours, rendered at 2× pixel density even on standard screens. No external tile, font or geocoding requests at runtime. Learning points and physical shapes are separate sources from the basemap; country borders remain visible when country labels are off.
 
 ## Geographic scope and licenses
 
-**242 countries/map units**: every feature in Natural Earth's 50m admin-0 countries dataset at the pinned revision. Includes dependencies, Antarctica and disputed units; **not 242 sovereign states**. Boundaries follow Natural Earth's worldview and imply no position on sovereignty.
+**242 countries/map units**: every feature in Natural Earth's 50m admin-0 countries list at the pinned revision, drawn with the 10m boundaries (a few extra tiny or disputed 10m units are drawn but not listed). Includes dependencies, Antarctica and disputed units; **not 242 sovereign states**. Boundaries follow Natural Earth's worldview and imply no position on sovereignty.
 
 **241 capital records**: every `PPLC` record in the GeoNames `cities500` download retrieved 2026-10-02. Includes capitals of dependencies. This source rule can omit small settlements and secondary/legislative seats; it is not a complete list of all national capital functions. See the [exact included names](data/INCLUDED.md).
 
-Physical geography now includes **2,092,870 GeoNames records worldwide**: 793 volcanoes; 8,353 glaciers/icecaps; 475,937 mountains/peaks; 29,654 ranges; 1,253,320 rivers/streams (including intermittent streams); 324,213 lakes; 348 deserts; and 252 seas/oceans. All five main oceans are searchable. Counts are source records, not a guarantee of every feature on Earth. GeoNames classifications and regional coverage are imperfect; Natural Earth adds supplementary overview labels and detailed 10m river/lake/marine shapes. Most global records are points, not traced outlines. See [exact feature-code rules and limitations](data/SOURCES.md).
+**Physical geography is curated, not complete.** Selection rules (see [data/SOURCES.md](data/SOURCES.md)):
+
+| Layer | Included |
+| --- | --- |
+| Rivers (≈300) | The 3 longest per country (rivers of at least 150 km with at least 40 km inside the country) plus top-ranked world rivers over 800 km |
+| Lakes (≈150) | The 3 largest per country (lakes of at least 60 km²) plus the world's top-ranked lakes |
+| Mountains (≈350) | The 3 highest per country (Natural Earth peaks) plus the world's best known; one well-known GeoNames peak for countries without one |
+| Ranges, deserts, seas | Natural Earth's higher-ranked regions (≈75 / ≈25 / ≈90) |
+| Volcanoes, glaciers | The best-known GeoNames records and the largest ice masses (≈35 / ≈20) |
+
+The full worldwide GeoNames catalogue of 2.09 million records (commit `8f94e2e`) was removed because it buried the features everyone should know. Most features are points; river courses, lake outlines, ranges and marine regions are drawn where Natural Earth provides shapes.
 
 Natural Earth data is **public domain**. GeoNames data is **CC BY 4.0**, adapted by selecting records, trimming aliases and rounding coordinates. Keep the visible GeoNames credit and license link, and the source notices when redistributing. MapLibre is BSD-3-Clause; other software retains its own package license. See [sources, preparation and limitations](data/SOURCES.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
-Data is checked in. The 166 MB compressed global catalogue is split into 1,301 static files. Startup loads only the country map, overview and catalogue metadata. A worker fetches small search shards on demand; enabled layers load nearby point data at zoom 4+. Labels are sampled and collision-managed to keep phones responsive. Physical shapes load separately on demand. Search uses names/aliases and word prefixes (normally 3+ letters), independently of label visibility.
+Data is checked in (about 14 MB). Startup loads the country map (≈9 MB raw, ≈2.6 MB gzipped by GitHub Pages) and the places list; physical shapes (≈3 MB) load on demand when a shape layer or a search result needs them.
 
-To regenerate: download GeoNames `allCountries.zip` and `countryInfo.txt` into ignored `data/source/`, then run `pnpm data:prepare` with Python 3. Input/output details and the source hash are in [data/SOURCES.md](data/SOURCES.md). Ordinary builds use the committed files and do not download geographic datasets.
+To regenerate: run `pnpm data:prepare` with Python 3. It downloads the pinned Natural Earth files into ignored `data/source/` and applies the selection rules to them and to the frozen GeoNames subsets in `data/` (`geonames-snapshot.json` for capitals, `geonames-curated.json` for the rest, produced by `scripts/extract-geonames-curated.py`). Ordinary builds use the committed files and do not download geographic datasets.
 
 ## GitHub Pages
 
@@ -50,6 +61,6 @@ The workflow derives `BASE_PATH` from the repository name. For a user/organizati
 
 ## Validation and limits
 
-`pnpm test` exercises accent/alias search, ranking, hidden-category search, coordinate/ID integrity, coverage, shape-to-place references, repository-path asset loading and network/data failures. See [verification notes](TESTING.md) for browser checks.
+`pnpm test` exercises accent/alias search, ranking, hidden-category search, the curation limits and famous-feature coverage, coordinate/ID integrity, shape-to-place references, repository-path asset loading and network/data failures. See [verification notes](TESTING.md) for browser checks.
 
-MapLibre v6 requires **WebGL2**; the compressed catalogue also needs a modern browser with `DecompressionStream` support. Current iPhone Safari is a target; physical-device and older-device behavior depends on GPU/memory support. The atlas is country/region scale (zoom capped at 7; nearby named features appear when zoomed in), not a street map. English display names and selected aliases are used; this is not a fully localized gazetteer. The overview also supports substring matches; worldwide search uses word prefixes and retained aliases, without arbitrary spelling correction. Data reflects its snapshot, not live political or geographic updates. MapLibre's renderer is the main JavaScript payload (~280 KB gzip plus its worker).
+MapLibre v6 requires **WebGL2**. Current iPhone Safari is a target; physical-device and older-device behavior depends on GPU/memory support. The atlas is country/region scale: the 1:10 million basemap stays clean up to zoom 10 but is not a street map and shows no local detail beyond the curated places. English display names and selected aliases are used; this is not a fully localized gazetteer. Search uses names and aliases with prefix and substring matching, without spelling correction. Data reflects its snapshot, not live political or geographic updates. MapLibre's renderer is the main JavaScript payload (~280 KB gzip plus its worker).

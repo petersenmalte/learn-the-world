@@ -1,14 +1,14 @@
 export const categories = [
-  { id: 'countries', name: 'Countries', singular: 'Country / territory', icon: '⚑', color: '#b7d6b8' },
-  { id: 'capitals', name: 'Capitals', singular: 'Capital city', icon: '◎', color: '#f5ce88' },
-  { id: 'mountains', name: 'Mountains', singular: 'Mountain', icon: '△', color: '#d9c8a7' },
-  { id: 'ranges', name: 'Mountain ranges', singular: 'Mountain range', icon: '⋀', color: '#c2b598' },
-  { id: 'rivers', name: 'Rivers', singular: 'River', icon: '≋', color: '#80bfd2' },
-  { id: 'seas', name: 'Seas & oceans', singular: 'Sea / ocean', icon: '≈', color: '#8fcdd8' },
-  { id: 'lakes', name: 'Lakes', singular: 'Lake', icon: '◒', color: '#93becb' },
-  { id: 'deserts', name: 'Deserts', singular: 'Desert', icon: '◠', color: '#e0bd7d' },
-  { id: 'glaciers', name: 'Glaciers', singular: 'Glacier', icon: '◇', color: '#cfedf1' },
-  { id: 'volcanoes', name: 'Volcanoes', singular: 'Volcano', icon: '♧', color: '#e69a7d' },
+  { id: 'countries', name: 'Countries', singular: 'Country / territory', color: '#ffffff' },
+  { id: 'capitals', name: 'Capitals', singular: 'Capital city', color: '#ffffff' },
+  { id: 'mountains', name: 'Mountains', singular: 'Mountain', color: '#8b4a1c' },
+  { id: 'ranges', name: 'Mountain ranges', singular: 'Mountain range', color: '#a8642b' },
+  { id: 'rivers', name: 'Rivers', singular: 'River', color: '#00c8ff' },
+  { id: 'seas', name: 'Seas & oceans', singular: 'Sea / ocean', color: '#b8ecff' },
+  { id: 'lakes', name: 'Lakes', singular: 'Lake', color: '#1aa3ff' },
+  { id: 'deserts', name: 'Deserts', singular: 'Desert', color: '#ffb02e' },
+  { id: 'glaciers', name: 'Glaciers', singular: 'Glacier', color: '#e6fbff' },
+  { id: 'volcanoes', name: 'Volcanoes', singular: 'Volcano', color: '#ff3b30' },
 ] as const;
 export type Category = typeof categories[number]['id'];
 export interface Place { id: string; name: string; category: Category; coordinates: [number, number]; aliases: string[]; region: string; rank: number; source: string; sourceId: string; minZoom: number; featureCode?: string }

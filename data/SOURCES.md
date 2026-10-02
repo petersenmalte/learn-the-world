@@ -1,57 +1,52 @@
 # Geographic data and coverage
 
-The atlas combines a global GeoNames point catalogue with Natural Earth overview labels, boundaries and physical shapes. Everything is served from this repository; no paid API, tile server, or secret is used.
+The atlas teaches what everyone should know, so it ships a curated selection rather than every record on Earth. Everything is served from this repository; no paid API, tile server, or secret is used.
 
-## GeoNames worldwide catalogue
+## Natural Earth: globe, rankings and shapes
 
-Source: [allCountries.zip](https://download.geonames.org/export/dump/allCountries.zip), retrieved 2026-10-02. Exact archive SHA-256, feature-code counts and exclusions are recorded in [manifest.json](../public/data/manifest.json) and [catalogue.json](../public/data/catalogue.json). All named, valid-coordinate records with the following feature codes are included, without a country or prominence cutoff:
+Pinned revision: `ca96624a56bd078437bca8184e78163e5039ad19` from [natural-earth-vector](https://github.com/nvkelso/natural-earth-vector/tree/ca96624a56bd078437bca8184e78163e5039ad19/geojson). [manifest.json](../public/data/manifest.json) records every file's URL and SHA-256.
 
-| Layer | Included GeoNames feature codes | Records |
-| --- | --- | ---: |
-| Mountains | MT, PK, PKS — mountains, peaks and groups of peaks | 475,937 |
-| Mountain ranges | MTS — ranges / groups of mountains | 29,654 |
-| Volcanoes | VLC | 793 |
-| Glaciers | GLCR, CAPG — glaciers and icecaps | 8,353 |
-| Seas & oceans | SEA, OCN | 252 |
-| Rivers | STM, STMS, STMI — rivers/streams, groups and intermittent streams | 1,253,320 |
-| Lakes | LK, LKS, LKI, LKSI — lakes, groups and intermittent lakes | 324,213 |
-| Deserts | DSRT | 348 |
-| **Total** | | **2,092,870** |
+- **Countries.** The 242 labelled map units come from `ne_50m_admin_0_countries` (names, label anchors, ranks). They are drawn with the sharper `ne_10m_admin_0_countries` boundaries, rounded to three decimals (about 110 m). Sixteen tiny or disputed 10m units without a 50m counterpart are drawn but not listed (`unlabelled` in the data). Seven fill colours come from the `MAPCOLOR7` field, which guarantees that neighbours differ.
+- **Rivers.** `ne_10m_rivers_lake_centerlines` plus the Europe and North America supplements. Segments are merged by name and proximity; length is computed from geometry and attributed to countries by sampling points against the 10m country polygons.
+- **Lakes.** `ne_10m_lakes` plus the Europe and North America supplements; area is computed from geometry. Reservoirs only when ranked among the world's largest.
+- **Peaks.** Named `mountain` points in `ne_10m_geography_regions_elevation_points`, with elevation. Names with "Volcán", "Volcano" and a few well-known volcanoes (Fuji, Etna, Mauna Kea, Erebus, Teide, Klyuchevskaya Sopka) are listed as volcanoes.
+- **Ranges, deserts.** Classes `Range/mtn` and `Desert` of `ne_10m_geography_regions_polys`.
+- **Seas and oceans.** Sea, ocean, gulf, bay, strait, sound and channel features of `ne_10m_geography_marine_polys`. The two halves of the Pacific and Atlantic carry the same name in the source and are shown as North/South.
+- **Ice masses.** Named features of `ne_10m_glaciated_areas` of the highest rank (ice sheets and a few ice caps), shown as points.
 
-These are **source records**, not a count of unique features on Earth. GeoNames coverage, names and classifications vary by country and can contain duplicates or errors. Not every volcanic mountain is tagged VLC; some are MT. Rivers include small streams; lakes and mountain groups can be grouped records. OCN includes ocean subdivisions and regional names, so 16 ocean records do not mean 16 globally recognized oceans. The interface also includes Natural Earth overview features in these layers. It does not claim complete worldwide coverage.
+### Selection rules
 
-Each record retains its GeoNames ID and feature code, with a source link `https://www.geonames.org/<id>/`. Coordinates are rounded to four decimals. Up to twelve alternate/ASCII names per physical record are retained. Country names use [countryInfo.txt](https://download.geonames.org/export/dump/countryInfo.txt). GeoNames is **CC BY 4.0**; the visible credit/license link and redistribution notice must remain. See [format documentation](https://download.geonames.org/export/dump/readme.txt) and [feature-code definitions](https://www.geonames.org/export/codes.html).
+Natural Earth's `scalerank` (0/1 = most important) is the importance signal. The constants live at the top of [prepare-data.py](../scripts/prepare-data.py) and are recorded in the manifest.
 
-## Natural Earth geometry and overview
+| Layer | Rule |
+| --- | --- |
+| Rivers | Top 3 per country by length inside that country (river ≥ 150 km, ≥ 40 km in the country), plus rivers with `scalerank` ≤ 3 that are ≥ 800 km long |
+| Lakes | Top 3 per country by area share (lake ≥ 60 km²), plus `scalerank` ≤ 2 |
+| Mountains | Top 3 per country by elevation, plus `scalerank` ≤ 4 (Everest, K2, Aconcagua …) |
+| Ranges / deserts / seas | `scalerank` ≤ 3 (seas also all oceans) |
+| Glaciers | `scalerank` ≤ 1 from Natural Earth |
 
-Pinned revision: `ca96624a56bd078437bca8184e78163e5039ad19` from [natural-earth-vector](https://github.com/nvkelso/natural-earth-vector/tree/ca96624a56bd078437bca8184e78163e5039ad19/geojson). The manifest records each file's URL and hash.
+Labels appear at zoom levels derived from the ranking: world-famous features first, then each country's best, then the rest of its quota. The country attribution uses thinned outer rings, so features near borders can be assigned to a neighbour; it is a ranking aid, not a survey.
 
-- Background/countries: all 242 features in `ne_50m_admin_0_countries`. Includes dependencies, Antarctica and disputed units; not 242 sovereign states. Names, label anchors and rank come from the source.
-- Mountain overview: named mountain points in `ne_10m_geography_regions_elevation_points`. Four previously selected volcanic mountains remain supplementary overview entries (Kilimanjaro, Fuji, Etna, Mauna Kea).
-- Ranges/deserts: classes Range/mtn and Desert in `ne_10m_geography_regions_polys`.
-- Rivers: named River and Lake Centerline features of **`ne_10m_rivers_lake_centerlines`**; replaces the original 110m/13-segment layer.
-- Lakes: named Lake, Alkaline Lake and Reservoir features of **`ne_10m_lakes`**, plus the Lake regions dataset.
-- Seas & oceans: sea, ocean, gulf, bay, strait, sound and channel features of **`ne_10m_geography_marine_polys`**. Oceans are now included. Marine boundaries are cartographic regions, not surveyed coastlines or jurisdictions.
+### Editorial corrections
 
-Unnamed/empty Natural Earth features are omitted from the learning geometry. Shapes are rounded to three decimal places; their original generalized scale remains a limitation. Ocean anchors use wrapped longitude for features crossing the date line. Other polygon anchors use the bounding-box center of the largest vertex-count component; river anchors use a middle vertex. Anchors can lie outside a concave feature and are approximate. Natural Earth IDs can repeat: IDs include the source file and index so unrelated shapes are not highlighted together.
+Natural Earth names are inconsistent (the Rhine appears as both "Rhein" and "Rhine", Chinese headwater reaches of the Yangtze as separate rivers, some names have lost diacritics). [prepare-data.py](../scripts/prepare-data.py) therefore contains small, visible tables: `RIVER_RENAME` (common English names; the original name is kept as a search alias), `RIVER_EXCLUDE` and `RIVER_NOISE` (headwater reaches, delta arms and side channels listed as separate rivers, plus entries with broken names), `LAKE_RENAME`, `LAKE_EXCLUDE`, `DESERT_EXCLUDE` and `GLACIER_KEEP`. All-caps names are title-cased and abbreviations such as "Mts." are expanded.
 
-**Point versus shape:** every GeoNames record can be searched and selected as a point. Detailed river courses, lake polygons, ranges and marine extents are drawn only where Natural Earth provides geometry. A million river records does not mean a million traced river courses. Glacier and volcano records are points, not current ice outlines or terrain. Natural Earth and GeoNames can describe the same place separately; no unreliable cross-source merge is claimed.
+## GeoNames: capitals and gap fillers
+
+GeoNames data is © GeoNames contributors, **CC BY 4.0**; the visible credit and license link must remain. Source files and hashes are in [geonames-provenance.json](geonames-provenance.json).
+
+- **Capitals** (`geonames-snapshot.json`): all 241 `PPLC` records of `cities500.zip`, retrieved 2026-10-02. Includes capitals of dependent territories; can omit secondary seats. [INCLUDED.md](INCLUDED.md) lists the exact entries.
+- **Curated subset** (`geonames-curated.json`): volcanoes (`VLC`), glaciers (`GLCR`, `CAPG`), deserts (`DSRT`), seas and oceans (`SEA`, `OCN`) and mountains (`MT`, `PK`, `PKS`) from the full GeoNames extract of 2026-10-02 (`allCountries.zip`, SHA-256 in the git history of `public/data/catalogue.json` at commit `8f94e2e`), keeping only the most widely known records. GeoNames has no size or elevation in that extract, so prominence is the number of alternate-language names (rank 2 = most, 8 = fewest). Volcanoes are kept up to rank 2, glaciers up to rank 3 (plus Aletsch and Pasterze), deserts and seas up to rank 3, and mountains up to rank 3, used only as the best-known peak of countries without a Natural Earth peak. [extract-geonames-curated.py](../scripts/extract-geonames-curated.py) documents the selection; it reads the old catalogue shards from commit `8f94e2e`.
+
+The previous worldwide catalogue (2,092,870 records in 1,301 static files, search shards and a worker) was removed on purpose: it listed every creek and hill. Check out `8f94e2e` to restore it.
 
 Natural Earth is [public domain](https://www.naturalearthdata.com/about/terms-of-use/). Boundary display follows the source and implies no position on sovereignty.
 
-## Countries and capitals
-
-Country/capital inclusion is unchanged. Capitals are all 241 PPLC records in the frozen GeoNames cities500 snapshot retrieved 2026-10-02. This includes territories and can omit secondary seats or small settlements; it is not a complete list of all capital functions. [INCLUDED.md](INCLUDED.md) lists the exact entries. The original capital extract and download hashes remain in `geonames-snapshot.json` and `geonames-provenance.json`.
-
 ## Preparation and performance
 
-`pnpm data:prepare` runs two Python 3 standard-library scripts. `prepare-data.py` fetches missing Natural Earth files at the pinned revision and creates the overview and shapes. `expand-catalogue.py` streams the local `data/source/allCountries.zip`, extracts all matching feature codes, and builds deterministic compressed shards. Download that world archive and countryInfo.txt into `data/source/` before regenerating. The public source archive changes daily; compare its hash with the recorded snapshot to reproduce this version. The checked-in outputs need no data download during a normal app build.
+`pnpm data:prepare` runs one Python 3 standard-library script (about 20 seconds). It downloads missing Natural Earth files into `data/source/` (ignored by Git) and writes `places.json`, `countries.geojson`, `physical.geojson` (and a `.gz` copy), `manifest.json` and [INCLUDED.md](INCLUDED.md). Checked-in outputs need no data download during a normal app build.
 
-The ~166 MB compressed catalogue is split into **1,301 files**, not downloaded at startup:
-
-- Search shards route on normalized three-character word prefixes, hashed into 256 buckets. Search considers names and retained aliases, with case/diacritic normalization. Multiword queries use the smallest relevant bucket. Empty buckets need no network request. An exact very short name is also indexed; for general prefix search type at least three letters. Arbitrary infix matching across the whole catalogue and typo correction are not provided.
-- Regional point shards use 15° longitude/latitude cells and categories. At zoom 4+, enabled layers fetch only intersecting populated cells, with four concurrent requests, a bounded cache, and sampling across screen space. This intentionally limits drawn labels; all included records remain searchable.
-- Gzip decoding, global search and regional sampling run in a worker. Stale replies are discarded. Request failures leave the globe usable, show a message, and allow retry.
-- Base country geometry and the overview load initially. The ~8 MB uncompressed Natural Earth physical geometry loads as a gzip file only when a shape layer or relevant search result is requested.
-
-The original tiny selections remain documented in Git history. Current layer counters show GeoNames records, except the fixed country/capital lists. Additional Natural Earth overview entries are not added to the GeoNames counters.
+- `places.json` (~0.6 MB) and `countries.geojson` (~9 MB; ~2.6 MB gzipped on GitHub Pages) load at startup. Search runs in the browser over `places.json`.
+- `physical.geojson` (~3 MB; a gzip copy is fetched) loads when a shape layer or a search result needs river, lake, range, desert or sea geometry.
+- Natural Earth shapes are rounded to three decimals (rivers, lakes) or two decimals (ranges, deserts, seas). The 1:10 million source resolution stays the limit when zooming in.
