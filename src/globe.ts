@@ -12,7 +12,11 @@ function graticule(): FeatureCollection<LineString> {
 }
 export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, onError: (message: string) => void) {
   const width = document.querySelector('#map')!.clientWidth;
-  const points: FeatureCollection<Point> = { type: 'FeatureCollection', features: data.places.map(p => ({ type: 'Feature', properties: { id: p.id, name: p.name, category: p.category, rank: p.rank, minZoom: labelThreshold(p, width) }, geometry: { type: 'Point', coordinates: p.coordinates } })) };
+  const makePoints = (places: Place[]): FeatureCollection<Point> => ({ type: 'FeatureCollection', features: places.map(p => ({ type: 'Feature', properties: { id: p.id, name: p.name, category: p.category, rank: p.rank, minZoom: labelThreshold(p, document.querySelector('#map')!.clientWidth) }, geometry: { type: 'Point', coordinates: p.coordinates } })) });
+  let physical = data.physical;
+  let selectedPlace: Place | undefined;
+  let displayed = data.places;
+  let points = makePoints(displayed);
   const empty: FeatureCollection<Geometry> = { type: 'FeatureCollection', features: [] };
   const style: StyleSpecification = {
     version: 8, projection: { type: 'globe' },
@@ -80,23 +84,37 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
     const next = map.getContainer().clientWidth < 600;
     if (next === narrow) return;
     narrow = next;
-    points.features.forEach((f, i) => { f.properties!.minZoom = labelThreshold(data.places[i], map.getContainer().clientWidth); });
+    points = makePoints(displayed);
     (map.getSource('learning') as GeoJSONSource).setData(points);
     categories.forEach(c => map.setLayoutProperty(`${c.id}-labels`, 'text-padding', next ? 9 : 5));
   });
   return {
     map,
+    setPhysical(shapes: FeatureCollection) {
+      physical = shapes;
+      (map.getSource('physical') as GeoJSONSource).setData(physical);
+      if (selectedPlace) (map.getSource('selected-shape') as GeoJSONSource).setData({ type: 'FeatureCollection', features: [...data.countries.features, ...physical.features].filter(f => f.properties?.id === selectedPlace!.id) });
+    },
+    setDetails(details: Place[]) {
+      const merged = new globalThis.Map(data.places.map(p => [p.id, p]));
+      details.forEach(p => { if (!merged.has(p.id)) merged.set(p.id, p); });
+      displayed = [...merged.values()];
+      byId.clear(); displayed.forEach(p => byId.set(p.id, p));
+      points = makePoints(displayed);
+      (map.getSource('learning') as GeoJSONSource).setData(points);
+    },
     toggle(category: Category, enabled: boolean) {
       for (const suffix of ['area', 'line', 'dots', 'labels']) if (map.getLayer(`${category}-${suffix}`)) map.setLayoutProperty(`${category}-${suffix}`, 'visibility', enabled ? 'visible' : 'none');
       // Country borders and land remain part of the independent basemap.
     },
     select(place: Place) {
+      selectedPlace = place;
       (map.getSource('selected') as GeoJSONSource).setData({ type: 'FeatureCollection', features: [{ type: 'Feature', properties: { name: place.name }, geometry: { type: 'Point', coordinates: place.coordinates } }] });
-      const shapes = [...data.countries.features, ...data.physical.features].filter(f => f.properties?.id === place.id);
+      const shapes = [...data.countries.features, ...physical.features].filter(f => f.properties?.id === place.id);
       (map.getSource('selected-shape') as GeoJSONSource).setData({ type: 'FeatureCollection', features: shapes });
-      map.flyTo({ center: place.coordinates, zoom: place.category === 'countries' ? 3.5 : ['seas', 'ranges', 'deserts', 'rivers'].includes(place.category) ? 3.6 : 5, duration: 1600, offset: [0, -45], essential: false });
+      map.flyTo({ center: place.coordinates, zoom: place.category === 'countries' ? 3.5 : ['seas', 'ranges', 'deserts', 'rivers'].includes(place.category) ? 4.2 : 5, duration: 1600, offset: [0, -45], essential: false });
     },
-    clear() { (map.getSource('selected') as GeoJSONSource).setData(empty); (map.getSource('selected-shape') as GeoJSONSource).setData(empty); },
+    clear() { selectedPlace = undefined; (map.getSource('selected') as GeoJSONSource).setData(empty); (map.getSource('selected-shape') as GeoJSONSource).setData(empty); },
     reset() { map.flyTo({ ...home(), offset: [0, 0], duration: 1200 }); },
   };
 }

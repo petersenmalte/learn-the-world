@@ -4,7 +4,7 @@ export const categories = [
   { id: 'mountains', name: 'Mountains', singular: 'Mountain', icon: '△', color: '#d9c8a7' },
   { id: 'ranges', name: 'Mountain ranges', singular: 'Mountain range', icon: '⋀', color: '#c2b598' },
   { id: 'rivers', name: 'Rivers', singular: 'River', icon: '≋', color: '#80bfd2' },
-  { id: 'seas', name: 'Seas', singular: 'Sea', icon: '≈', color: '#8fcdd8' },
+  { id: 'seas', name: 'Seas & oceans', singular: 'Sea / ocean', icon: '≈', color: '#8fcdd8' },
   { id: 'lakes', name: 'Lakes', singular: 'Lake', icon: '◒', color: '#93becb' },
   { id: 'deserts', name: 'Deserts', singular: 'Desert', icon: '◠', color: '#e0bd7d' },
   { id: 'glaciers', name: 'Glaciers', singular: 'Glacier', icon: '◇', color: '#cfedf1' },
@@ -20,9 +20,12 @@ export function createSearch(places: Place[]) {
   return (query: string, limit = 10): Place[] => {
     const q = normalize(query);
     if (!q) return [];
-    return index.map(item => ({ ...item, score: item.name === q ? 0 : item.name.startsWith(q) ? 1 : item.names.some(n => n === q) ? 2 : item.names.some(n => n.startsWith(q)) ? 3 : item.names.some(n => n.includes(q)) ? 4 : 99 }))
-      .filter(item => item.score < 99).sort((a, b) => a.score - b.score || a.place.rank - b.place.rank || a.place.name.localeCompare(b.place.name))
-      .slice(0, limit).map(item => item.place);
+    const found: {place: Place; score: number}[] = [];
+    for (const item of index) {
+      const score = item.name === q ? 0 : item.name.startsWith(q) ? 1 : item.names.some(n => n === q) ? 2 : item.names.some(n => n.startsWith(q)) ? 3 : item.names.some(n => n.includes(q) || q.split(' ').every(t => n.split(' ').some(w => w.startsWith(t)))) ? 4 : 99;
+      if (score < 99) found.push({ place: item.place, score });
+    }
+    return found.sort((a, b) => a.score - b.score || a.place.rank - b.place.rank || a.place.name.localeCompare(b.place.name)).slice(0, limit).map(item => item.place);
   };
 }
 export function labelThreshold(place: Place, width: number) { return place.minZoom < 1 ? 0 : place.minZoom + (width < 600 ? 0.55 : 0); }
