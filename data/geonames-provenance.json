@@ -1,0 +1,23 @@
+{
+  "retrieved": "2026-10-02",
+  "license": "CC BY 4.0",
+  "sources": [
+    {
+      "url": "https://download.geonames.org/export/dump/cities500.zip",
+      "sha256": "88b41c5f6ce2a69ac526bf70b54a27f9c1992d8cf29855536b853be63bde4d17"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/countryInfo.txt",
+      "sha256": "93bafc525813f22e4711ff9ed6d626343094ce48c26388dc7c49189b3d7d5512"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/CH.zip",
+      "sha256": "c085252f0cbb8e55b3905c63a405b4727121780736b1bd47999dfcfc525c02f1"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/IS.zip",
+      "sha256": "95921a5423e1ecee9709c9db0a998b984e078b62bb431bb53f5b502b32b18a1f"
+    }
+  ],
+  "extractSha256": "209e55f9b7eed8ec9eee1615201aa5569e44d6028f26f6ef27bd14cf2c625c74"
+}
