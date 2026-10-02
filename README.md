@@ -19,6 +19,7 @@ Open the printed URL ending in `/learn-the-world/`. All geographic assets and th
 ## Features
 
 - A rotatable, zoomable 3D globe, touch gestures, keyboard map navigation, zoom buttons and reset.
+- A flat black-and-white interface with the globe in the centre and search plus layer switches beside it; only the globe carries colour. Latitude and longitude appear, dimmed, next to the cursor whenever it is over the globe.
 - Countries and capitals enabled initially; independent switches for all ten categories.
 - Local search across names and aliases, insensitive to case and diacritics, with keyboard result selection. Hidden layers and collision-hidden labels remain searchable. Search highlights the selected location and available geometry without changing your layer preferences.
 - Ranked labels, zoom thresholds, collision detection and extra mobile spacing. A phone-sized layer sheet, safe-area spacing, reduced-motion support, loading/failure messages and a WebGL2 compatibility message.
