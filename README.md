@@ -1,6 +1,6 @@
 # Learn the World
 
-A responsive, interactive globe for exploring geography. Built with Vite 8, TypeScript and MapLibre GL JS 6. No accounts, games, API keys, tracking, or paid services.
+A responsive, interactive globe for exploring geography. Built with Vite 8, TypeScript and MapLibre GL JS 6. No accounts, games, API keys, or paid services. Microsoft Clarity analytics is loaded through the project tag in `index.html`.
 
 ## Develop
 
