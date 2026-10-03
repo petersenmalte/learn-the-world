@@ -1,5 +1,12 @@
 # Verification
 
+## Progressive satellite detail — 2026-10-03
+
+- Production build passes, as do all 12 tests. Additional tests cover no-data transparency (including preservation of colored dark water), invalid tile URLs and HTTP service errors. The existing MapLibre bundle-size warning remains.
+- NASA production WMTS capabilities checked for the exact layer names, date, 256px tile sizes and maximum matrix levels (8 and 12). Sample Landsat imagery fetched successfully; JPEG black no-data requires explicit masking (even the service's PNG output was opaque).
+- Browser checks on the local production preview under `/learn-the-world/`: search and fly to Mont Blanc, successive zoom steps into the Alps, sharper regional/detail imagery, preserved labels/highlights, no warning/error console messages. Checked desktop 1280 × 720 and phone 390 × 844; phone content width remained 390px. Attribution now has a dark backing to remain readable on detailed terrain.
+- Error propagation is unit-tested; an end-to-end provider outage/retry and physical iPhone Safari have not been simulated. Real-world availability, coverage, image age and dark-pixel masking limitations are documented in `data/EARTH.md`.
+
 ## Natural Earth appearance — 2026-10-03
 
 - Pulled `origin/main` at `28bee1b`; preserved the existing local phone globe-sizing change while resolving its overlap with the updated map options.

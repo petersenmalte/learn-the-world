@@ -1,5 +1,7 @@
 # Third-party notices
 
+- **NASA GIBS / Landsat WELD**: remotely served Blue Marble shaded relief/bathymetry and historical annual Landsat WELD true-color imagery (time `2000-12-01`). Acknowledgment: NASA Global Imagery Browse Services (GIBS), part of EOSDIS, and Landsat/WELD data producers. Public NASA data-use guidance: https://www.earthdata.nasa.gov/engage/open-data-services-software/data-use-policy . No endorsement is implied. Near-black Landsat no-data pixels are made transparent for display; see [imagery details](data/EARTH.md).
+
 - **NASA Blue Marble Next Generation**: December 2004 land, topography and bathymetry composite. Credit: NASA Earth Observatory (Reto Stöckli). NASA imagery is generally not subject to copyright in the United States; NASA endorsement is not implied. Reprojected and compressed into WebP tiles, with display saturation/contrast adjustments. Retain the visible NASA credit. Source and reproduction: [data/EARTH.md](data/EARTH.md). Usage guidance: https://www.nasa.gov/nasa-brand-center/images-and-media/
 
 - **Natural Earth**: geographic boundaries, names and physical shapes. Public domain. https://www.naturalearthdata.com/about/terms-of-use/

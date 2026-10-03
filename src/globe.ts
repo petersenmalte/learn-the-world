@@ -1,9 +1,11 @@
-import { Map, Point as ScreenPoint, setWorkerUrl, type FilterSpecification, type StyleSpecification, type GeoJSONSource } from 'maplibre-gl';
+import { Map, Point as ScreenPoint, setWorkerUrl, type FilterSpecification, type StyleSpecification, type GeoJSONSource, type RasterTileSource } from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import type { FeatureCollection, Geometry, Point } from 'geojson';
 import { categories, labelThreshold, type Place, type Category } from './search';
 import type { AtlasData } from './data';
+import { GIBS, registerSatelliteProtocol } from './satellite';
 setWorkerUrl(workerUrl);
+registerSatelliteProtocol();
 export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, onError: (message: string) => void) {
   const width = document.querySelector('#map')!.clientWidth;
   const makePoints = (places: Place[]): FeatureCollection<Point> => ({ type: 'FeatureCollection', features: places.map(p => ({ type: 'Feature', properties: { id: p.id, name: p.name, category: p.category, rank: p.rank, minZoom: labelThreshold(p, document.querySelector('#map')!.clientWidth) }, geometry: { type: 'Point', coordinates: p.coordinates } })) });
@@ -17,6 +19,8 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
       // Background geometry is independent of all learning labels and category visibility.
       basemap: { type: 'geojson', data: data.countries, tolerance: 0.6 },
       earth: { type: 'raster', tiles: [`${new URL(import.meta.env.BASE_URL, window.location.origin).href}earth/{z}/{x}/{y}.webp`], tileSize: 512, minzoom: 0, maxzoom: 3, attribution: 'NASA Blue Marble' },
+      'earth-regional': { type: 'raster', tiles: [`${GIBS}/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg`], tileSize: 256, minzoom: 3, maxzoom: 8, attribution: 'NASA GIBS / Blue Marble' },
+      'earth-detail': { type: 'raster', tiles: ['landsat://{z}/{y}/{x}'], tileSize: 256, minzoom: 6, maxzoom: 12, bounds: [-180, -60, 180, 80], attribution: 'NASA GIBS / Landsat WELD' },
       learning: { type: 'geojson', data: points },
       physical: { type: 'geojson', data: data.physical, tolerance: 0.6 },
       selected: { type: 'geojson', data: empty },
@@ -26,6 +30,8 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
       { id: 'ocean', type: 'background', paint: { 'background-color': '#063273' } },
       { id: 'land', type: 'fill', source: 'basemap', paint: { 'fill-color': '#548864' } },
       { id: 'earth-surface', type: 'raster', source: 'earth', paint: { 'raster-saturation': 0.22, 'raster-brightness-min': 0.025, 'raster-brightness-max': 1, 'raster-contrast': 0.08, 'raster-fade-duration': 250 } },
+      { id: 'earth-regional', type: 'raster', source: 'earth-regional', minzoom: 3, paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 3, 0, 4, 1], 'raster-saturation': 0.22, 'raster-contrast': 0.08, 'raster-brightness-min': 0.025, 'raster-fade-duration': 350 } },
+      { id: 'earth-detail', type: 'raster', source: 'earth-detail', minzoom: 6, paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 6, 0, 7, 1], 'raster-saturation': 0.12, 'raster-brightness-min': 0.025, 'raster-fade-duration': 350 } },
       { id: 'borders', type: 'line', source: 'basemap', paint: { 'line-color': '#e2f5ff', 'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.35, 5, 0.8, 9, 1.4], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 0, 0.18, 3, 0.35, 6, 0.6] } },
       { id: 'selection-fill', type: 'fill', source: 'selected-shape', filter: ['==', ['geometry-type'], 'Polygon'], paint: { 'fill-color': '#ffffff', 'fill-opacity': 0.4 } },
       { id: 'selection-outline', type: 'line', source: 'selected-shape', paint: { 'line-color': '#ffffff', 'line-width': 2.5 } },
@@ -66,7 +72,35 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
     return { center: [15, 20] as [number, number], zoom: Math.max(-0.2, Math.min(2.6, Math.log2(diameter / 164))), bearing: 0, pitch: 0 };
   };
   const map = new Map({ container: 'map', style, ...home(), minZoom: -0.5, maxZoom: 10, maxPitch: 0, pixelRatio: Math.min(3, Math.max(2, window.devicePixelRatio || 1)), attributionControl: false, canvasContextAttributes: { antialias: true }, renderWorldCopies: false });
-  map.on('error', event => { console.error(event.error); onError('The globe could not finish rendering. Reload to try again.'); });
+  const failedImagery = new Set<string>();
+  const imageryStatus = document.createElement('p');
+  imageryStatus.className = 'imagery-status';
+  imageryStatus.setAttribute('role', 'status');
+  imageryStatus.hidden = true;
+  const retryImagery = document.createElement('button');
+  retryImagery.textContent = 'Retry';
+  retryImagery.onclick = () => {
+    for (const source of failedImagery) {
+      const raster = map.getSource(source) as RasterTileSource;
+      raster.setTiles(raster.tiles);
+      map.setLayoutProperty(source, 'visibility', 'visible');
+    }
+    failedImagery.clear();
+    imageryStatus.hidden = true;
+  };
+  imageryStatus.append('Detailed imagery unavailable. Showing the underlying map. ', retryImagery);
+  map.getContainer().after(imageryStatus);
+  map.on('remove', () => imageryStatus.remove());
+  map.on('error', event => {
+    const sourceId = (event as typeof event & { sourceId?: string }).sourceId;
+    if (sourceId === 'earth-regional' || sourceId === 'earth-detail') {
+      failedImagery.add(sourceId);
+      map.setLayoutProperty(sourceId, 'visibility', 'none');
+      imageryStatus.hidden = false;
+      return;
+    }
+    console.error(event.error); onError('The globe could not finish rendering. Reload to try again.');
+  });
   map.on('webglcontextlost', () => onError('The browser paused the globe’s graphics. Reload to restore the atlas.'));
   const byId = new globalThis.Map(data.places.map(p => [p.id, p]));
   map.on('click', event => {

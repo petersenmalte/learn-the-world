@@ -20,4 +20,19 @@ The script reprojects latitude to Web Mercator and creates 512px XYZ WebP tiles 
 
 ## Limits
 
-This is overview imagery, not a high-resolution satellite service. At zoom levels above 3 it is enlarged; vector borders and labels retain their resolution. Web Mercator ends at ±85.0511°; MapLibre extends the edge raster over the polar caps, so the very poles are approximate. Bathymetric shading represents seabed relief and is not a literal photograph of ocean color. The atmospheric halo and edge shading are decorative and follow the visible globe disc, fading as the user zooms in. No live weather, clouds or day/night simulation is provided.
+The local texture is overview imagery. It remains underneath remotely fetched detail layers as a fallback. Web Mercator ends at ±85.0511°; MapLibre extends the edge raster over the polar caps, so the very poles are approximate. Bathymetric shading represents seabed relief and is not a literal photograph of ocean color. The atmospheric halo and edge shading are decorative and follow the visible globe disc, fading as the user zooms in. No live weather or day/night simulation is provided.
+
+## On-demand NASA GIBS detail layers
+
+Verified against the production [Web Mercator capabilities](https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/1.0.0/WMTSCapabilities.xml) on 2026-10-03:
+
+| Map zoom | Dataset | WMTS matrix | Tile size |
+| --- | --- | --- | --- |
+| 3–4 transition | `BlueMarble_ShadedRelief_Bathymetry` | `GoogleMapsCompatible_Level8` | 256 px |
+| 6–7 transition | `Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual`, time `2000-12-01` | `GoogleMapsCompatible_Level12` | 256 px |
+
+WMTS tile order is `{z}/{y}/{x}`. Only visible tiles are requested, and layers below their minimum map zoom do not request imagery. Source maximum zooms prevent requests beyond the published matrices. The existing map zoom limit remains 10. GIBS is a public NASA production imagery service, not a demo tile server. No keys, bulk downloads or paid services are used. The local NASA layer remains available without GIBS.
+
+Landsat WELD uses historical 30 m observations; the selected annual period starts December 2000. It has variable coverage, clouds and composite seams, and is not street-level or current imagery. Detail requests are limited to 60°S–80°N; outside that band Blue Marble remains visible. The JPEG service encodes missing data in black. `src/satellite.ts` turns pixels with all channels ≤8 transparent and feathers to full opacity at channel maximum 20. This can also make very dark water/shadows transparent; the imagery is for learning/context, not scientific measurement. Browser decoding uses `createImageBitmap` and `OffscreenCanvas`; unsupported decoding or network failures preserve the underlying map and show Retry. Tiles are processed individually and bitmap memory is released immediately.
+
+NASA receives ordinary tile requests (including client IP and the viewed tile coordinates). Service availability and load times depend on the network. Credit NASA GIBS and Landsat/WELD in the map. Data usage: https://www.earthdata.nasa.gov/engage/open-data-services-software/data-use-policy . API: https://nasa-gibs.github.io/gibs-api-docs/access-basics/ . We acknowledge NASA's Global Imagery Browse Services (GIBS), part of EOSDIS, for access to this imagery.

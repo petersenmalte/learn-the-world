@@ -9,6 +9,9 @@
   background: radial-gradient(circle at 36% 30%, transparent 42%, #031b3840 78%, #010a1f99 100%);
 }
 
+.imagery-status { position: absolute; z-index: 3; top: 42px; left: 14px; right: 14px; margin: 0; padding: 8px 10px; width: fit-content; max-width: calc(100% - 28px); background: #101010e8; color: #ddd; font-size: 11px; line-height: 1.5; }
+.imagery-status button { background: transparent; border: 1px solid #777; padding: 5px 10px; margin-left: 6px; }
+
 /* Flat black and white. The globe is the only place with colour. */
 :root {
   --fg: #fff;
@@ -50,7 +53,7 @@ main { display: flex; min-height: 100dvh; height: 100dvh; }
 .map-controls { position: absolute; z-index: 2; left: 20px; bottom: 44px; display: flex; gap: 6px; }
 .icon-button { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 1px solid var(--line); border-radius: 0; background: #000; font-size: 18px; line-height: 1; }
 .icon-button:hover:not(:disabled) { border-color: var(--fg); }
-.attribution { position: absolute; z-index: 2; bottom: 0; left: 0; right: 0; padding: 10px 20px; font-size: 9px; color: var(--faint); text-align: right; }
+.attribution { position: absolute; z-index: 2; bottom: 0; left: 0; right: 0; padding: 10px 20px; font-size: 9px; line-height: 1.5; color: #b8b8b8; background: #000b; text-align: right; }
 .attribution a { text-decoration: none; }
 .attribution a:hover { color: var(--fg); }
 
