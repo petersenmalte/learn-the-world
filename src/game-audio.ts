@@ -23,21 +23,44 @@ export class GameAudio {
       });
     } catch { /* Visual feedback remains usable if audio is unavailable. */ }
   }
+  private utterance?: SpeechSynthesisUtterance;
+  private pendingSpeech?: string;
+  private unlockArmed = false;
   /** Reads a place name aloud with the browser's built-in speech synthesis (no network, no API key). */
   say(text: string) {
     if (this.muted || !text) return;
     try {
       const speech = globalThis.speechSynthesis;
       if (!speech || typeof SpeechSynthesisUtterance === 'undefined') return;
-      speech.cancel();
+      // Browsers block speech until the page has had a user gesture (e.g. a direct link or reload).
+      // Remember the name and say it on the first click or key press instead of dropping it.
+      const activation = (globalThis.navigator as Navigator | undefined)?.userActivation;
+      if (activation && !activation.hasBeenActive) { this.waitForGesture(text); return; }
+      if (speech.speaking || speech.pending) speech.cancel();
+      speech.resume();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-GB';
-      const voice = speech.getVoices().find(v => v.lang === 'en-GB') ?? speech.getVoices().find(v => v.lang.startsWith('en'));
+      const voices = speech.getVoices();
+      const voice = voices.find(v => v.lang === 'en-GB') ?? voices.find(v => v.lang.startsWith('en'));
       if (voice) utterance.voice = voice;
       utterance.rate = 0.95;
+      utterance.onerror = event => { if (event.error === 'not-allowed') this.waitForGesture(text); };
+      this.utterance = utterance; // Keep a reference: some engines stop speaking when it is garbage-collected.
       speech.speak(utterance);
     } catch { /* The written question remains available if speech is unsupported. */ }
   }
-  silence() { try { globalThis.speechSynthesis?.cancel(); } catch { /* Speech is optional. */ } }
+  private waitForGesture(text: string) {
+    this.pendingSpeech = text;
+    if (this.unlockArmed || typeof addEventListener !== 'function') return;
+    this.unlockArmed = true;
+    const unlock = () => {
+      removeEventListener('pointerdown', unlock, true); removeEventListener('keydown', unlock, true);
+      this.unlockArmed = false;
+      const pending = this.pendingSpeech; this.pendingSpeech = undefined;
+      if (pending) this.say(pending);
+    };
+    addEventListener('pointerdown', unlock, true); addEventListener('keydown', unlock, true);
+  }
+  silence() { this.pendingSpeech = undefined; try { globalThis.speechSynthesis?.cancel(); } catch { /* Speech is optional. */ } }
   close() { this.silence(); void this.context?.close().catch(() => {}); }
 }
