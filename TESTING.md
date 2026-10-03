@@ -1,5 +1,10 @@
 # Verification
 
+## Consistent overview and detail — 2026-10-03
+
+- Removed the local December 2004 winter overview from the active style. The Landsat annual mosaic and its Blue Marble ocean/no-data background now render from zoom 0, with constant opacity and color treatment; only tile resolution changes when zooming.
+- Production build and all 12 tests pass. Browser overview checked: the previous widespread Eurasian winter snow texture is no longer used; no imagery warnings/errors during the check. Imagery remains historical, as documented in `data/EARTH.md`, and is not represented as current.
+
 ## Progressive satellite detail — 2026-10-03
 
 - Production build passes, as do all 12 tests. Additional tests cover no-data transparency (including preservation of colored dark water), invalid tile URLs and HTTP service errors. The existing MapLibre bundle-size warning remains.

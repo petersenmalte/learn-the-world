@@ -18,9 +18,10 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
     sources: {
       // Background geometry is independent of all learning labels and category visibility.
       basemap: { type: 'geojson', data: data.countries, tolerance: 0.6 },
-      earth: { type: 'raster', tiles: [`${new URL(import.meta.env.BASE_URL, window.location.origin).href}earth/{z}/{x}/{y}.webp`], tileSize: 512, minzoom: 0, maxzoom: 3, attribution: 'NASA Blue Marble' },
-      'earth-regional': { type: 'raster', tiles: [`${GIBS}/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg`], tileSize: 256, minzoom: 3, maxzoom: 8, attribution: 'NASA GIBS / Blue Marble' },
-      'earth-detail': { type: 'raster', tiles: ['landsat://{z}/{y}/{x}'], tileSize: 256, minzoom: 6, maxzoom: 12, bounds: [-180, -60, 180, 80], attribution: 'NASA GIBS / Landsat WELD' },
+      // Use the same mosaic and color treatment from the globe to close-ups.
+      // Blue Marble fills oceans and Landsat gaps at every scale, never a zoom switch.
+      'earth-regional': { type: 'raster', tiles: [`${GIBS}/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg`], tileSize: 256, minzoom: 0, maxzoom: 8, attribution: 'NASA GIBS / Blue Marble' },
+      'earth-detail': { type: 'raster', tiles: ['landsat://{z}/{y}/{x}'], tileSize: 256, minzoom: 0, maxzoom: 12, bounds: [-180, -60, 180, 80], attribution: 'NASA GIBS / Landsat WELD' },
       learning: { type: 'geojson', data: points },
       physical: { type: 'geojson', data: data.physical, tolerance: 0.6 },
       selected: { type: 'geojson', data: empty },
@@ -29,9 +30,8 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
     layers: [
       { id: 'ocean', type: 'background', paint: { 'background-color': '#063273' } },
       { id: 'land', type: 'fill', source: 'basemap', paint: { 'fill-color': '#548864' } },
-      { id: 'earth-surface', type: 'raster', source: 'earth', paint: { 'raster-saturation': 0.22, 'raster-brightness-min': 0.025, 'raster-brightness-max': 1, 'raster-contrast': 0.08, 'raster-fade-duration': 250 } },
-      { id: 'earth-regional', type: 'raster', source: 'earth-regional', minzoom: 3, paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 3, 0, 4, 1], 'raster-saturation': 0.22, 'raster-contrast': 0.08, 'raster-brightness-min': 0.025, 'raster-fade-duration': 350 } },
-      { id: 'earth-detail', type: 'raster', source: 'earth-detail', minzoom: 6, paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 6, 0, 7, 1], 'raster-saturation': 0.12, 'raster-brightness-min': 0.025, 'raster-fade-duration': 350 } },
+      { id: 'earth-regional', type: 'raster', source: 'earth-regional', paint: { 'raster-saturation': 0.22, 'raster-contrast': 0.08, 'raster-brightness-min': 0.025, 'raster-fade-duration': 350 } },
+      { id: 'earth-detail', type: 'raster', source: 'earth-detail', paint: { 'raster-saturation': 0.12, 'raster-brightness-min': 0.025, 'raster-fade-duration': 350 } },
       { id: 'borders', type: 'line', source: 'basemap', paint: { 'line-color': '#e2f5ff', 'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.35, 5, 0.8, 9, 1.4], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 0, 0.18, 3, 0.35, 6, 0.6] } },
       { id: 'selection-fill', type: 'fill', source: 'selected-shape', filter: ['==', ['geometry-type'], 'Polygon'], paint: { 'fill-color': '#ffffff', 'fill-opacity': 0.4 } },
       { id: 'selection-outline', type: 'line', source: 'selected-shape', paint: { 'line-color': '#ffffff', 'line-width': 2.5 } },
