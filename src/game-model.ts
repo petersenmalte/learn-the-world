@@ -46,7 +46,7 @@ export class Game {
     this.order = shuffle(targets, random);
   }
   get current() { return this.order[this.index] as Target | undefined; }
-  get complete() { return this.index === this.order.length; }
+  get complete() { return this.index === this.order.length || (this.mode === 'elimination' && this.removed.size === this.targets.length); }
   get completed() { return this.mode === 'elimination' ? this.removed.size : this.index; }
   choose(id: string): 'ignored' | 'selected' | 'answered' {
     if (this.feedback || this.complete || this.removed.has(id)) return 'ignored';

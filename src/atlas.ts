@@ -24,6 +24,7 @@ let shapeRequest: Promise<void> | undefined;
 function ensureShapes() {
   if (!shapeRequest) shapeRequest = loadShapes(import.meta.env.BASE_URL).then(shapes => { if (!disposed) atlas?.setPhysical(shapes); }).catch(() => {
     shapeRequest = undefined;
+    if (disposed) return;
     $('detail-status').textContent = 'Some outlines could not load';
   });
   return shapeRequest;

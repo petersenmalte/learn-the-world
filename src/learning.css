@@ -1,40 +1,40 @@
 .site-nav { position: absolute; z-index: 10; top: max(18px, env(safe-area-inset-top)); left: max(20px, env(safe-area-inset-left)); }
-.site-nav select { font: inherit; color: inherit; background: #000; border: 1px solid #555; border-radius: 0; padding: 9px 32px 9px 12px; cursor: pointer; max-width: 220px; }
-.site-nav select:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.site-nav select { font: inherit; color: inherit; background: #000; border: 1px solid var(--line); border-radius: 0; padding: 8px 30px 8px 10px; cursor: pointer; max-width: 220px; font-size: 12px; }
+.site-nav select:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
 .route-loading { padding: 90px 24px; }
-.learning-page { --fg: #1c211e; --dim: #626b64; --faint: #999; --line: #d9ded8; background: #fff; color: var(--fg); color-scheme: light; }
-.learning-page .site-nav select { background: #fff; border-color: var(--line); }
-.learning-page button { background: #fff; border: 1px solid var(--line); padding: 10px 15px; border-radius: 0; min-height: 42px; }
-.learning-page button:hover:not(:disabled), .game-link:hover { border-color: #394a3c; background: #f5f7f4; }
+.learning-page { background: #000; color: var(--fg); color-scheme: dark; }
+.learning-page button { background: #000; border: 1px solid var(--line); padding: 9px 13px; border-radius: 0; min-height: 40px; }
+.learning-page button:hover:not(:disabled), .game-link:hover { border-color: var(--fg); }
 .learning-page button:disabled { cursor: default; }
 .learning-page main { display: block; height: auto; min-height: 100dvh; }
-.learning-content { max-width: 1140px; margin: 0 auto; padding: 110px 36px 42px; }
-.learning-eyebrow { margin: 0 0 12px; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; color: #68716a; }
-.learning-page h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 450; line-height: 1.12; letter-spacing: -.035em; margin: 0 0 20px; }
-.learning-intro { font-size: 16px; line-height: 1.7; color: #626b64; max-width: 560px; }
-.mode-explanation { display: flex; gap: 48px; margin: 24px 0 36px; max-width: 720px; font-size: 13px; line-height: 1.7; }
-.mode-explanation p { flex: 1; color: #626b64; }.mode-explanation strong { font-weight: 500; color: #1c211e; }
-.region-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.region-card { padding: 25px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.region-card h2 { font-size: 19px; font-weight: 500; margin: 0 0 8px; }.region-card p { color: #626b64; font-size: 12px; }
-.game-links { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }.game-links h3 { font-size: 12px; font-weight: 500; margin: 0 0 10px; }
-.game-link { display: flex; justify-content: space-between; gap: 5px; padding: 10px 8px; border: 1px solid var(--line); text-decoration: none; font-size: 11px; margin-top: 6px; min-height: 38px; align-items: center; }
-.empty-note { line-height: 1.6; }.learning-footer { margin-top: 36px; font-size: 11px; color: #626b64; line-height: 2; }
-.game-page { padding: 84px 30px 16px; max-width: 1600px; margin: auto; }
-.game-heading { position: relative; max-width: 1100px; margin: 0 auto 16px; }.back-link { display: inline-block; font-size: 12px; text-decoration: none; margin: 0 0 26px; }.sound-button { position: absolute; top: 0; right: 0; font-size: 12px; }
-.game-heading h1 { font-size: clamp(25px, 3vw, 36px); margin-bottom: 8px; }.game-heading h1:focus { outline: none; }
-#question-detail { color: #626b64; margin: 0; font-size: 13px; }#question-detail:empty, #question-note:empty { display: none; }
-.question-note { max-width: 880px; line-height: 1.5; font-size: 12px; color: #626b64; margin: 10px 0; }
-.progress-row { display: flex; align-items: center; gap: 20px; font-size: 11px; margin-top: 18px; color: #626b64; }.progress-row progress { width: 160px; height: 4px; appearance: none; border: none; background: #edf0eb; }.progress-row progress::-webkit-progress-bar { background: #edf0eb; }.progress-row progress::-webkit-progress-value { background: #546d59; }.progress-row progress::-moz-progress-bar { background: #546d59; }
-.game-map-wrap { position: relative; height: min(55vh, 610px); min-height: 300px; border-block: 1px solid #e6e9e3; background: #fff; }#game-map { position: absolute; inset: 0; background: #fff; }
-#map-reset { position: absolute; bottom: 10px; right: 10px; font-size: 11px; padding: 7px 10px; }
+.learning-content { max-width: 980px; margin: 0 auto; padding: 108px 32px 36px; }
+.learning-eyebrow { margin: 0 0 12px; text-transform: uppercase; letter-spacing: .1em; font-size: 10px; color: var(--dim); }
+.learning-page h1 { font-size: 24px; font-weight: 450; line-height: 1.25; letter-spacing: -.02em; margin: 0 0 14px; }
+.mode-explanation { margin: 0 0 38px; font-size: 12px; line-height: 1.7; color: var(--dim); }
+.region-grid { border-top: 1px solid var(--line); }
+.region-card { display: grid; grid-template-columns: 1fr 1.6fr; align-items: center; column-gap: 32px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+.region-card h2 { font-size: 15px; font-weight: 400; margin: 0 0 7px; }.region-card p { color: var(--dim); font-size: 10px; margin: 0; }
+.game-links { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }.game-links > div { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; }.game-links h3 { grid-column: 1/-1; font-size: 10px; font-weight: 400; color: var(--dim); margin: 0 0 9px; }
+.game-link { display: inline-flex; align-items: center; min-height: 34px; text-decoration: none; font-size: 12px; border-bottom: 1px solid transparent; width: fit-content; }
+.empty-note { grid-column: 1/-1; padding-top: 10px; }.learning-footer { margin-top: 25px; font-size: 10px; color: var(--dim); line-height: 2; }.learning-footer a { text-decoration: none; }
+.game-page { padding: 80px 26px 16px; max-width: 1600px; margin: auto; }
+.game-heading { position: relative; max-width: 1100px; margin: 0 auto 18px; }.back-link { display: inline-block; font-size: 11px; text-decoration: none; margin: 0 0 26px; color: var(--dim); }.sound-button { position: absolute; top: 0; right: 0; font-size: 11px; }
+.game-heading h1 { font-size: 26px; margin-bottom: 8px; }.game-heading h1:focus { outline: none; }
+#question-detail { color: var(--dim); margin: 0; font-size: 12px; }#question-detail:empty, #question-note:empty { display: none; }
+.question-note { max-width: 880px; line-height: 1.5; font-size: 11px; color: var(--dim); margin: 10px 0; }
+.progress-row { display: flex; align-items: center; gap: 16px; font-size: 10px; margin-top: 15px; color: var(--dim); }.progress-row progress { width: 100px; height: 2px; appearance: none; border: none; background: #292929; }.progress-row progress::-webkit-progress-bar { background: #292929; }.progress-row progress::-webkit-progress-value { background: #aaa; }.progress-row progress::-moz-progress-bar { background: #aaa; }
+.game-map-wrap { position: relative; height: min(55vh, 610px); min-height: 300px; background: #fff; color: #222; color-scheme: light; }#game-map { position: absolute; inset: 0; background: #fff; }
+.learning-page .game-map-wrap button { color: #222; background: #fff; border-color: #d9ded8; }
+.learning-page .game-map-wrap button:focus-visible { outline-color: #222; }
+#map-reset { position: absolute; bottom: 10px; right: 10px; font-size: 10px; padding: 6px 9px; min-height: 32px; }
 #game-loading { position: absolute; inset: 0; display: grid; place-content: center; padding: 24px; background: #fff; color: #626b64; text-align: center; line-height: 1.7; }
-.game-page .maplibregl-ctrl-group { box-shadow: none; border: 1px solid #d9ded8; border-radius: 0; }.game-page .maplibregl-ctrl button { padding: 0; width: 40px; height: 40px; }
+.game-page .maplibregl-ctrl-group { box-shadow: none; border: 1px solid #ddd; border-radius: 0; }.game-page .maplibregl-ctrl button { padding: 0; width: 36px; height: 36px; min-height: 36px; }
 .map-crosshair { display: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); pointer-events: none; font: 24px monospace; color: #111; text-shadow: 0 0 2px #fff; }.game-map-wrap:has(canvas:focus-visible) .map-crosshair { display: block; }
-.game-answer { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 86px; max-width: 1100px; margin: auto; font-size: 13px; line-height: 1.6; }.answer-actions { display: flex; gap: 8px; flex-shrink: 0; }
-.feedback-correct { color: #227344; }.feedback-wrong { color: #b63333; }
-.game-footer { max-width: 1100px; margin: auto; color: #697269; font-size: 10px; line-height: 1.65; }.game-footer p { margin: 5px 0; }
-.source-content { max-width: 1000px; }.source-content h1 { margin-top: 32px; }.source-content h2 { font-size: 21px; font-weight: 500; margin-top: 34px; }.source-content p, .source-links { font-size: 14px; line-height: 1.8; }.source-links { padding-left: 18px; }.source-links li { margin: 8px 0; }.catalogue-scroll { overflow: auto; }.source-content table { border-collapse: collapse; font-size: 12px; width: 100%; }.source-content th, .source-content td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); vertical-align: top; min-width: 110px; line-height: 1.5; }.source-content td:last-child { min-width: 240px; }.source-content small { color: #626b64; }
-@media (max-width: 950px) { .region-grid { grid-template-columns: repeat(2, 1fr); }.game-answer { flex-wrap: wrap; padding: 16px 0; }.answer-actions { flex-wrap: wrap; } }
-@media (max-width: 560px) { .learning-content { padding: 100px 20px 30px; }.region-grid { grid-template-columns: 1fr; }.region-card { padding: 22px; }.mode-explanation { gap: 20px; font-size: 12px; }.game-page { padding: 82px 14px 16px; }.game-map-wrap { min-height: 320px; height: 48vh; }.game-heading { margin-bottom: 16px; }.question-note { font-size: 11px; }.game-link { font-size: 12px; min-height: 42px; } }
-@media (prefers-reduced-motion: reduce) { .learning-page * { scroll-behavior: auto; } }
+.game-answer { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 76px; max-width: 1100px; margin: auto; font-size: 12px; line-height: 1.6; }.answer-actions { display: flex; gap: 8px; flex-shrink: 0; font-size: 11px; }
+.feedback-correct { color: #79ce96; }.feedback-wrong { color: #f48787; }
+.game-footer { display: flex; flex-wrap: wrap; gap: 8px 24px; max-width: 1100px; margin: auto; color: var(--dim); font-size: 9px; line-height: 1.65; }.game-footer p { margin: 0; }.game-footer a { text-decoration: none; }.game-footer details { max-width: 450px; }.game-footer summary { cursor: pointer; }
+.source-content { max-width: 1000px; }.source-content h1 { margin-top: 30px; }.source-content h2 { font-size: 18px; font-weight: 450; margin-top: 32px; }.source-content p, .source-links { font-size: 13px; line-height: 1.8; color: #bbb; }.source-links { padding-left: 18px; }.source-links li { margin: 8px 0; }.catalogue-scroll { overflow: auto; }.source-content table { border-collapse: collapse; font-size: 11px; width: 100%; }.source-content th, .source-content td { text-align: left; padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; min-width: 110px; line-height: 1.5; }.source-content td:last-child { min-width: 240px; }.source-content small { color: var(--dim); }
+@media (max-width: 760px) { .region-card { grid-template-columns: 1fr 1.7fr; column-gap: 20px; }.game-links { gap: 16px; }.game-links > div { display: flex; flex-wrap: wrap; column-gap: 10px; }.game-links h3 { flex-basis: 100%; margin-bottom: 2px; }.game-answer { flex-wrap: wrap; padding: 15px 0; }.answer-actions { flex-wrap: wrap; } }
+@media (max-width: 480px) { .learning-content { padding: 96px 20px 30px; }.region-card { grid-template-columns: 1fr; gap: 16px; padding: 18px 0; }.region-name { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }.region-name h2 { font-size: 14px; }.region-name p { white-space: nowrap; font-size: 9px; }.game-links { gap: 20px; }.game-links > div { column-gap: 14px; }.game-link { min-height: 36px; font-size: 11px; }.mode-explanation { font-size: 11px; margin-bottom: 28px; }.game-page { padding: 80px 14px 16px; }.game-map-wrap { min-height: 320px; height: 48vh; }.game-heading h1 { font-size: 22px; }.question-note { font-size: 10px; }.game-footer { font-size: 9px; } }
+/* Reserve the navigation row above the atlas search on narrow screens. */
+@media (max-width: 760px) { body:not(.learning-page) .sidebar { padding-top: max(68px, calc(env(safe-area-inset-top) + 54px)); } }

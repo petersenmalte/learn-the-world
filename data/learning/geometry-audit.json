@@ -1,0 +1,78 @@
+{
+  "checked": "2026-10-03",
+  "tool": "Shapely 2.1.2 / GEOS; geographic coordinates, distances approximate",
+  "features": 250,
+  "overlappingInteriors": [],
+  "capitalOffsets": [
+    {
+      "country": "FJ",
+      "capital": "Suva",
+      "approxOffsetKm": 1.458
+    },
+    {
+      "country": "GD",
+      "capital": "St. George’s",
+      "approxOffsetKm": 0.629
+    },
+    {
+      "country": "GM",
+      "capital": "Banjul",
+      "approxOffsetKm": 1.078
+    },
+    {
+      "country": "KI",
+      "capital": "Tarawa",
+      "approxOffsetKm": 3.961
+    },
+    {
+      "country": "LR",
+      "capital": "Monrovia",
+      "approxOffsetKm": 0.023
+    },
+    {
+      "country": "MH",
+      "capital": "Majuro",
+      "approxOffsetKm": 1.206
+    },
+    {
+      "country": "NR",
+      "capital": "Yaren",
+      "approxOffsetKm": 0.176
+    },
+    {
+      "country": "PS",
+      "capital": "Ostjerusalem",
+      "approxOffsetKm": 2.504
+    },
+    {
+      "country": "SB",
+      "capital": "Honiara",
+      "approxOffsetKm": 0.046
+    },
+    {
+      "country": "TO",
+      "capital": "Nuku’alofa",
+      "approxOffsetKm": 1.758
+    },
+    {
+      "country": "TV",
+      "capital": "Funafuti",
+      "approxOffsetKm": 0.822
+    },
+    {
+      "country": "VA",
+      "capital": "Vatikanstadt",
+      "approxOffsetKm": 0.014
+    },
+    {
+      "country": "VC",
+      "capital": "Kingstown",
+      "approxOffsetKm": 0.077
+    }
+  ],
+  "invalidBeforeRepair": {
+    "EG": "Ring Self-intersection[35.621087 23.139293]"
+  },
+  "invalidAfterRepair": {},
+  "completed": "2026-10-04"
+}

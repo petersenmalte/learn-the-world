@@ -8,3 +8,7 @@
 - **GeoNames**: capital names, aliases, coordinates, classifications and a curated subset of well-known volcanoes, glaciers, deserts, seas and mountains. © GeoNames contributors, Creative Commons Attribution 4.0. https://www.geonames.org/ · https://creativecommons.org/licenses/by/4.0/ . This app adapts the data by selecting well-known records of documented feature codes, trimming aliases and rounding coordinates; no endorsement is implied.
 - **MapLibre GL JS**: BSD 3-Clause, copyright MapLibre contributors and original Mapbox contributors. The installed package includes the full license; retain it when redistributing MapLibre separately. https://github.com/maplibre/maplibre-gl-js/blob/main/LICENSE.txt
 - Vite, TypeScript and build/test dependencies retain the licenses included in their packages. System fonts are rendered locally; no font files are distributed.
+
+## Learning catalogue
+
+The learning games use Natural Earth 1:10m Germany-worldview polygons (Public Domain), with one documented area-preserving GEOS topology repair, and 199 GeoNames coordinate records (© GeoNames contributors, CC BY 4.0). Names, roles, status notes, country selection and continent grouping are editorial adaptations based on the EU Publications Office and the primary sources cited in [the learning data documentation](data/learning/README.md). GeoNames attribution and the license link remain visible on game pages.

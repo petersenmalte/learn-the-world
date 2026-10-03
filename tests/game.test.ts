@@ -120,3 +120,26 @@ test('muted audio creates no audio context and correct/wrong cues use different 
   const sound=new GameAudio();sound.muted=true;await sound.play(true);await sound.play(false);sound.close();
   assert.notDeepEqual(tones.correct,tones.wrong);assert.equal(sound.toggle(),false);assert.equal(sound.toggle(),true);
 });
+
+test('all capital coordinates and country associations exactly match the frozen GeoNames evidence', () => {
+  const rows=JSON.parse(readFileSync(new URL('../data/learning/geonames-reference.json',import.meta.url),'utf8')).rows as {id:string;countryCode:string;coordinates:number[]}[];
+  assert.equal(rows.length,199);
+  for (const c of countries) for (const capital of c.capitals) {
+    const source=rows.find(r=>r.id===capital.geonamesId);assert.ok(source,capital.name);
+    assert.equal(source.countryCode,c.id);assert.deepEqual(source.coordinates,capital.coordinates);
+  }
+});
+test('every marker can be separated from its neighbours within the allowed zoom range', () => {
+  const project=([lng,lat]:number[])=>[(lng+180)/360,(1-Math.asinh(Math.tan(lat*Math.PI/180))/Math.PI)/2];
+  for (const kind of ['countries','capitals'] as const) {
+    const points=targetsFor(countries,{kind,mode:'selection',region:'world'}).map(t=>({id:t.id,p:project(t.coordinates)}));
+    for(let i=0;i<points.length;i++)for(let j=i+1;j<points.length;j++){
+      const a=points[i],b=points[j],dx=Math.min(Math.abs(a.p[0]-b.p[0]),1-Math.abs(a.p[0]-b.p[0]));
+      assert.ok(Math.hypot(dx,a.p[1]-b.p[1])*512*2**15>44,`${a.id} and ${b.id} cannot be separated`);
+    }
+  }
+});
+test('elimination completes as soon as the last target is removed', () => {
+  const game=new Game(targets.slice(0,1),'elimination');const id=game.current!.id;
+  game.choose(id);game.choose(id);assert.equal(game.complete,true);assert.equal(game.feedback?.correct,true);
+});

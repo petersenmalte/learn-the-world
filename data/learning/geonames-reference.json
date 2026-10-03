@@ -1,0 +1,2194 @@
+{
+  "retrieved": "2026-10-02",
+  "rows": [
+    {
+      "id": "3041563",
+      "name": "Andorra la Vella",
+      "countryCode": "AD",
+      "coordinates": [
+        1.52109,
+        42.50779
+      ],
+      "featureCode": "PPLC",
+      "modified": "2020-03-03"
+    },
+    {
+      "id": "292968",
+      "name": "Abu Dhabi",
+      "countryCode": "AE",
+      "coordinates": [
+        54.39696,
+        24.45118
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-06-30"
+    },
+    {
+      "id": "1138958",
+      "name": "Kabul",
+      "countryCode": "AF",
+      "coordinates": [
+        69.17233,
+        34.52813
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-11-12"
+    },
+    {
+      "id": "3576022",
+      "name": "Saint John’s",
+      "countryCode": "AG",
+      "coordinates": [
+        -61.84329,
+        17.12096
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-02"
+    },
+    {
+      "id": "3183875",
+      "name": "Tirana",
+      "countryCode": "AL",
+      "coordinates": [
+        19.81866,
+        41.32744
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-06-05"
+    },
+    {
+      "id": "616052",
+      "name": "Yerevan",
+      "countryCode": "AM",
+      "coordinates": [
+        44.5126,
+        40.17765
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-08-31"
+    },
+    {
+      "id": "2240449",
+      "name": "Luanda",
+      "countryCode": "AO",
+      "coordinates": [
+        13.23432,
+        -8.83682
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-03-26"
+    },
+    {
+      "id": "3435910",
+      "name": "Buenos Aires",
+      "countryCode": "AR",
+      "coordinates": [
+        -58.37723,
+        -34.61315
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-06-19"
+    },
+    {
+      "id": "2761369",
+      "name": "Vienna",
+      "countryCode": "AT",
+      "coordinates": [
+        16.37208,
+        48.20849
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-11-01"
+    },
+    {
+      "id": "2172517",
+      "name": "Canberra",
+      "countryCode": "AU",
+      "coordinates": [
+        149.12807,
+        -35.28346
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "587084",
+      "name": "Baku",
+      "countryCode": "AZ",
+      "coordinates": [
+        49.89201,
+        40.37767
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-06-02"
+    },
+    {
+      "id": "3191281",
+      "name": "Sarajevo",
+      "countryCode": "BA",
+      "coordinates": [
+        18.35644,
+        43.84864
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "3374036",
+      "name": "Bridgetown",
+      "countryCode": "BB",
+      "coordinates": [
+        -59.62021,
+        13.10732
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-08-08"
+    },
+    {
+      "id": "1185241",
+      "name": "Dhaka",
+      "countryCode": "BD",
+      "coordinates": [
+        90.40744,
+        23.7104
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-09-07"
+    },
+    {
+      "id": "2800866",
+      "name": "Brussels",
+      "countryCode": "BE",
+      "coordinates": [
+        4.34878,
+        50.85045
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-05-03"
+    },
+    {
+      "id": "2357048",
+      "name": "Ouagadougou",
+      "countryCode": "BF",
+      "coordinates": [
+        -1.53388,
+        12.36566
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-20"
+    },
+    {
+      "id": "727011",
+      "name": "Sofia",
+      "countryCode": "BG",
+      "coordinates": [
+        23.32415,
+        42.69751
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-09-08"
+    },
+    {
+      "id": "290340",
+      "name": "Manama",
+      "countryCode": "BH",
+      "coordinates": [
+        50.58565,
+        26.22787
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "426272",
+      "name": "Gitega",
+      "countryCode": "BI",
+      "coordinates": [
+        29.92463,
+        -3.42708
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "2392087",
+      "name": "Porto-Novo",
+      "countryCode": "BJ",
+      "coordinates": [
+        2.60359,
+        6.49646
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "1820906",
+      "name": "Bandar Seri Begawan",
+      "countryCode": "BN",
+      "coordinates": [
+        114.94006,
+        4.89035
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "3903987",
+      "name": "Sucre",
+      "countryCode": "BO",
+      "coordinates": [
+        -65.26274,
+        -19.03332
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-05-28"
+    },
+    {
+      "id": "3469058",
+      "name": "Brasília",
+      "countryCode": "BR",
+      "coordinates": [
+        -47.92972,
+        -15.77972
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-06-29"
+    },
+    {
+      "id": "3571824",
+      "name": "Nassau",
+      "countryCode": "BS",
+      "coordinates": [
+        -77.34306,
+        25.05823
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "1252416",
+      "name": "Thimphu",
+      "countryCode": "BT",
+      "coordinates": [
+        89.64191,
+        27.46609
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "933773",
+      "name": "Gaborone",
+      "countryCode": "BW",
+      "coordinates": [
+        25.90859,
+        -24.65451
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "625144",
+      "name": "Minsk",
+      "countryCode": "BY",
+      "coordinates": [
+        27.56653,
+        53.90019
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-11-01"
+    },
+    {
+      "id": "3582672",
+      "name": "Belmopan",
+      "countryCode": "BZ",
+      "coordinates": [
+        -88.76401,
+        17.25376
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-15"
+    },
+    {
+      "id": "6094817",
+      "name": "Ottawa",
+      "countryCode": "CA",
+      "coordinates": [
+        -75.69812,
+        45.41117
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-08-04"
+    },
+    {
+      "id": "2314302",
+      "name": "Kinshasa",
+      "countryCode": "CD",
+      "coordinates": [
+        15.31357,
+        -4.32758
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "2389853",
+      "name": "Bangui",
+      "countryCode": "CF",
+      "coordinates": [
+        18.55496,
+        4.36122
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "2260535",
+      "name": "Brazzaville",
+      "countryCode": "CG",
+      "coordinates": [
+        15.28318,
+        -4.26613
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-10-31"
+    },
+    {
+      "id": "2661552",
+      "name": "Bern",
+      "countryCode": "CH",
+      "coordinates": [
+        7.44744,
+        46.94809
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-18"
+    },
+    {
+      "id": "2279755",
+      "name": "Yamoussoukro",
+      "countryCode": "CI",
+      "coordinates": [
+        -5.27674,
+        6.82055
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-01-05"
+    },
+    {
+      "id": "3871336",
+      "name": "Santiago",
+      "countryCode": "CL",
+      "coordinates": [
+        -70.64827,
+        -33.45694
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-21"
+    },
+    {
+      "id": "2220957",
+      "name": "Yaoundé",
+      "countryCode": "CM",
+      "coordinates": [
+        11.51667,
+        3.86667
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-07-20"
+    },
+    {
+      "id": "1816670",
+      "name": "Beijing",
+      "countryCode": "CN",
+      "coordinates": [
+        116.39723,
+        39.9075
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-12-15"
+    },
+    {
+      "id": "3688689",
+      "name": "Bogotá",
+      "countryCode": "CO",
+      "coordinates": [
+        -74.08175,
+        4.60971
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-03-26"
+    },
+    {
+      "id": "3621849",
+      "name": "San José",
+      "countryCode": "CR",
+      "coordinates": [
+        -84.08489,
+        9.93388
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-15"
+    },
+    {
+      "id": "3553478",
+      "name": "Havana",
+      "countryCode": "CU",
+      "coordinates": [
+        -82.38304,
+        23.13302
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-10-31"
+    },
+    {
+      "id": "3374333",
+      "name": "Praia",
+      "countryCode": "CV",
+      "coordinates": [
+        -23.51254,
+        14.93152
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-07-01"
+    },
+    {
+      "id": "146268",
+      "name": "Nicosia",
+      "countryCode": "CY",
+      "coordinates": [
+        33.35397,
+        35.17284
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-12"
+    },
+    {
+      "id": "3067696",
+      "name": "Prague",
+      "countryCode": "CZ",
+      "coordinates": [
+        14.42076,
+        50.08804
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "2950159",
+      "name": "Berlin",
+      "countryCode": "DE",
+      "coordinates": [
+        13.41053,
+        52.52437
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-07-22"
+    },
+    {
+      "id": "223817",
+      "name": "Djibouti",
+      "countryCode": "DJ",
+      "coordinates": [
+        43.14503,
+        11.58901
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "2618425",
+      "name": "Copenhagen",
+      "countryCode": "DK",
+      "coordinates": [
+        12.56553,
+        55.67594
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-09-05"
+    },
+    {
+      "id": "3575635",
+      "name": "Roseau",
+      "countryCode": "DM",
+      "coordinates": [
+        -61.38808,
+        15.30174
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-09-05"
+    },
+    {
+      "id": "3492908",
+      "name": "Santo Domingo",
+      "countryCode": "DO",
+      "coordinates": [
+        -69.89232,
+        18.47186
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-03-09"
+    },
+    {
+      "id": "2507480",
+      "name": "Algiers",
+      "countryCode": "DZ",
+      "coordinates": [
+        3.08746,
+        36.73225
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-08-05"
+    },
+    {
+      "id": "3652462",
+      "name": "Quito",
+      "countryCode": "EC",
+      "coordinates": [
+        -78.52495,
+        -0.22985
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-12-15"
+    },
+    {
+      "id": "588409",
+      "name": "Tallinn",
+      "countryCode": "EE",
+      "coordinates": [
+        24.75353,
+        59.43696
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "360630",
+      "name": "Cairo",
+      "countryCode": "EG",
+      "coordinates": [
+        31.24967,
+        30.06263
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-08-29"
+    },
+    {
+      "id": "343300",
+      "name": "Asmara",
+      "countryCode": "ER",
+      "coordinates": [
+        38.93184,
+        15.33805
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-03-10"
+    },
+    {
+      "id": "3117735",
+      "name": "Madrid",
+      "countryCode": "ES",
+      "coordinates": [
+        -3.70256,
+        40.4165
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "344979",
+      "name": "Addis Ababa",
+      "countryCode": "ET",
+      "coordinates": [
+        38.74689,
+        9.02497
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "658225",
+      "name": "Helsinki",
+      "countryCode": "FI",
+      "coordinates": [
+        24.93545,
+        60.16952
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-02-13"
+    },
+    {
+      "id": "2198148",
+      "name": "Suva",
+      "countryCode": "FJ",
+      "coordinates": [
+        178.42531,
+        -18.13683
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-02-23"
+    },
+    {
+      "id": "2081986",
+      "name": "Palikir",
+      "countryCode": "FM",
+      "coordinates": [
+        158.16109,
+        6.92477
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-12-03"
+    },
+    {
+      "id": "2988507",
+      "name": "Paris",
+      "countryCode": "FR",
+      "coordinates": [
+        2.3488,
+        48.85341
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "2399697",
+      "name": "Libreville",
+      "countryCode": "GA",
+      "coordinates": [
+        9.45356,
+        0.39241
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-12-01"
+    },
+    {
+      "id": "2643743",
+      "name": "London",
+      "countryCode": "GB",
+      "coordinates": [
+        -0.12574,
+        51.50853
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-08-17"
+    },
+    {
+      "id": "3579925",
+      "name": "Saint George's",
+      "countryCode": "GD",
+      "coordinates": [
+        -61.75226,
+        12.05288
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-02-20"
+    },
+    {
+      "id": "611717",
+      "name": "Tbilisi",
+      "countryCode": "GE",
+      "coordinates": [
+        44.83412,
+        41.69143
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-06-11"
+    },
+    {
+      "id": "2306104",
+      "name": "Accra",
+      "countryCode": "GH",
+      "coordinates": [
+        -0.1969,
+        5.55602
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-04-29"
+    },
+    {
+      "id": "2413876",
+      "name": "Banjul",
+      "countryCode": "GM",
+      "coordinates": [
+        -16.57803,
+        13.45274
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-12-01"
+    },
+    {
+      "id": "2422465",
+      "name": "Conakry",
+      "countryCode": "GN",
+      "coordinates": [
+        -13.67729,
+        9.53795
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-12-20"
+    },
+    {
+      "id": "12226438",
+      "name": "Ciudad de la Paz",
+      "countryCode": "GQ",
+      "coordinates": [
+        10.82361,
+        1.5925
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-01-18"
+    },
+    {
+      "id": "264371",
+      "name": "Athens",
+      "countryCode": "GR",
+      "coordinates": [
+        23.72784,
+        37.98376
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-03-11"
+    },
+    {
+      "id": "3598132",
+      "name": "Guatemala City",
+      "countryCode": "GT",
+      "coordinates": [
+        -90.51327,
+        14.64072
+      ],
+      "featureCode": "PPLC",
+      "modified": "2020-07-15"
+    },
+    {
+      "id": "2374775",
+      "name": "Bissau",
+      "countryCode": "GW",
+      "coordinates": [
+        -15.59767,
+        11.86357
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-09-05"
+    },
+    {
+      "id": "3378644",
+      "name": "Georgetown",
+      "countryCode": "GY",
+      "coordinates": [
+        -58.15527,
+        6.80448
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-08-01"
+    },
+    {
+      "id": "3600949",
+      "name": "Tegucigalpa",
+      "countryCode": "HN",
+      "coordinates": [
+        -87.20681,
+        14.0818
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-09-12"
+    },
+    {
+      "id": "3186886",
+      "name": "Zagreb",
+      "countryCode": "HR",
+      "coordinates": [
+        15.97798,
+        45.81444
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-25"
+    },
+    {
+      "id": "3718426",
+      "name": "Port-au-Prince",
+      "countryCode": "HT",
+      "coordinates": [
+        -72.33881,
+        18.54349
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "3054643",
+      "name": "Budapest",
+      "countryCode": "HU",
+      "coordinates": [
+        19.04045,
+        47.49835
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-07-29"
+    },
+    {
+      "id": "1642911",
+      "name": "Jakarta",
+      "countryCode": "ID",
+      "coordinates": [
+        106.84513,
+        -6.21462
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "2964574",
+      "name": "Dublin",
+      "countryCode": "IE",
+      "coordinates": [
+        -6.24889,
+        53.33306
+      ],
+      "featureCode": "PPLC",
+      "modified": "2022-03-09"
+    },
+    {
+      "id": "281184",
+      "name": "Jerusalem",
+      "countryCode": "IL",
+      "coordinates": [
+        35.21633,
+        31.76904
+      ],
+      "featureCode": "PPLA",
+      "modified": "2025-09-23"
+    },
+    {
+      "id": "1261481",
+      "name": "New Delhi",
+      "countryCode": "IN",
+      "coordinates": [
+        77.2148,
+        28.62137
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-07-22"
+    },
+    {
+      "id": "98182",
+      "name": "Baghdad",
+      "countryCode": "IQ",
+      "coordinates": [
+        44.40088,
+        33.34058
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-02-14"
+    },
+    {
+      "id": "112931",
+      "name": "Tehran",
+      "countryCode": "IR",
+      "coordinates": [
+        51.42151,
+        35.69439
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-09-07"
+    },
+    {
+      "id": "3413829",
+      "name": "Reykjavík",
+      "countryCode": "IS",
+      "coordinates": [
+        -21.89541,
+        64.13548
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-08"
+    },
+    {
+      "id": "3169070",
+      "name": "Rome",
+      "countryCode": "IT",
+      "coordinates": [
+        12.51133,
+        41.89193
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-07-22"
+    },
+    {
+      "id": "3489854",
+      "name": "Kingston",
+      "countryCode": "JM",
+      "coordinates": [
+        -76.79358,
+        17.99702
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-08-01"
+    },
+    {
+      "id": "250441",
+      "name": "Amman",
+      "countryCode": "JO",
+      "coordinates": [
+        35.94503,
+        31.95522
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "1850147",
+      "name": "Tokyo",
+      "countryCode": "JP",
+      "coordinates": [
+        139.69171,
+        35.6895
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-07-22"
+    },
+    {
+      "id": "184745",
+      "name": "Nairobi",
+      "countryCode": "KE",
+      "coordinates": [
+        36.81667,
+        -1.28333
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-12-21"
+    },
+    {
+      "id": "1528675",
+      "name": "Bishkek",
+      "countryCode": "KG",
+      "coordinates": [
+        74.59,
+        42.87
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-08-22"
+    },
+    {
+      "id": "1821306",
+      "name": "Phnom Penh",
+      "countryCode": "KH",
+      "coordinates": [
+        104.91601,
+        11.56245
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-10-19"
+    },
+    {
+      "id": "2110257",
+      "name": "Tarawa",
+      "countryCode": "KI",
+      "coordinates": [
+        172.97696,
+        1.3278
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-08"
+    },
+    {
+      "id": "921772",
+      "name": "Moroni",
+      "countryCode": "KM",
+      "coordinates": [
+        43.25506,
+        -11.70216
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "3575551",
+      "name": "Basseterre",
+      "countryCode": "KN",
+      "coordinates": [
+        -62.72499,
+        17.2955
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "1871859",
+      "name": "Pyongyang",
+      "countryCode": "KP",
+      "coordinates": [
+        125.75432,
+        39.03385
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-06-19"
+    },
+    {
+      "id": "1835848",
+      "name": "Seoul",
+      "countryCode": "KR",
+      "coordinates": [
+        126.9784,
+        37.566
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-12-01"
+    },
+    {
+      "id": "285787",
+      "name": "Kuwait City",
+      "countryCode": "KW",
+      "coordinates": [
+        47.97429,
+        29.367
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-12"
+    },
+    {
+      "id": "1526273",
+      "name": "Astana",
+      "countryCode": "KZ",
+      "coordinates": [
+        71.44598,
+        51.1801
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-06-12"
+    },
+    {
+      "id": "1651944",
+      "name": "Vientiane",
+      "countryCode": "LA",
+      "coordinates": [
+        102.6,
+        17.96667
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-03-29"
+    },
+    {
+      "id": "276781",
+      "name": "Beirut",
+      "countryCode": "LB",
+      "coordinates": [
+        35.50157,
+        33.89332
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-04-04"
+    },
+    {
+      "id": "3576812",
+      "name": "Castries",
+      "countryCode": "LC",
+      "coordinates": [
+        -61.00614,
+        13.9957
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "3042030",
+      "name": "Vaduz",
+      "countryCode": "LI",
+      "coordinates": [
+        9.52154,
+        47.14151
+      ],
+      "featureCode": "PPLC",
+      "modified": "2013-04-02"
+    },
+    {
+      "id": "1238992",
+      "name": "Sri Jayewardenepura Kotte",
+      "countryCode": "LK",
+      "coordinates": [
+        79.90708,
+        6.88297
+      ],
+      "featureCode": "PPL",
+      "modified": "2018-12-29"
+    },
+    {
+      "id": "2274895",
+      "name": "Monrovia",
+      "countryCode": "LR",
+      "coordinates": [
+        -10.7969,
+        6.30054
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-12-15"
+    },
+    {
+      "id": "932505",
+      "name": "Maseru",
+      "countryCode": "LS",
+      "coordinates": [
+        27.48333,
+        -29.31667
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-12-21"
+    },
+    {
+      "id": "593116",
+      "name": "Vilnius",
+      "countryCode": "LT",
+      "coordinates": [
+        25.2798,
+        54.68916
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-07-25"
+    },
+    {
+      "id": "2960316",
+      "name": "Luxembourg",
+      "countryCode": "LU",
+      "coordinates": [
+        6.13268,
+        49.60982
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-20"
+    },
+    {
+      "id": "456172",
+      "name": "Riga",
+      "countryCode": "LV",
+      "coordinates": [
+        24.10589,
+        56.946
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "2210247",
+      "name": "Tripoli",
+      "countryCode": "LY",
+      "coordinates": [
+        13.18733,
+        32.88743
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-07-08"
+    },
+    {
+      "id": "2538475",
+      "name": "Rabat",
+      "countryCode": "MA",
+      "coordinates": [
+        -6.83255,
+        34.01325
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-08-31"
+    },
+    {
+      "id": "2993458",
+      "name": "Monaco",
+      "countryCode": "MC",
+      "coordinates": [
+        7.42145,
+        43.73718
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-12-13"
+    },
+    {
+      "id": "618426",
+      "name": "Chisinau",
+      "countryCode": "MD",
+      "coordinates": [
+        28.85938,
+        47.00902
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-12"
+    },
+    {
+      "id": "3193044",
+      "name": "Podgorica",
+      "countryCode": "ME",
+      "coordinates": [
+        19.26309,
+        42.44124
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-12"
+    },
+    {
+      "id": "1070940",
+      "name": "Antananarivo",
+      "countryCode": "MG",
+      "coordinates": [
+        47.53613,
+        -18.91368
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-18"
+    },
+    {
+      "id": "2113779",
+      "name": "Majuro",
+      "countryCode": "MH",
+      "coordinates": [
+        171.38027,
+        7.08971
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-08"
+    },
+    {
+      "id": "785842",
+      "name": "Skopje",
+      "countryCode": "MK",
+      "coordinates": [
+        21.43141,
+        41.99646
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-10-04"
+    },
+    {
+      "id": "2460596",
+      "name": "Bamako",
+      "countryCode": "ML",
+      "coordinates": [
+        -7.97522,
+        12.60915
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-02-18"
+    },
+    {
+      "id": "6611854",
+      "name": "Nay Pyi Taw",
+      "countryCode": "MM",
+      "coordinates": [
+        96.12972,
+        19.745
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-08"
+    },
+    {
+      "id": "2028462",
+      "name": "Ulan Bator",
+      "countryCode": "MN",
+      "coordinates": [
+        106.88324,
+        47.90771
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-08-25"
+    },
+    {
+      "id": "2377450",
+      "name": "Nouakchott",
+      "countryCode": "MR",
+      "coordinates": [
+        -15.9785,
+        18.08581
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-01-18"
+    },
+    {
+      "id": "2562305",
+      "name": "Valletta",
+      "countryCode": "MT",
+      "coordinates": [
+        14.5148,
+        35.89968
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-10-29"
+    },
+    {
+      "id": "934154",
+      "name": "Port Louis",
+      "countryCode": "MU",
+      "coordinates": [
+        57.49889,
+        -20.16194
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "1282027",
+      "name": "Male",
+      "countryCode": "MV",
+      "coordinates": [
+        73.50916,
+        4.17521
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-08-06"
+    },
+    {
+      "id": "927967",
+      "name": "Lilongwe",
+      "countryCode": "MW",
+      "coordinates": [
+        33.78725,
+        -13.96692
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-01-18"
+    },
+    {
+      "id": "3530597",
+      "name": "Mexico City",
+      "countryCode": "MX",
+      "coordinates": [
+        -99.12766,
+        19.42847
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-03-26"
+    },
+    {
+      "id": "1735161",
+      "name": "Kuala Lumpur",
+      "countryCode": "MY",
+      "coordinates": [
+        101.68653,
+        3.1412
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-04-29"
+    },
+    {
+      "id": "1040652",
+      "name": "Maputo",
+      "countryCode": "MZ",
+      "coordinates": [
+        32.58322,
+        -25.96553
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-01-18"
+    },
+    {
+      "id": "3352136",
+      "name": "Windhoek",
+      "countryCode": "NA",
+      "coordinates": [
+        17.08323,
+        -22.55941
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-01-18"
+    },
+    {
+      "id": "2440485",
+      "name": "Niamey",
+      "countryCode": "NE",
+      "coordinates": [
+        2.1098,
+        13.51366
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-01-18"
+    },
+    {
+      "id": "2352778",
+      "name": "Abuja",
+      "countryCode": "NG",
+      "coordinates": [
+        7.49508,
+        9.05785
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-04-06"
+    },
+    {
+      "id": "3617763",
+      "name": "Managua",
+      "countryCode": "NI",
+      "coordinates": [
+        -86.2504,
+        12.13282
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-01-02"
+    },
+    {
+      "id": "2759794",
+      "name": "Amsterdam",
+      "countryCode": "NL",
+      "coordinates": [
+        4.88969,
+        52.37403
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "3143244",
+      "name": "Oslo",
+      "countryCode": "NO",
+      "coordinates": [
+        10.74609,
+        59.91273
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-08-27"
+    },
+    {
+      "id": "1283240",
+      "name": "Kathmandu",
+      "countryCode": "NP",
+      "coordinates": [
+        85.3206,
+        27.70169
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-10-18"
+    },
+    {
+      "id": "7626461",
+      "name": "Yaren",
+      "countryCode": "NR",
+      "coordinates": [
+        166.9252,
+        -0.55085
+      ],
+      "featureCode": "PPLC",
+      "modified": "2016-10-03"
+    },
+    {
+      "id": "2179537",
+      "name": "Wellington",
+      "countryCode": "NZ",
+      "coordinates": [
+        174.77557,
+        -41.28664
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "287286",
+      "name": "Muscat",
+      "countryCode": "OM",
+      "coordinates": [
+        58.40778,
+        23.58413
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "3703443",
+      "name": "Panama City",
+      "countryCode": "PA",
+      "coordinates": [
+        -79.51973,
+        8.9936
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-05-01"
+    },
+    {
+      "id": "3936456",
+      "name": "Lima",
+      "countryCode": "PE",
+      "coordinates": [
+        -77.02824,
+        -12.04318
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-10-25"
+    },
+    {
+      "id": "2088122",
+      "name": "Port Moresby",
+      "countryCode": "PG",
+      "coordinates": [
+        147.15089,
+        -9.47723
+      ],
+      "featureCode": "PPLC",
+      "modified": "2022-03-06"
+    },
+    {
+      "id": "1701668",
+      "name": "Manila",
+      "countryCode": "PH",
+      "coordinates": [
+        120.9822,
+        14.6042
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-09-16"
+    },
+    {
+      "id": "1176615",
+      "name": "Islamabad",
+      "countryCode": "PK",
+      "coordinates": [
+        73.04329,
+        33.72148
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "756135",
+      "name": "Warsaw",
+      "countryCode": "PL",
+      "coordinates": [
+        21.01178,
+        52.22977
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-06-30"
+    },
+    {
+      "id": "7303419",
+      "name": "East Jerusalem",
+      "countryCode": "PS",
+      "coordinates": [
+        35.23388,
+        31.78336
+      ],
+      "featureCode": "PPLX",
+      "modified": "2025-09-23"
+    },
+    {
+      "id": "2267057",
+      "name": "Lisbon",
+      "countryCode": "PT",
+      "coordinates": [
+        -9.1498,
+        38.72509
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "8063361",
+      "name": "Ngerulmud",
+      "countryCode": "PW",
+      "coordinates": [
+        134.6238,
+        7.50077
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-05-01"
+    },
+    {
+      "id": "3439389",
+      "name": "Asunción",
+      "countryCode": "PY",
+      "coordinates": [
+        -57.647,
+        -25.28646
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "290030",
+      "name": "Doha",
+      "countryCode": "QA",
+      "coordinates": [
+        51.53096,
+        25.28545
+      ],
+      "featureCode": "PPLC",
+      "modified": "2022-11-15"
+    },
+    {
+      "id": "683506",
+      "name": "Bucharest",
+      "countryCode": "RO",
+      "coordinates": [
+        26.10626,
+        44.43225
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-01-09"
+    },
+    {
+      "id": "792680",
+      "name": "Belgrade",
+      "countryCode": "RS",
+      "coordinates": [
+        20.46513,
+        44.80401
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-01-15"
+    },
+    {
+      "id": "524901",
+      "name": "Moscow",
+      "countryCode": "RU",
+      "coordinates": [
+        37.61781,
+        55.75204
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-09-09"
+    },
+    {
+      "id": "202061",
+      "name": "Kigali",
+      "countryCode": "RW",
+      "coordinates": [
+        30.05885,
+        -1.94995
+      ],
+      "featureCode": "PPLC",
+      "modified": "2021-11-09"
+    },
+    {
+      "id": "108410",
+      "name": "Riyadh",
+      "countryCode": "SA",
+      "coordinates": [
+        46.72185,
+        24.68773
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-03-26"
+    },
+    {
+      "id": "2108502",
+      "name": "Honiara",
+      "countryCode": "SB",
+      "coordinates": [
+        159.95,
+        -9.43333
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-10-04"
+    },
+    {
+      "id": "241131",
+      "name": "Victoria",
+      "countryCode": "SC",
+      "coordinates": [
+        55.45501,
+        -4.62001
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "379252",
+      "name": "Khartoum",
+      "countryCode": "SD",
+      "coordinates": [
+        32.53241,
+        15.55177
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-11-03"
+    },
+    {
+      "id": "2673730",
+      "name": "Stockholm",
+      "countryCode": "SE",
+      "coordinates": [
+        18.06871,
+        59.32938
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-06-20"
+    },
+    {
+      "id": "1880252",
+      "name": "Singapore",
+      "countryCode": "SG",
+      "coordinates": [
+        103.85007,
+        1.28967
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-07-23"
+    },
+    {
+      "id": "3196359",
+      "name": "Ljubljana",
+      "countryCode": "SI",
+      "coordinates": [
+        14.50513,
+        46.05108
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "3060972",
+      "name": "Bratislava",
+      "countryCode": "SK",
+      "coordinates": [
+        17.10674,
+        48.14816
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-01-18"
+    },
+    {
+      "id": "2409306",
+      "name": "Freetown",
+      "countryCode": "SL",
+      "coordinates": [
+        -13.2356,
+        8.48714
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-01-18"
+    },
+    {
+      "id": "3168070",
+      "name": "San Marino",
+      "countryCode": "SM",
+      "coordinates": [
+        12.44639,
+        43.93667
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-08-07"
+    },
+    {
+      "id": "2253354",
+      "name": "Dakar",
+      "countryCode": "SN",
+      "coordinates": [
+        -17.44406,
+        14.6937
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-07-27"
+    },
+    {
+      "id": "53654",
+      "name": "Mogadishu",
+      "countryCode": "SO",
+      "coordinates": [
+        45.34375,
+        2.03711
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-10-18"
+    },
+    {
+      "id": "3383330",
+      "name": "Paramaribo",
+      "countryCode": "SR",
+      "coordinates": [
+        -55.16682,
+        5.86638
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "373303",
+      "name": "Juba",
+      "countryCode": "SS",
+      "coordinates": [
+        31.58247,
+        4.85165
+      ],
+      "featureCode": "PPLC",
+      "modified": "2020-07-12"
+    },
+    {
+      "id": "2410763",
+      "name": "São Tomé",
+      "countryCode": "ST",
+      "coordinates": [
+        6.7299,
+        0.33756
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-01-07"
+    },
+    {
+      "id": "3583361",
+      "name": "San Salvador",
+      "countryCode": "SV",
+      "coordinates": [
+        -89.18718,
+        13.68935
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "170654",
+      "name": "Damascus",
+      "countryCode": "SY",
+      "coordinates": [
+        36.29128,
+        33.5102
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-08-27"
+    },
+    {
+      "id": "934985",
+      "name": "Mbabane",
+      "countryCode": "SZ",
+      "coordinates": [
+        31.13333,
+        -26.31667
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "935048",
+      "name": "Lobamba",
+      "countryCode": "SZ",
+      "coordinates": [
+        31.2,
+        -26.46667
+      ],
+      "featureCode": "PPLG",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "2427123",
+      "name": "N'Djamena",
+      "countryCode": "TD",
+      "coordinates": [
+        15.0444,
+        12.10672
+      ],
+      "featureCode": "PPLC",
+      "modified": "2023-11-29"
+    },
+    {
+      "id": "2365267",
+      "name": "Lomé",
+      "countryCode": "TG",
+      "coordinates": [
+        1.22154,
+        6.12874
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-10-31"
+    },
+    {
+      "id": "1609350",
+      "name": "Bangkok",
+      "countryCode": "TH",
+      "coordinates": [
+        100.50144,
+        13.75398
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-03-26"
+    },
+    {
+      "id": "1221874",
+      "name": "Dushanbe",
+      "countryCode": "TJ",
+      "coordinates": [
+        68.77905,
+        38.53575
+      ],
+      "featureCode": "PPLC",
+      "modified": "2016-10-19"
+    },
+    {
+      "id": "1645457",
+      "name": "Dili",
+      "countryCode": "TL",
+      "coordinates": [
+        125.57361,
+        -8.55861
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "162183",
+      "name": "Ashgabat",
+      "countryCode": "TM",
+      "coordinates": [
+        58.38333,
+        37.95
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-04-15"
+    },
+    {
+      "id": "2464470",
+      "name": "Tunis",
+      "countryCode": "TN",
+      "coordinates": [
+        10.16579,
+        36.81897
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "4032402",
+      "name": "Nuku‘alofa",
+      "countryCode": "TO",
+      "coordinates": [
+        -175.20114,
+        -21.13683
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-08"
+    },
+    {
+      "id": "323786",
+      "name": "Ankara",
+      "countryCode": "TR",
+      "coordinates": [
+        32.85427,
+        39.91987
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-03-24"
+    },
+    {
+      "id": "3573890",
+      "name": "Port of Spain",
+      "countryCode": "TT",
+      "coordinates": [
+        -61.51889,
+        10.66668
+      ],
+      "featureCode": "PPLC",
+      "modified": "2022-12-29"
+    },
+    {
+      "id": "2110394",
+      "name": "Funafuti",
+      "countryCode": "TV",
+      "coordinates": [
+        179.19417,
+        -8.52425
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-08-02"
+    },
+    {
+      "id": "160196",
+      "name": "Dodoma",
+      "countryCode": "TZ",
+      "coordinates": [
+        35.73947,
+        -6.17221
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-12-02"
+    },
+    {
+      "id": "703448",
+      "name": "Kyiv",
+      "countryCode": "UA",
+      "coordinates": [
+        30.5238,
+        50.45466
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-08-14"
+    },
+    {
+      "id": "232422",
+      "name": "Kampala",
+      "countryCode": "UG",
+      "coordinates": [
+        32.58219,
+        0.31628
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-12-14"
+    },
+    {
+      "id": "4140963",
+      "name": "Washington",
+      "countryCode": "US",
+      "coordinates": [
+        -77.03637,
+        38.89511
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-06-12"
+    },
+    {
+      "id": "3441575",
+      "name": "Montevideo",
+      "countryCode": "UY",
+      "coordinates": [
+        -56.18816,
+        -34.90328
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-23"
+    },
+    {
+      "id": "1512569",
+      "name": "Tashkent",
+      "countryCode": "UZ",
+      "coordinates": [
+        69.21627,
+        41.26465
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-06-22"
+    },
+    {
+      "id": "6691831",
+      "name": "Vatican City",
+      "countryCode": "VA",
+      "coordinates": [
+        12.45414,
+        41.90268
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-02-25"
+    },
+    {
+      "id": "3577887",
+      "name": "Kingstown",
+      "countryCode": "VC",
+      "coordinates": [
+        -61.22742,
+        13.15527
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "3646738",
+      "name": "Caracas",
+      "countryCode": "VE",
+      "coordinates": [
+        -66.87919,
+        10.48801
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-11-01"
+    },
+    {
+      "id": "1581130",
+      "name": "Hanoi",
+      "countryCode": "VN",
+      "coordinates": [
+        105.84117,
+        21.0245
+      ],
+      "featureCode": "PPLC",
+      "modified": "2026-05-07"
+    },
+    {
+      "id": "2135171",
+      "name": "Port-Vila",
+      "countryCode": "VU",
+      "coordinates": [
+        168.31366,
+        -17.73648
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-05-08"
+    },
+    {
+      "id": "4035413",
+      "name": "Apia",
+      "countryCode": "WS",
+      "coordinates": [
+        -171.76666,
+        -13.83333
+      ],
+      "featureCode": "PPLC",
+      "modified": "2019-09-05"
+    },
+    {
+      "id": "786714",
+      "name": "Pristina",
+      "countryCode": "XK",
+      "coordinates": [
+        21.16688,
+        42.67272
+      ],
+      "featureCode": "PPLC",
+      "modified": "2022-09-14"
+    },
+    {
+      "id": "71137",
+      "name": "Sanaa",
+      "countryCode": "YE",
+      "coordinates": [
+        44.20646,
+        15.35452
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-06-14"
+    },
+    {
+      "id": "964137",
+      "name": "Pretoria",
+      "countryCode": "ZA",
+      "coordinates": [
+        28.18783,
+        -25.74486
+      ],
+      "featureCode": "PPLC",
+      "modified": "2024-12-02"
+    },
+    {
+      "id": "1018725",
+      "name": "Bloemfontein",
+      "countryCode": "ZA",
+      "coordinates": [
+        26.214,
+        -29.12107
+      ],
+      "featureCode": "PPLA",
+      "modified": "2026-04-14"
+    },
+    {
+      "id": "3369157",
+      "name": "Cape Town",
+      "countryCode": "ZA",
+      "coordinates": [
+        18.42322,
+        -33.92584
+      ],
+      "featureCode": "PPLA",
+      "modified": "2026-04-14"
+    },
+    {
+      "id": "909137",
+      "name": "Lusaka",
+      "countryCode": "ZM",
+      "coordinates": [
+        28.28713,
+        -15.40669
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-10-26"
+    },
+    {
+      "id": "890299",
+      "name": "Harare",
+      "countryCode": "ZW",
+      "coordinates": [
+        31.05337,
+        -17.82772
+      ],
+      "featureCode": "PPLC",
+      "modified": "2025-02-07"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Learn the World
 
-A responsive, interactive globe for exploring geography. Built with Vite 8, TypeScript and MapLibre GL JS 6. No accounts, games, API keys, or paid services. Microsoft Clarity analytics is loaded through the project tag in `index.html`.
+A responsive, interactive globe for exploring geography. Built with Vite 8, TypeScript and MapLibre GL JS 6. Includes a minimalist country and capital learning area. No accounts, API keys, or paid services. Microsoft Clarity analytics is loaded through the project tag in `index.html`.
 
 ## Develop
 
@@ -15,6 +15,12 @@ pnpm preview
 ```
 
 Open the printed URL ending in `/learn-the-world/`. All geographic assets and the bundled MapLibre worker use Vite's base path. Set `BASE_PATH=/` for a root-domain deployment. Production files are in `dist/`; no backend is needed.
+
+## Learning games
+
+Use the top-left menu to open **Lernen**. Countries and capitals each offer **Auswahl** (ask each target once) and **Eliminierung** (retry until correct, then remove the target) for the world and every continent. Antarctica explains its empty scope. A first click marks a provisional choice; a second on the same target confirms it. Feedback stays until Continue, correct/incorrect sounds can be muted, and small targets have selectable points. The black interface matches the atlas; the game map is plain white with local vector geometry.
+
+The independently reviewed catalogue contains **196 country targets and 199 capital targets**, including multiple capital functions. It uses EU Publications Office reference names, pinned Natural Earth boundaries and GeoNames coordinates. See [learning geography rules, disputed cases, sources and limitations](data/learning/README.md). The data snapshot is 2026-10-03, not a live or legally authoritative map. Run `pnpm data:learning` to regenerate the frozen assets.
 
 ## Features
 
