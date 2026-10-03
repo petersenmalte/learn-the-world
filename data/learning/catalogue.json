@@ -19,13 +19,13 @@
           42.50779
         ],
         "geonamesId": "3041563",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AE",
-    "name": "Vereinigte Arabische Emirate",
+    "name": "United Arab Emirates",
     "continent": "asia",
     "anchor": [
       54.547256,
@@ -43,7 +43,7 @@
           24.45118
         ],
         "geonamesId": "292968",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -67,37 +67,37 @@
           34.52813
         ],
         "geonamesId": "1138958",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AG",
-    "name": "Antigua und Barbuda",
+    "name": "Antigua and Barbuda",
     "continent": "north-america",
     "anchor": [
       -61.84329,
       17.12096
     ],
-    "euCapital": "St. John’s",
+    "euCapital": "St John’s",
     "geometryId": "ATG",
     "note": "",
     "capitals": [
       {
         "id": "AG-capital",
-        "name": "St. John’s",
+        "name": "St John’s",
         "coordinates": [
           -61.84329,
           17.12096
         ],
         "geonamesId": "3576022",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AL",
-    "name": "Albanien",
+    "name": "Albania",
     "continent": "europe",
     "anchor": [
       20.11384,
@@ -115,31 +115,31 @@
           41.32744
         ],
         "geonamesId": "3183875",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AM",
-    "name": "Armenien",
+    "name": "Armenia",
     "continent": "asia",
     "anchor": [
       44.800564,
       40.459077
     ],
-    "euCapital": "Eriwan",
+    "euCapital": "Yerevan",
     "geometryId": "ARM",
     "note": "",
     "capitals": [
       {
         "id": "AM-capital",
-        "name": "Eriwan",
+        "name": "Yerevan",
         "coordinates": [
           44.5126,
           40.17765
         ],
         "geonamesId": "616052",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -163,13 +163,13 @@
           -8.83682
         ],
         "geonamesId": "2240449",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AR",
-    "name": "Argentinien",
+    "name": "Argentina",
     "continent": "south-america",
     "anchor": [
       -64.173331,
@@ -187,37 +187,37 @@
           -34.61315
         ],
         "geonamesId": "3435910",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AT",
-    "name": "Österreich",
+    "name": "Austria",
     "continent": "europe",
     "anchor": [
       14.130515,
       47.518859
     ],
-    "euCapital": "Wien",
+    "euCapital": "Vienna",
     "geometryId": "AUT",
     "note": "",
     "capitals": [
       {
         "id": "AT-capital",
-        "name": "Wien",
+        "name": "Vienna",
         "coordinates": [
           16.37208,
           48.20849
         ],
         "geonamesId": "2761369",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AU",
-    "name": "Australien",
+    "name": "Australia",
     "continent": "oceania",
     "anchor": [
       134.04972,
@@ -235,13 +235,13 @@
           -35.28346
         ],
         "geonamesId": "2172517",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "AZ",
-    "name": "Aserbaidschan",
+    "name": "Azerbaijan",
     "continent": "asia",
     "anchor": [
       47.210994,
@@ -259,31 +259,31 @@
           40.37767
         ],
         "geonamesId": "587084",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "BA",
-    "name": "Bosnien und Herzegowina",
+    "name": "Bosnia and Herzegovina",
     "continent": "europe",
     "anchor": [
       18.06841,
       44.091051
     ],
-    "euCapital": "Sarajewo",
+    "euCapital": "Sarajevo",
     "geometryId": "BIH",
     "note": "",
     "capitals": [
       {
         "id": "BA-capital",
-        "name": "Sarajewo",
+        "name": "Sarajevo",
         "coordinates": [
           18.35644,
           43.84864
         ],
         "geonamesId": "3191281",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -307,13 +307,13 @@
           13.10732
         ],
         "geonamesId": "3374036",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "BD",
-    "name": "Bangladesch",
+    "name": "Bangladesh",
     "continent": "asia",
     "anchor": [
       89.684963,
@@ -331,31 +331,31 @@
           23.7104
         ],
         "geonamesId": "1185241",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "BE",
-    "name": "Belgien",
+    "name": "Belgium",
     "continent": "europe",
     "anchor": [
       4.800448,
       50.785392
     ],
-    "euCapital": "Brüssel",
+    "euCapital": "Brussels",
     "geometryId": "BEL",
     "note": "",
     "capitals": [
       {
         "id": "BE-capital",
-        "name": "Brüssel",
+        "name": "Brussels",
         "coordinates": [
           4.34878,
           50.85045
         ],
         "geonamesId": "2800866",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -379,13 +379,13 @@
           12.36566
         ],
         "geonamesId": "2357048",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "BG",
-    "name": "Bulgarien",
+    "name": "Bulgaria",
     "continent": "europe",
     "anchor": [
       25.15709,
@@ -403,7 +403,7 @@
           42.69751
         ],
         "geonamesId": "727011",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -427,7 +427,7 @@
           26.22787
         ],
         "geonamesId": "290340",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -451,7 +451,7 @@
           -3.42708
         ],
         "geonamesId": "426272",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -465,7 +465,7 @@
     ],
     "euCapital": "Porto Novo",
     "geometryId": "BEN",
-    "note": "Porto Novo ist die Hauptstadt; Cotonou ist der Regierungssitz.",
+    "note": "Porto Novo is the capital; Cotonou is the seat of government.",
     "capitals": [
       {
         "id": "BJ-capital",
@@ -475,7 +475,7 @@
           6.49646
         ],
         "geonamesId": "2392087",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -499,13 +499,13 @@
           4.89035
         ],
         "geonamesId": "1820906",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "BO",
-    "name": "Bolivien",
+    "name": "Bolivia",
     "continent": "south-america",
     "anchor": [
       -64.593433,
@@ -513,7 +513,7 @@
     ],
     "euCapital": "Sucre",
     "geometryId": "BOL",
-    "note": "Sucre ist die verfassungsmäßige Hauptstadt; La Paz ist der Regierungssitz.",
+    "note": "Sucre is the constitutional capital; La Paz is the seat of government.",
     "capitals": [
       {
         "id": "BO-capital",
@@ -523,13 +523,13 @@
           -19.03332
         ],
         "geonamesId": "3903987",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "BR",
-    "name": "Brasilien",
+    "name": "Brazil",
     "continent": "south-america",
     "anchor": [
       -49.55945,
@@ -547,7 +547,7 @@
           -15.77972
         ],
         "geonamesId": "3469058",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -571,7 +571,7 @@
           25.05823
         ],
         "geonamesId": "3571824",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -595,13 +595,13 @@
           27.46609
         ],
         "geonamesId": "1252416",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "BW",
-    "name": "Botsuana",
+    "name": "Botswana",
     "continent": "africa",
     "anchor": [
       24.179216,
@@ -619,7 +619,7 @@
           -24.65451
         ],
         "geonamesId": "933773",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -643,7 +643,7 @@
           53.90019
         ],
         "geonamesId": "625144",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -667,13 +667,13 @@
           17.25376
         ],
         "geonamesId": "3582672",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CA",
-    "name": "Kanada",
+    "name": "Canada",
     "continent": "north-america",
     "anchor": [
       -101.9107,
@@ -691,13 +691,13 @@
           45.41117
         ],
         "geonamesId": "6094817",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CD",
-    "name": "Demokratische Republik Kongo",
+    "name": "Democratic Republic of the Congo",
     "continent": "africa",
     "anchor": [
       23.458829,
@@ -715,13 +715,13 @@
           -4.32758
         ],
         "geonamesId": "2314302",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CF",
-    "name": "Zentralafrikanische Republik",
+    "name": "Central African Republic",
     "continent": "africa",
     "anchor": [
       20.906897,
@@ -739,13 +739,13 @@
           4.36122
         ],
         "geonamesId": "2389853",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CG",
-    "name": "Kongo",
+    "name": "Congo",
     "continent": "africa",
     "anchor": [
       15.9005,
@@ -763,13 +763,13 @@
           -4.26613
         ],
         "geonamesId": "2260535",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CH",
-    "name": "Schweiz",
+    "name": "Switzerland",
     "continent": "europe",
     "anchor": [
       7.463965,
@@ -777,7 +777,7 @@
     ],
     "euCapital": "Bern",
     "geometryId": "CHE",
-    "note": "Bern ist die Bundesstadt und der Sitz von Bundesrat und Bundesversammlung.",
+    "note": "Bern is the federal city and the seat of the Federal Council and Federal Assembly.",
     "capitals": [
       {
         "id": "CH-capital",
@@ -787,7 +787,7 @@
           46.94809
         ],
         "geonamesId": "2661552",
-        "role": "Bundesstadt"
+        "role": "federal city"
       }
     ]
   },
@@ -801,7 +801,7 @@
     ],
     "euCapital": "Yamoussoukro",
     "geometryId": "CIV",
-    "note": "Yamoussoukro ist die politische Hauptstadt; Abidjan bleibt ein bedeutendes Verwaltungs- und Wirtschaftszentrum.",
+    "note": "Yamoussoukro is the political capital; Abidjan remains a major administrative and economic centre.",
     "capitals": [
       {
         "id": "CI-capital",
@@ -811,7 +811,7 @@
           6.82055
         ],
         "geonamesId": "2279755",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -823,43 +823,43 @@
       -72.318871,
       -38.151771
     ],
-    "euCapital": "Santiago de Chile",
+    "euCapital": "Santiago",
     "geometryId": "CHL",
     "note": "",
     "capitals": [
       {
         "id": "CL-capital",
-        "name": "Santiago de Chile",
+        "name": "Santiago",
         "coordinates": [
           -70.64827,
           -33.45694
         ],
         "geonamesId": "3871336",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CM",
-    "name": "Kamerun",
+    "name": "Cameroon",
     "continent": "africa",
     "anchor": [
       12.473488,
       4.585041
     ],
-    "euCapital": "Jaunde",
+    "euCapital": "Yaoundé",
     "geometryId": "CMR",
     "note": "",
     "capitals": [
       {
         "id": "CM-capital",
-        "name": "Jaunde",
+        "name": "Yaoundé",
         "coordinates": [
           11.51667,
           3.86667
         ],
         "geonamesId": "2220957",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -871,25 +871,25 @@
       106.337289,
       32.498178
     ],
-    "euCapital": "Peking (Beijing)",
+    "euCapital": "Beijing",
     "geometryId": "CHN",
     "note": "",
     "capitals": [
       {
         "id": "CN-capital",
-        "name": "Peking (Beijing)",
+        "name": "Beijing",
         "coordinates": [
           116.39723,
           39.9075
         ],
         "geonamesId": "1816670",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CO",
-    "name": "Kolumbien",
+    "name": "Colombia",
     "continent": "south-america",
     "anchor": [
       -73.174347,
@@ -907,7 +907,7 @@
           4.60971
         ],
         "geonamesId": "3688689",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -931,31 +931,31 @@
           9.93388
         ],
         "geonamesId": "3621849",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CU",
-    "name": "Kuba",
+    "name": "Cuba",
     "continent": "north-america",
     "anchor": [
       -77.975855,
       21.334024
     ],
-    "euCapital": "Havanna",
+    "euCapital": "Havana",
     "geometryId": "CUB",
     "note": "",
     "capitals": [
       {
         "id": "CU-capital",
-        "name": "Havanna",
+        "name": "Havana",
         "coordinates": [
           -82.38304,
           23.13302
         ],
         "geonamesId": "3553478",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -979,61 +979,61 @@
           14.93152
         ],
         "geonamesId": "3374333",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CY",
-    "name": "Zypern",
+    "name": "Cyprus",
     "continent": "europe",
     "anchor": [
       33.084182,
       34.913329
     ],
-    "euCapital": "Nikosia",
+    "euCapital": "Nicosia",
     "geometryId": "CYP",
-    "note": "Zypern wird für dieses Lernspiel Europa zugeordnet. Die Republik Zypern umfasst auch den Nordteil; britische Hoheitsgebiete sind keine Spielziele.",
+    "note": "Cyprus is assigned to Europe for this game. The Republic of Cyprus includes the north; British sovereign base areas are not game targets.",
     "capitals": [
       {
         "id": "CY-capital",
-        "name": "Nikosia",
+        "name": "Nicosia",
         "coordinates": [
           33.35397,
           35.17284
         ],
         "geonamesId": "146268",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "CZ",
-    "name": "Tschechien",
+    "name": "Czechia",
     "continent": "europe",
     "anchor": [
       15.377555,
       49.882364
     ],
-    "euCapital": "Prag",
+    "euCapital": "Prague",
     "geometryId": "CZE",
     "note": "",
     "capitals": [
       {
         "id": "CZ-capital",
-        "name": "Prag",
+        "name": "Prague",
         "coordinates": [
           14.42076,
           50.08804
         ],
         "geonamesId": "3067696",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "DE",
-    "name": "Deutschland",
+    "name": "Germany",
     "continent": "europe",
     "anchor": [
       9.678348,
@@ -1051,55 +1051,55 @@
           52.52437
         ],
         "geonamesId": "2950159",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "DJ",
-    "name": "Dschibuti",
+    "name": "Djibouti",
     "continent": "africa",
     "anchor": [
       42.498825,
       11.976343
     ],
-    "euCapital": "Dschibuti",
+    "euCapital": "Djibouti",
     "geometryId": "DJI",
     "note": "",
     "capitals": [
       {
         "id": "DJ-capital",
-        "name": "Dschibuti",
+        "name": "Djibouti",
         "coordinates": [
           43.14503,
           11.58901
         ],
         "geonamesId": "223817",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "DK",
-    "name": "Dänemark",
+    "name": "Denmark",
     "continent": "europe",
     "anchor": [
       9.018163,
       55.966965
     ],
-    "euCapital": "Kopenhagen",
+    "euCapital": "Copenhagen",
     "geometryId": "DNK",
     "note": "",
     "capitals": [
       {
         "id": "DK-capital",
-        "name": "Kopenhagen",
+        "name": "Copenhagen",
         "coordinates": [
           12.56553,
           55.67594
         ],
         "geonamesId": "2618425",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1123,13 +1123,13 @@
           15.30174
         ],
         "geonamesId": "3575635",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "DO",
-    "name": "Dominikanische Republik",
+    "name": "Dominican Republic",
     "continent": "north-america",
     "anchor": [
       -70.653998,
@@ -1147,31 +1147,31 @@
           18.47186
         ],
         "geonamesId": "3492908",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "DZ",
-    "name": "Algerien",
+    "name": "Algeria",
     "continent": "africa",
     "anchor": [
       2.808241,
       27.397406
     ],
-    "euCapital": "Algier",
+    "euCapital": "Algiers",
     "geometryId": "DZA",
     "note": "",
     "capitals": [
       {
         "id": "DZ-capital",
-        "name": "Algier",
+        "name": "Algiers",
         "coordinates": [
           3.08746,
           36.73225
         ],
         "geonamesId": "2507480",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1195,13 +1195,13 @@
           -0.22985
         ],
         "geonamesId": "3652462",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "EE",
-    "name": "Estland",
+    "name": "Estonia",
     "continent": "europe",
     "anchor": [
       25.867126,
@@ -1219,31 +1219,31 @@
           59.43696
         ],
         "geonamesId": "588409",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "EG",
-    "name": "Ägypten",
+    "name": "Egypt",
     "continent": "africa",
     "anchor": [
       29.445837,
       26.186173
     ],
-    "euCapital": "Kairo",
+    "euCapital": "Cairo",
     "geometryId": "EGY",
     "note": "",
     "capitals": [
       {
         "id": "EG-capital",
-        "name": "Kairo",
+        "name": "Cairo",
         "coordinates": [
           31.24967,
           30.06263
         ],
         "geonamesId": "360630",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1267,13 +1267,13 @@
           15.33805
         ],
         "geonamesId": "343300",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "ES",
-    "name": "Spanien",
+    "name": "Spain",
     "continent": "europe",
     "anchor": [
       -3.464718,
@@ -1291,37 +1291,37 @@
           40.4165
         ],
         "geonamesId": "3117735",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "ET",
-    "name": "Äthiopien",
+    "name": "Ethiopia",
     "continent": "africa",
     "anchor": [
       39.0886,
       8.032795
     ],
-    "euCapital": "Addis Abeba",
+    "euCapital": "Addis Ababa",
     "geometryId": "ETH",
     "note": "",
     "capitals": [
       {
         "id": "ET-capital",
-        "name": "Addis Abeba",
+        "name": "Addis Ababa",
         "coordinates": [
           38.74689,
           9.02497
         ],
         "geonamesId": "344979",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "FI",
-    "name": "Finnland",
+    "name": "Finland",
     "continent": "europe",
     "anchor": [
       27.276449,
@@ -1339,13 +1339,13 @@
           60.16952
         ],
         "geonamesId": "658225",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "FJ",
-    "name": "Fidschi",
+    "name": "Fiji",
     "continent": "oceania",
     "anchor": [
       177.975427,
@@ -1363,13 +1363,13 @@
           -18.13683
         ],
         "geonamesId": "2198148",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "FM",
-    "name": "Mikronesien",
+    "name": "Micronesia",
     "continent": "oceania",
     "anchor": [
       158.234019,
@@ -1387,13 +1387,13 @@
           6.92477
         ],
         "geonamesId": "2081986",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "FR",
-    "name": "Frankreich",
+    "name": "France",
     "continent": "europe",
     "anchor": [
       2.552275,
@@ -1411,13 +1411,13 @@
           48.85341
         ],
         "geonamesId": "2988507",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "GA",
-    "name": "Gabun",
+    "name": "Gabon",
     "continent": "africa",
     "anchor": [
       11.835939,
@@ -1435,13 +1435,13 @@
           0.39241
         ],
         "geonamesId": "2399697",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "GB",
-    "name": "Vereinigtes Königreich",
+    "name": "United Kingdom",
     "continent": "europe",
     "anchor": [
       -2.116346,
@@ -1459,7 +1459,7 @@
           51.50853
         ],
         "geonamesId": "2643743",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1471,43 +1471,43 @@
       -61.680461,
       12.113156
     ],
-    "euCapital": "St. George’s",
+    "euCapital": "St George’s",
     "geometryId": "GRD",
     "note": "",
     "capitals": [
       {
         "id": "GD-capital",
-        "name": "St. George’s",
+        "name": "St George’s",
         "coordinates": [
           -61.75226,
           12.05288
         ],
         "geonamesId": "3579925",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "GE",
-    "name": "Georgien",
+    "name": "Georgia",
     "continent": "asia",
     "anchor": [
       43.735724,
       41.870087
     ],
-    "euCapital": "Tiflis",
+    "euCapital": "Tbilisi",
     "geometryId": "GEO",
     "note": "",
     "capitals": [
       {
         "id": "GE-capital",
-        "name": "Tiflis",
+        "name": "Tbilisi",
         "coordinates": [
           44.83412,
           41.69143
         ],
         "geonamesId": "611717",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1531,13 +1531,13 @@
           5.55602
         ],
         "geonamesId": "2306104",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "GM",
-    "name": "Gambia",
+    "name": "The Gambia",
     "continent": "africa",
     "anchor": [
       -14.998318,
@@ -1555,7 +1555,7 @@
           13.45274
         ],
         "geonamesId": "2413876",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1579,13 +1579,13 @@
           9.53795
         ],
         "geonamesId": "2422465",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "GQ",
-    "name": "Äquatorialguinea",
+    "name": "Equatorial Guinea",
     "continent": "africa",
     "anchor": [
       10.82361,
@@ -1593,7 +1593,7 @@
     ],
     "euCapital": "Ciudad de la Paz",
     "geometryId": "GNQ",
-    "note": "Ciudad de la Paz ersetzt Malabo in der EU-Referenz seit 11. März 2026.",
+    "note": "Ciudad de la Paz has replaced Malabo in the EU reference since 11 March 2026.",
     "capitals": [
       {
         "id": "GQ-capital",
@@ -1603,31 +1603,31 @@
           1.5925
         ],
         "geonamesId": "12226438",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "GR",
-    "name": "Griechenland",
+    "name": "Greece",
     "continent": "europe",
     "anchor": [
       21.72568,
       39.492763
     ],
-    "euCapital": "Athen",
+    "euCapital": "Athens",
     "geometryId": "GRC",
     "note": "",
     "capitals": [
       {
         "id": "GR-capital",
-        "name": "Athen",
+        "name": "Athens",
         "coordinates": [
           23.72784,
           37.98376
         ],
         "geonamesId": "264371",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1639,25 +1639,25 @@
       -90.497134,
       14.982133
     ],
-    "euCapital": "Guatemala-Stadt",
+    "euCapital": "Guatemala City",
     "geometryId": "GTM",
     "note": "",
     "capitals": [
       {
         "id": "GT-capital",
-        "name": "Guatemala-Stadt",
+        "name": "Guatemala City",
         "coordinates": [
           -90.51327,
           14.64072
         ],
         "geonamesId": "3598132",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "GW",
-    "name": "Guinea‑Bissau",
+    "name": "Guinea-Bissau",
     "continent": "africa",
     "anchor": [
       -14.52413,
@@ -1675,7 +1675,7 @@
           11.86357
         ],
         "geonamesId": "2374775",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1699,7 +1699,7 @@
           6.80448
         ],
         "geonamesId": "3378644",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1723,13 +1723,13 @@
           14.0818
         ],
         "geonamesId": "3600949",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "HR",
-    "name": "Kroatien",
+    "name": "Croatia",
     "continent": "europe",
     "anchor": [
       16.37241,
@@ -1747,7 +1747,7 @@
           45.81444
         ],
         "geonamesId": "3186886",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1771,13 +1771,13 @@
           18.54349
         ],
         "geonamesId": "3718426",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "HU",
-    "name": "Ungarn",
+    "name": "Hungary",
     "continent": "europe",
     "anchor": [
       19.447867,
@@ -1795,13 +1795,13 @@
           47.49835
         ],
         "geonamesId": "3054643",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "ID",
-    "name": "Indonesien",
+    "name": "Indonesia",
     "continent": "asia",
     "anchor": [
       101.892949,
@@ -1809,7 +1809,7 @@
     ],
     "euCapital": "Jakarta",
     "geometryId": "IDN",
-    "note": "Jakarta gemäß EU-Referenz vom 3. Oktober 2026. Der geplante Hauptstadtumzug nach Nusantara wird nicht vorweggenommen.",
+    "note": "Jakarta follows the EU reference retrieved on 3 October 2026. The planned capital relocation to Nusantara is not treated as complete.",
     "capitals": [
       {
         "id": "ID-capital",
@@ -1819,13 +1819,13 @@
           -6.21462
         ],
         "geonamesId": "1642911",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "IE",
-    "name": "Irland",
+    "name": "Ireland",
     "continent": "europe",
     "anchor": [
       -7.798588,
@@ -1843,7 +1843,7 @@
           53.33306
         ],
         "geonamesId": "2964574",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1855,9 +1855,9 @@
       34.847915,
       30.911148
     ],
-    "euCapital": null,
+    "euCapital": "",
     "geometryId": "ISR",
-    "note": "Jerusalem: Sitz von Regierung und Parlament. Der Status der Stadt ist umstritten; dies bedeutet keine Anerkennung israelischer Souveränität über Ostjerusalem.",
+    "note": "Jerusalem is the seat of government and parliament. The city’s status is disputed; this does not imply recognition of Israeli sovereignty over East Jerusalem.",
     "capitals": [
       {
         "id": "IL-capital",
@@ -1867,13 +1867,13 @@
           31.76904
         ],
         "geonamesId": "281184",
-        "role": "Regierungssitz · Status umstritten"
+        "role": "seat of government · disputed status"
       }
     ]
   },
   {
     "id": "IN",
-    "name": "Indien",
+    "name": "India",
     "continent": "asia",
     "anchor": [
       79.358105,
@@ -1891,31 +1891,31 @@
           28.62137
         ],
         "geonamesId": "1261481",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "IQ",
-    "name": "Irak",
+    "name": "Iraq",
     "continent": "asia",
     "anchor": [
       43.26181,
       33.09403
     ],
-    "euCapital": "Bagdad",
+    "euCapital": "Baghdad",
     "geometryId": "IRQ",
     "note": "",
     "capitals": [
       {
         "id": "IQ-capital",
-        "name": "Bagdad",
+        "name": "Baghdad",
         "coordinates": [
           44.40088,
           33.34058
         ],
         "geonamesId": "98182",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -1927,25 +1927,25 @@
       54.931495,
       32.166225
     ],
-    "euCapital": "Teheran",
+    "euCapital": "Tehran",
     "geometryId": "IRN",
     "note": "",
     "capitals": [
       {
         "id": "IR-capital",
-        "name": "Teheran",
+        "name": "Tehran",
         "coordinates": [
           51.42151,
           35.69439
         ],
         "geonamesId": "112931",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "IS",
-    "name": "Island",
+    "name": "Iceland",
     "continent": "europe",
     "anchor": [
       -18.673711,
@@ -1963,37 +1963,37 @@
           64.13548
         ],
         "geonamesId": "3413829",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "IT",
-    "name": "Italien",
+    "name": "Italy",
     "continent": "europe",
     "anchor": [
       11.076907,
       44.732482
     ],
-    "euCapital": "Rom",
+    "euCapital": "Rome",
     "geometryId": "ITA",
     "note": "",
     "capitals": [
       {
         "id": "IT-capital",
-        "name": "Rom",
+        "name": "Rome",
         "coordinates": [
           12.51133,
           41.89193
         ],
         "geonamesId": "3169070",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "JM",
-    "name": "Jamaika",
+    "name": "Jamaica",
     "continent": "north-america",
     "anchor": [
       -77.318767,
@@ -2011,13 +2011,13 @@
           17.99702
         ],
         "geonamesId": "3489854",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "JO",
-    "name": "Jordanien",
+    "name": "Jordan",
     "continent": "asia",
     "anchor": [
       36.375991,
@@ -2035,7 +2035,7 @@
           31.95522
         ],
         "geonamesId": "250441",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2059,13 +2059,13 @@
           35.6895
         ],
         "geonamesId": "1850147",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KE",
-    "name": "Kenia",
+    "name": "Kenya",
     "continent": "africa",
     "anchor": [
       37.907632,
@@ -2083,37 +2083,37 @@
           -1.28333
         ],
         "geonamesId": "184745",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KG",
-    "name": "Kirgisistan",
+    "name": "Kyrgyzstan",
     "continent": "asia",
     "anchor": [
       74.532637,
       41.66854
     ],
-    "euCapital": "Bischkek",
+    "euCapital": "Bishkek",
     "geometryId": "KGZ",
     "note": "",
     "capitals": [
       {
         "id": "KG-capital",
-        "name": "Bischkek",
+        "name": "Bishkek",
         "coordinates": [
           74.59,
           42.87
         ],
         "geonamesId": "1528675",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KH",
-    "name": "Kambodscha",
+    "name": "Cambodia",
     "continent": "asia",
     "anchor": [
       104.50487,
@@ -2131,7 +2131,7 @@
           11.56245
         ],
         "geonamesId": "1821306",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2155,13 +2155,13 @@
           1.3278
         ],
         "geonamesId": "2110257",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KM",
-    "name": "Komoren",
+    "name": "Comoros",
     "continent": "africa",
     "anchor": [
       43.318094,
@@ -2179,13 +2179,13 @@
           -11.70216
         ],
         "geonamesId": "921772",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KN",
-    "name": "St. Kitts und Nevis",
+    "name": "Saint Kitts and Nevis",
     "continent": "north-america",
     "anchor": [
       -62.757975,
@@ -2203,37 +2203,37 @@
           17.2955
         ],
         "geonamesId": "3575551",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KP",
-    "name": "Nordkorea",
+    "name": "North Korea",
     "continent": "asia",
     "anchor": [
       126.444516,
       39.885252
     ],
-    "euCapital": "Pjöngjang",
+    "euCapital": "Pyongyang",
     "geometryId": "PRK",
     "note": "",
     "capitals": [
       {
         "id": "KP-capital",
-        "name": "Pjöngjang",
+        "name": "Pyongyang",
         "coordinates": [
           125.75432,
           39.03385
         ],
         "geonamesId": "1871859",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KR",
-    "name": "Südkorea",
+    "name": "South Korea",
     "continent": "asia",
     "anchor": [
       128.129504,
@@ -2251,7 +2251,7 @@
           37.566
         ],
         "geonamesId": "1835848",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2263,25 +2263,25 @@
       47.313999,
       29.413628
     ],
-    "euCapital": "Kuwait",
+    "euCapital": "Kuwait City",
     "geometryId": "KWT",
     "note": "",
     "capitals": [
       {
         "id": "KW-capital",
-        "name": "Kuwait",
+        "name": "Kuwait City",
         "coordinates": [
           47.97429,
           29.367
         ],
         "geonamesId": "285787",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "KZ",
-    "name": "Kasachstan",
+    "name": "Kazakhstan",
     "continent": "asia",
     "anchor": [
       68.685548,
@@ -2299,7 +2299,7 @@
           51.1801
         ],
         "geonamesId": "1526273",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2323,13 +2323,13 @@
           17.96667
         ],
         "geonamesId": "1651944",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "LB",
-    "name": "Libanon",
+    "name": "Lebanon",
     "continent": "asia",
     "anchor": [
       35.992892,
@@ -2347,13 +2347,13 @@
           33.89332
         ],
         "geonamesId": "276781",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "LC",
-    "name": "St. Lucia",
+    "name": "Saint Lucia",
     "continent": "north-america",
     "anchor": [
       -60.980094,
@@ -2371,7 +2371,7 @@
           13.9957
         ],
         "geonamesId": "3576812",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2395,7 +2395,7 @@
           47.14151
         ],
         "geonamesId": "3042030",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2407,19 +2407,19 @@
       80.704823,
       7.581097
     ],
-    "euCapital": "Sri Jayewardenepura Kotte",
+    "euCapital": "Sri Jayawardenapura Kotte",
     "geometryId": "LKA",
-    "note": "Sri Jayewardenepura Kotte ist die offizielle Hauptstadt und der Parlamentssitz; Colombo bleibt ein bedeutendes Regierungs- und Wirtschaftszentrum.",
+    "note": "Sri Jayawardenapura Kotte is the official capital and seat of parliament; Colombo remains a major government and economic centre.",
     "capitals": [
       {
         "id": "LK-capital",
-        "name": "Sri Jayewardenepura Kotte",
+        "name": "Sri Jayawardenapura Kotte",
         "coordinates": [
           79.90708,
           6.88297
         ],
         "geonamesId": "1238992",
-        "role": "offizielle Hauptstadt · Parlamentssitz"
+        "role": "official capital · seat of parliament"
       }
     ]
   },
@@ -2443,7 +2443,7 @@
           6.30054
         ],
         "geonamesId": "2274895",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2467,13 +2467,13 @@
           -29.31667
         ],
         "geonamesId": "932505",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "LT",
-    "name": "Litauen",
+    "name": "Lithuania",
     "continent": "europe",
     "anchor": [
       24.089932,
@@ -2491,37 +2491,37 @@
           54.68916
         ],
         "geonamesId": "593116",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "LU",
-    "name": "Luxemburg",
+    "name": "Luxembourg",
     "continent": "europe",
     "anchor": [
       6.07762,
       49.733732
     ],
-    "euCapital": "Luxemburg",
+    "euCapital": "Luxembourg",
     "geometryId": "LUX",
     "note": "",
     "capitals": [
       {
         "id": "LU-capital",
-        "name": "Luxemburg",
+        "name": "Luxembourg",
         "coordinates": [
           6.13268,
           49.60982
         ],
         "geonamesId": "2960316",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "LV",
-    "name": "Lettland",
+    "name": "Latvia",
     "continent": "europe",
     "anchor": [
       25.458723,
@@ -2539,37 +2539,37 @@
           56.946
         ],
         "geonamesId": "456172",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "LY",
-    "name": "Libyen",
+    "name": "Libya",
     "continent": "africa",
     "anchor": [
       18.011015,
       26.638944
     ],
-    "euCapital": "Tripolis",
+    "euCapital": "Tripoli",
     "geometryId": "LBY",
     "note": "",
     "capitals": [
       {
         "id": "LY-capital",
-        "name": "Tripolis",
+        "name": "Tripoli",
         "coordinates": [
           13.18733,
           32.88743
         ],
         "geonamesId": "2210247",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MA",
-    "name": "Marokko",
+    "name": "Morocco",
     "continent": "africa",
     "anchor": [
       -7.187296,
@@ -2587,7 +2587,7 @@
           34.01325
         ],
         "geonamesId": "2538475",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2611,13 +2611,13 @@
           43.73718
         ],
         "geonamesId": "2993458",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MD",
-    "name": "Moldau",
+    "name": "Moldova",
     "continent": "europe",
     "anchor": [
       28.487904,
@@ -2635,7 +2635,7 @@
           47.00902
         ],
         "geonamesId": "618426",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2659,13 +2659,13 @@
           42.44124
         ],
         "geonamesId": "3193044",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MG",
-    "name": "Madagaskar",
+    "name": "Madagascar",
     "continent": "africa",
     "anchor": [
       46.704241,
@@ -2683,13 +2683,13 @@
           -18.91368
         ],
         "geonamesId": "1070940",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MH",
-    "name": "Marshallinseln",
+    "name": "Marshall Islands",
     "continent": "oceania",
     "anchor": [
       171.193609,
@@ -2707,13 +2707,13 @@
           7.08971
         ],
         "geonamesId": "2113779",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MK",
-    "name": "Nordmazedonien",
+    "name": "North Macedonia",
     "continent": "europe",
     "anchor": [
       21.555839,
@@ -2731,7 +2731,7 @@
           41.99646
         ],
         "geonamesId": "785842",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2755,13 +2755,13 @@
           12.60915
         ],
         "geonamesId": "2460596",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MM",
-    "name": "Myanmar/Birma",
+    "name": "Myanmar/Burma",
     "continent": "asia",
     "anchor": [
       95.804497,
@@ -2779,37 +2779,37 @@
           19.745
         ],
         "geonamesId": "6611854",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MN",
-    "name": "Mongolei",
+    "name": "Mongolia",
     "continent": "asia",
     "anchor": [
       104.150405,
       45.997488
     ],
-    "euCapital": "Ulan-Bator",
+    "euCapital": "Ulaanbaatar",
     "geometryId": "MNG",
     "note": "",
     "capitals": [
       {
         "id": "MN-capital",
-        "name": "Ulan-Bator",
+        "name": "Ulaanbaatar",
         "coordinates": [
           106.88324,
           47.90771
         ],
         "geonamesId": "2028462",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MR",
-    "name": "Mauretanien",
+    "name": "Mauritania",
     "continent": "africa",
     "anchor": [
       -9.740299,
@@ -2827,7 +2827,7 @@
           18.08581
         ],
         "geonamesId": "2377450",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2851,7 +2851,7 @@
           35.89968
         ],
         "geonamesId": "2562305",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2875,31 +2875,31 @@
           -20.16194
         ],
         "geonamesId": "934154",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MV",
-    "name": "Malediven",
+    "name": "Maldives",
     "continent": "asia",
     "anchor": [
       73.507554,
       4.174441
     ],
-    "euCapital": "Male",
+    "euCapital": "Malé",
     "geometryId": "MDV",
     "note": "",
     "capitals": [
       {
         "id": "MV-capital",
-        "name": "Male",
+        "name": "Malé",
         "coordinates": [
           73.50916,
           4.17521
         ],
         "geonamesId": "1282027",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2923,31 +2923,31 @@
           -13.96692
         ],
         "geonamesId": "927967",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MX",
-    "name": "Mexiko",
+    "name": "Mexico",
     "continent": "north-america",
     "anchor": [
       -102.289448,
       23.919988
     ],
-    "euCapital": "Mexiko-Stadt",
+    "euCapital": "Mexico City",
     "geometryId": "MEX",
     "note": "",
     "capitals": [
       {
         "id": "MX-capital",
-        "name": "Mexiko-Stadt",
+        "name": "Mexico City",
         "coordinates": [
           -99.12766,
           19.42847
         ],
         "geonamesId": "3530597",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -2961,7 +2961,7 @@
     ],
     "euCapital": "Kuala Lumpur",
     "geometryId": "MYS",
-    "note": "Kuala Lumpur ist die Hauptstadt; Putrajaya ist der Regierungssitz.",
+    "note": "Kuala Lumpur is the capital; Putrajaya is the seat of government.",
     "capitals": [
       {
         "id": "MY-capital",
@@ -2971,13 +2971,13 @@
           3.1412
         ],
         "geonamesId": "1735161",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "MZ",
-    "name": "Mosambik",
+    "name": "Mozambique",
     "continent": "africa",
     "anchor": [
       37.83789,
@@ -2995,7 +2995,7 @@
           -25.96553
         ],
         "geonamesId": "1040652",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3007,19 +3007,19 @@
       17.108166,
       -20.575298
     ],
-    "euCapital": "Windhuk",
+    "euCapital": "Windhoek",
     "geometryId": "NAM",
     "note": "",
     "capitals": [
       {
         "id": "NA-capital",
-        "name": "Windhuk",
+        "name": "Windhoek",
         "coordinates": [
           17.08323,
           -22.55941
         ],
         "geonamesId": "3352136",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3043,7 +3043,7 @@
           13.51366
         ],
         "geonamesId": "2440485",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3067,7 +3067,7 @@
           9.05785
         ],
         "geonamesId": "2352778",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3091,13 +3091,13 @@
           12.13282
         ],
         "geonamesId": "3617763",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "NL",
-    "name": "Niederlande",
+    "name": "Netherlands",
     "continent": "europe",
     "anchor": [
       5.61144,
@@ -3105,7 +3105,7 @@
     ],
     "euCapital": "Amsterdam",
     "geometryId": "NLD",
-    "note": "Amsterdam ist die Hauptstadt; Den Haag ist der Regierungssitz.",
+    "note": "Amsterdam is the capital; The Hague is the seat of government.",
     "capitals": [
       {
         "id": "NL-capital",
@@ -3115,13 +3115,13 @@
           52.37403
         ],
         "geonamesId": "2759794",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "NO",
-    "name": "Norwegen",
+    "name": "Norway",
     "continent": "europe",
     "anchor": [
       9.679975,
@@ -3139,7 +3139,7 @@
           59.91273
         ],
         "geonamesId": "3143244",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3163,7 +3163,7 @@
           27.70169
         ],
         "geonamesId": "1283240",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3177,7 +3177,7 @@
     ],
     "euCapital": "Yaren",
     "geometryId": "NRU",
-    "note": "Yaren ist der Regierungssitz; Nauru hat keine förmlich bestimmte Hauptstadt.",
+    "note": "Yaren is the seat of government; Nauru has no formally designated capital.",
     "capitals": [
       {
         "id": "NR-capital",
@@ -3187,13 +3187,13 @@
           -0.55085
         ],
         "geonamesId": "7626461",
-        "role": "Regierungssitz"
+        "role": "seat of government"
       }
     ]
   },
   {
     "id": "NZ",
-    "name": "Neuseeland",
+    "name": "New Zealand",
     "continent": "oceania",
     "anchor": [
       174.77557,
@@ -3211,7 +3211,7 @@
           -41.28664
         ],
         "geonamesId": "2179537",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3223,19 +3223,19 @@
       57.336553,
       22.120427
     ],
-    "euCapital": "Maskat",
+    "euCapital": "Muscat",
     "geometryId": "OMN",
     "note": "",
     "capitals": [
       {
         "id": "OM-capital",
-        "name": "Maskat",
+        "name": "Muscat",
         "coordinates": [
           58.40778,
           23.58413
         ],
         "geonamesId": "287286",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3247,19 +3247,19 @@
       -80.352106,
       8.72198
     ],
-    "euCapital": "Panama",
+    "euCapital": "Panama City",
     "geometryId": "PAN",
     "note": "",
     "capitals": [
       {
         "id": "PA-capital",
-        "name": "Panama",
+        "name": "Panama City",
         "coordinates": [
           -79.51973,
           8.9936
         ],
         "geonamesId": "3703443",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3283,13 +3283,13 @@
           -12.04318
         ],
         "geonamesId": "3936456",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "PG",
-    "name": "Papua-Neuguinea",
+    "name": "Papua New Guinea",
     "continent": "oceania",
     "anchor": [
       143.910216,
@@ -3307,13 +3307,13 @@
           -9.47723
         ],
         "geonamesId": "2088122",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "PH",
-    "name": "Philippinen",
+    "name": "Philippines",
     "continent": "asia",
     "anchor": [
       122.465,
@@ -3331,7 +3331,7 @@
           14.6042
         ],
         "geonamesId": "1701668",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3355,37 +3355,37 @@
           33.72148
         ],
         "geonamesId": "1176615",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "PL",
-    "name": "Polen",
+    "name": "Poland",
     "continent": "europe",
     "anchor": [
       19.490468,
       51.990316
     ],
-    "euCapital": "Warschau",
+    "euCapital": "Warsaw",
     "geometryId": "POL",
     "note": "",
     "capitals": [
       {
         "id": "PL-capital",
-        "name": "Warschau",
+        "name": "Warsaw",
         "coordinates": [
           21.01178,
           52.22977
         ],
         "geonamesId": "756135",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "PS",
-    "name": "Palästina*",
+    "name": "Palestine*",
     "continent": "asia",
     "anchor": [
       35.291341,
@@ -3393,17 +3393,17 @@
     ],
     "euCapital": null,
     "geometryId": "PSX",
-    "note": "Ostjerusalem: beanspruchte Hauptstadt Palästinas; Verwaltungssitz ist Ramallah. Die EU unterstützt Jerusalem als künftige Hauptstadt beider Staaten. Anerkennung durch EU-Mitgliedstaaten ist nicht einheitlich.",
+    "note": "East Jerusalem is Palestine’s claimed capital; Ramallah is the administrative seat. The EU supports Jerusalem as the future capital of both states. Recognition varies among EU Member States.",
     "capitals": [
       {
         "id": "PS-capital",
-        "name": "Ostjerusalem",
+        "name": "East Jerusalem",
         "coordinates": [
           35.23388,
           31.78336
         ],
         "geonamesId": "7303419",
-        "role": "beanspruchte Hauptstadt · Status umstritten"
+        "role": "claimed capital · disputed status"
       }
     ]
   },
@@ -3415,19 +3415,19 @@
       -8.271754,
       39.606675
     ],
-    "euCapital": "Lissabon",
+    "euCapital": "Lisbon",
     "geometryId": "PRT",
     "note": "",
     "capitals": [
       {
         "id": "PT-capital",
-        "name": "Lissabon",
+        "name": "Lisbon",
         "coordinates": [
           -9.1498,
           38.72509
         ],
         "geonamesId": "2267057",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3441,7 +3441,7 @@
     ],
     "euCapital": "Melekeok",
     "geometryId": "PLW",
-    "note": "Ngerulmud im Staat Melekeok ist der Regierungssitz. Die EU-Tabelle nennt verkürzt Melekeok; die Ortsmarkierung folgt dem tatsächlichen Kapitolstandort.",
+    "note": "Ngerulmud, in Melekeok State, is the seat of government. The EU table uses the shortened designation Melekeok; the marker follows the actual capitol location.",
     "capitals": [
       {
         "id": "PW-capital",
@@ -3451,7 +3451,7 @@
           7.50077
         ],
         "geonamesId": "8063361",
-        "role": "Regierungssitz in Melekeok"
+        "role": "seat of government in Melekeok"
       }
     ]
   },
@@ -3475,13 +3475,13 @@
           -25.28646
         ],
         "geonamesId": "3439389",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "QA",
-    "name": "Katar",
+    "name": "Qatar",
     "continent": "asia",
     "anchor": [
       51.143509,
@@ -3499,85 +3499,85 @@
           25.28545
         ],
         "geonamesId": "290030",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "RO",
-    "name": "Rumänien",
+    "name": "Romania",
     "continent": "europe",
     "anchor": [
       24.972624,
       45.733237
     ],
-    "euCapital": "Bukarest",
+    "euCapital": "Bucharest",
     "geometryId": "ROU",
     "note": "",
     "capitals": [
       {
         "id": "RO-capital",
-        "name": "Bukarest",
+        "name": "Bucharest",
         "coordinates": [
           26.10626,
           44.43225
         ],
         "geonamesId": "683506",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "RS",
-    "name": "Serbien",
+    "name": "Serbia",
     "continent": "europe",
     "anchor": [
       20.787989,
       44.189919
     ],
-    "euCapital": "Belgrad",
+    "euCapital": "Belgrade",
     "geometryId": "SRB",
     "note": "",
     "capitals": [
       {
         "id": "RS-capital",
-        "name": "Belgrad",
+        "name": "Belgrade",
         "coordinates": [
           20.46513,
           44.80401
         ],
         "geonamesId": "792680",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "RU",
-    "name": "Russland",
+    "name": "Russia",
     "continent": "europe",
     "anchor": [
       44.686469,
       58.249357
     ],
-    "euCapital": "Moskau",
+    "euCapital": "Moscow",
     "geometryId": "RUS",
-    "note": "Russland wird in dieser Lernsystematik Europa zugeordnet, obwohl sein Staatsgebiet auch in Asien liegt.",
+    "note": "Russia is assigned to Europe in this game, although its territory also extends into Asia.",
     "capitals": [
       {
         "id": "RU-capital",
-        "name": "Moskau",
+        "name": "Moscow",
         "coordinates": [
           37.61781,
           55.75204
         ],
         "geonamesId": "524901",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "RW",
-    "name": "Ruanda",
+    "name": "Rwanda",
     "continent": "africa",
     "anchor": [
       30.103894,
@@ -3595,37 +3595,37 @@
           -1.94995
         ],
         "geonamesId": "202061",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SA",
-    "name": "Saudi-Arabien",
+    "name": "Saudi Arabia",
     "continent": "asia",
     "anchor": [
       44.6996,
       23.806908
     ],
-    "euCapital": "Riad",
+    "euCapital": "Riyadh",
     "geometryId": "SAU",
     "note": "",
     "capitals": [
       {
         "id": "SA-capital",
-        "name": "Riad",
+        "name": "Riyadh",
         "coordinates": [
           46.72185,
           24.68773
         ],
         "geonamesId": "108410",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SB",
-    "name": "Salomonen",
+    "name": "Solomon Islands",
     "continent": "oceania",
     "anchor": [
       159.170468,
@@ -3643,13 +3643,13 @@
           -9.43333
         ],
         "geonamesId": "2108502",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SC",
-    "name": "Seychellen",
+    "name": "Seychelles",
     "continent": "africa",
     "anchor": [
       55.480175,
@@ -3667,7 +3667,7 @@
           -4.62001
         ],
         "geonamesId": "241131",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3679,25 +3679,25 @@
       29.260657,
       16.330746
     ],
-    "euCapital": "Khartum",
+    "euCapital": "Khartoum",
     "geometryId": "SDN",
-    "note": "Khartum gemäß EU-Referenz; kriegsbedingte Ausweichsitze ändern diese Lernzuordnung nicht.",
+    "note": "Khartoum follows the EU reference; temporary wartime seats do not change this learning designation.",
     "capitals": [
       {
         "id": "SD-capital",
-        "name": "Khartum",
+        "name": "Khartoum",
         "coordinates": [
           32.53241,
           15.55177
         ],
         "geonamesId": "379252",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SE",
-    "name": "Schweden",
+    "name": "Sweden",
     "continent": "europe",
     "anchor": [
       19.01705,
@@ -3715,37 +3715,37 @@
           59.32938
         ],
         "geonamesId": "2673730",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SG",
-    "name": "Singapur",
+    "name": "Singapore",
     "continent": "asia",
     "anchor": [
       103.816925,
       1.366587
     ],
-    "euCapital": "Singapur",
+    "euCapital": "Singapore",
     "geometryId": "SGP",
     "note": "",
     "capitals": [
       {
         "id": "SG-capital",
-        "name": "Singapur",
+        "name": "Singapore",
         "coordinates": [
           103.85007,
           1.28967
         ],
         "geonamesId": "1880252",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SI",
-    "name": "Slowenien",
+    "name": "Slovenia",
     "continent": "europe",
     "anchor": [
       14.915312,
@@ -3763,13 +3763,13 @@
           46.05108
         ],
         "geonamesId": "3196359",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SK",
-    "name": "Slowakei",
+    "name": "Slovakia",
     "continent": "europe",
     "anchor": [
       19.049868,
@@ -3787,7 +3787,7 @@
           48.14816
         ],
         "geonamesId": "3060972",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3811,7 +3811,7 @@
           8.48714
         ],
         "geonamesId": "2409306",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3835,7 +3835,7 @@
           43.93667
         ],
         "geonamesId": "3168070",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3859,7 +3859,7 @@
           14.6937
         ],
         "geonamesId": "2253354",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3871,19 +3871,19 @@
       45.19238,
       3.568925
     ],
-    "euCapital": "Mogadischu",
+    "euCapital": "Mogadishu",
     "geometryId": "SOM",
     "note": "",
     "capitals": [
       {
         "id": "SO-capital",
-        "name": "Mogadischu",
+        "name": "Mogadishu",
         "coordinates": [
           45.34375,
           2.03711
         ],
         "geonamesId": "53654",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3907,37 +3907,37 @@
           5.86638
         ],
         "geonamesId": "3383330",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SS",
-    "name": "Südsudan",
+    "name": "South Sudan",
     "continent": "africa",
     "anchor": [
       30.390151,
       7.230477
     ],
-    "euCapital": "Dschuba",
+    "euCapital": "Juba",
     "geometryId": "SDS",
     "note": "",
     "capitals": [
       {
         "id": "SS-capital",
-        "name": "Dschuba",
+        "name": "Juba",
         "coordinates": [
           31.58247,
           4.85165
         ],
         "geonamesId": "373303",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "ST",
-    "name": "São Tomé und Príncipe",
+    "name": "São Tomé and Príncipe",
     "continent": "africa",
     "anchor": [
       6.7299,
@@ -3955,7 +3955,7 @@
           0.33756
         ],
         "geonamesId": "2410763",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -3979,31 +3979,31 @@
           13.68935
         ],
         "geonamesId": "3583361",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "SY",
-    "name": "Syrien",
+    "name": "Syria",
     "continent": "asia",
     "anchor": [
       38.277783,
       35.006636
     ],
-    "euCapital": "Damaskus",
+    "euCapital": "Damascus",
     "geometryId": "SYR",
     "note": "",
     "capitals": [
       {
         "id": "SY-capital",
-        "name": "Damaskus",
+        "name": "Damascus",
         "coordinates": [
           36.29128,
           33.5102
         ],
         "geonamesId": "170654",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4017,7 +4017,7 @@
     ],
     "euCapital": "Mbabane",
     "geometryId": "SWZ",
-    "note": "Eswatini hat zwei Hauptstadtfunktionen: Mbabane (Verwaltung) und Lobamba (König und Parlament).",
+    "note": "Eswatini has two capital functions: Mbabane (administrative) and Lobamba (royal and parliamentary).",
     "capitals": [
       {
         "id": "SZ-capital",
@@ -4027,7 +4027,7 @@
           -26.31667
         ],
         "geonamesId": "934985",
-        "role": "Verwaltungshauptstadt"
+        "role": "administrative capital"
       },
       {
         "id": "SZ-935048",
@@ -4037,13 +4037,13 @@
           -26.46667
         ],
         "geonamesId": "935048",
-        "role": "Königs- und Parlamentssitz"
+        "role": "royal and parliamentary seat"
       }
     ]
   },
   {
     "id": "TD",
-    "name": "Tschad",
+    "name": "Chad",
     "continent": "africa",
     "anchor": [
       18.645041,
@@ -4061,7 +4061,7 @@
           12.10672
         ],
         "geonamesId": "2427123",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4085,7 +4085,7 @@
           6.12874
         ],
         "geonamesId": "2365267",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4109,31 +4109,31 @@
           13.75398
         ],
         "geonamesId": "1609350",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "TJ",
-    "name": "Tadschikistan",
+    "name": "Tajikistan",
     "continent": "asia",
     "anchor": [
       72.587276,
       38.199835
     ],
-    "euCapital": "Duschanbe",
+    "euCapital": "Dushanbe",
     "geometryId": "TJK",
     "note": "",
     "capitals": [
       {
         "id": "TJ-capital",
-        "name": "Duschanbe",
+        "name": "Dushanbe",
         "coordinates": [
           68.77905,
           38.53575
         ],
         "geonamesId": "1221874",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4157,7 +4157,7 @@
           -8.55861
         ],
         "geonamesId": "1645457",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4169,25 +4169,25 @@
       58.676647,
       39.855246
     ],
-    "euCapital": "Aschgabat",
+    "euCapital": "Ashgabat",
     "geometryId": "TKM",
     "note": "",
     "capitals": [
       {
         "id": "TM-capital",
-        "name": "Aschgabat",
+        "name": "Ashgabat",
         "coordinates": [
           58.38333,
           37.95
         ],
         "geonamesId": "162183",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "TN",
-    "name": "Tunesien",
+    "name": "Tunisia",
     "continent": "africa",
     "anchor": [
       9.007881,
@@ -4205,7 +4205,7 @@
           36.81897
         ],
         "geonamesId": "2464470",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4229,13 +4229,13 @@
           -21.13683
         ],
         "geonamesId": "4032402",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "TR",
-    "name": "Türkei",
+    "name": "Türkiye",
     "continent": "asia",
     "anchor": [
       34.508268,
@@ -4253,31 +4253,31 @@
           39.91987
         ],
         "geonamesId": "323786",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "TT",
-    "name": "Trinidad und Tobago",
+    "name": "Trinidad and Tobago",
     "continent": "north-america",
     "anchor": [
       -61.51889,
       10.66668
     ],
-    "euCapital": "Port‑of‑Spain",
+    "euCapital": "Port of Spain",
     "geometryId": "TTO",
     "note": "",
     "capitals": [
       {
         "id": "TT-capital",
-        "name": "Port‑of‑Spain",
+        "name": "Port of Spain",
         "coordinates": [
           -61.51889,
           10.66668
         ],
         "geonamesId": "3573890",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4301,13 +4301,13 @@
           -8.52425
         ],
         "geonamesId": "2110394",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "TZ",
-    "name": "Tansania",
+    "name": "Tanzania",
     "continent": "africa",
     "anchor": [
       34.959183,
@@ -4325,7 +4325,7 @@
           -6.17221
         ],
         "geonamesId": "160196",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4337,19 +4337,19 @@
       32.140865,
       49.724739
     ],
-    "euCapital": "Kyjiw",
+    "euCapital": "Kyiv",
     "geometryId": "UKR",
     "note": "",
     "capitals": [
       {
         "id": "UA-capital",
-        "name": "Kyjiw",
+        "name": "Kyiv",
         "coordinates": [
           30.5238,
           50.45466
         ],
         "geonamesId": "703448",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4373,31 +4373,31 @@
           0.31628
         ],
         "geonamesId": "232422",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "US",
-    "name": "Vereinigte Staaten",
+    "name": "United States",
     "continent": "north-america",
     "anchor": [
       -97.482602,
       39.538479
     ],
-    "euCapital": "Washington",
+    "euCapital": "Washington DC",
     "geometryId": "USA",
     "note": "",
     "capitals": [
       {
         "id": "US-capital",
-        "name": "Washington",
+        "name": "Washington DC",
         "coordinates": [
           -77.03637,
           38.89511
         ],
         "geonamesId": "4140963",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4421,61 +4421,61 @@
           -34.90328
         ],
         "geonamesId": "3441575",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "UZ",
-    "name": "Usbekistan",
+    "name": "Uzbekistan",
     "continent": "asia",
     "anchor": [
       64.005429,
       41.693603
     ],
-    "euCapital": "Taschkent",
+    "euCapital": "Tashkent",
     "geometryId": "UZB",
     "note": "",
     "capitals": [
       {
         "id": "UZ-capital",
-        "name": "Taschkent",
+        "name": "Tashkent",
         "coordinates": [
           69.21627,
           41.26465
         ],
         "geonamesId": "1512569",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "VA",
-    "name": "Vatikanstadt",
+    "name": "Vatican City",
     "continent": "europe",
     "anchor": [
       12.453418,
       41.903323
     ],
-    "euCapital": "—/Vatikanstadt",
+    "euCapital": "—/Vatican City",
     "geometryId": "VAT",
-    "note": "Der Heilige Stuhl ist UN-Beobachter; das geografische Spielziel ist der Staat Vatikanstadt.",
+    "note": "The Holy See is a UN observer; the geographical game target is Vatican City State.",
     "capitals": [
       {
         "id": "VA-capital",
-        "name": "Vatikanstadt",
+        "name": "Vatican City",
         "coordinates": [
           12.45414,
           41.90268
         ],
         "geonamesId": "6691831",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "VC",
-    "name": "St. Vincent und Grenadinen",
+    "name": "Saint Vincent and the Grenadines",
     "continent": "north-america",
     "anchor": [
       -61.198767,
@@ -4493,7 +4493,7 @@
           13.15527
         ],
         "geonamesId": "3577887",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4517,13 +4517,13 @@
           10.48801
         ],
         "geonamesId": "3646738",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "VN",
-    "name": "Vietnam",
+    "name": "Viet Nam",
     "continent": "asia",
     "anchor": [
       105.387292,
@@ -4541,7 +4541,7 @@
           21.0245
         ],
         "geonamesId": "1581130",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4565,7 +4565,7 @@
           -17.73648
         ],
         "geonamesId": "2135171",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4589,7 +4589,7 @@
           -13.83333
         ],
         "geonamesId": "4035413",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
@@ -4603,7 +4603,7 @@
     ],
     "euCapital": null,
     "geometryId": "KOS",
-    "note": "Kosovo*: Statusneutrale Aufnahme entsprechend der EU-Bezeichnung; unbeschadet der Statuspositionen, im Einklang mit UNSCR 1244/1999 und dem IGH-Gutachten. Nicht alle EU-Mitgliedstaaten erkennen Kosovo an.",
+    "note": "Kosovo*: included on a status-neutral basis following EU terminology, without prejudice to positions on status, in line with UNSCR 1244/1999 and the ICJ opinion. Not all EU Member States recognise Kosovo.",
     "capitals": [
       {
         "id": "XK-capital",
@@ -4613,37 +4613,37 @@
           42.67272
         ],
         "geonamesId": "786714",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "YE",
-    "name": "Jemen",
+    "name": "Yemen",
     "continent": "asia",
     "anchor": [
       45.874383,
       15.328226
     ],
-    "euCapital": "Sanaa",
+    "euCapital": "Sana’a",
     "geometryId": "YEM",
-    "note": "Sanaa gemäß EU-Referenz; Hauptstadtstatus und wechselnde tatsächliche Regierungssitze infolge des Konflikts sind zu unterscheiden.",
+    "note": "Sana’a follows the EU reference; capital status must be distinguished from changing actual seats of government during the conflict.",
     "capitals": [
       {
         "id": "YE-capital",
-        "name": "Sanaa",
+        "name": "Sana’a",
         "coordinates": [
           44.20646,
           15.35452
         ],
         "geonamesId": "71137",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "ZA",
-    "name": "Südafrika",
+    "name": "South Africa",
     "continent": "africa",
     "anchor": [
       23.665734,
@@ -4651,7 +4651,7 @@
     ],
     "euCapital": "Pretoria",
     "geometryId": "ZAF",
-    "note": "Südafrika hat drei Hauptstadtfunktionen: Pretoria (Verwaltung), Kapstadt (Parlament), Bloemfontein (Justiz; Sitz des Supreme Court of Appeal).",
+    "note": "South Africa has three capital functions: Pretoria (administrative), Cape Town (parliamentary) and Bloemfontein (judicial; seat of the Supreme Court of Appeal).",
     "capitals": [
       {
         "id": "ZA-capital",
@@ -4661,17 +4661,17 @@
           -25.74486
         ],
         "geonamesId": "964137",
-        "role": "Verwaltungshauptstadt"
+        "role": "administrative capital"
       },
       {
         "id": "ZA-3369157",
-        "name": "Kapstadt",
+        "name": "Cape Town",
         "coordinates": [
           18.42322,
           -33.92584
         ],
         "geonamesId": "3369157",
-        "role": "Parlamentssitz"
+        "role": "seat of parliament"
       },
       {
         "id": "ZA-1018725",
@@ -4681,13 +4681,13 @@
           -29.12107
         ],
         "geonamesId": "1018725",
-        "role": "Justizhauptstadt"
+        "role": "judicial capital"
       }
     ]
   },
   {
     "id": "ZM",
-    "name": "Sambia",
+    "name": "Zambia",
     "continent": "africa",
     "anchor": [
       26.395298,
@@ -4705,13 +4705,13 @@
           -15.40669
         ],
         "geonamesId": "909137",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   },
   {
     "id": "ZW",
-    "name": "Simbabwe",
+    "name": "Zimbabwe",
     "continent": "africa",
     "anchor": [
       29.925444,
@@ -4729,7 +4729,7 @@
           -17.82772
         ],
         "geonamesId": "890299",
-        "role": "Hauptstadt"
+        "role": "capital"
       }
     ]
   }

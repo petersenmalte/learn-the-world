@@ -35,7 +35,7 @@ for feature in json.loads(raw)['features']:
     geometry_id = feature['properties']['ADM0_A3']
     ident = by_geometry.get(geometry_id, 'context-' + geometry_id)
     features.append({'type': 'Feature', 'id': ident,
-                     'properties': {'id': ident, 'name': feature['properties']['NAME_DE'],
+                     'properties': {'id': ident, 'name': feature['properties']['NAME_EN'],
                                     'playable': geometry_id in by_geometry},
                      'geometry': repairs.get(geometry_id, {}).get('geometry', feature['geometry'])})
 assert {f['id'] for f in features if f['properties']['playable']} == {c['id'] for c in catalogue}

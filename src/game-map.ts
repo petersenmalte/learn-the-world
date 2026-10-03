@@ -33,7 +33,7 @@ export function createGameMap(container: HTMLElement, data: LearningData, target
   map.touchZoomRotate.disableRotation();
   map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
   const canvas = map.getCanvas();
-  canvas.setAttribute('aria-label', 'Spielkarte. Pfeiltasten verschieben, Plus und Minus zoomen. Enter wählt das Ziel im Fadenkreuz; erneut Enter bestätigt.');
+  canvas.setAttribute('aria-label', 'Game map. Arrow keys pan; plus and minus zoom. Enter selects the target at the crosshair; Enter again confirms.');
   const reset = () => {
     const r = regions.find(r => r.id === config.region)!;
     map.fitBounds([[r.bounds[0], r.bounds[1]], [r.bounds[2], r.bounds[3]]], { padding: 35, duration: 0 });
@@ -47,7 +47,7 @@ export function createGameMap(container: HTMLElement, data: LearningData, target
       const candidate = targets.find(t => t.id === ids[0])!;
       const lng = candidate.coordinates[0] + 360 * Math.round((map.getCenter().lng - candidate.coordinates[0]) / 360);
       map.easeTo({ center: [lng, candidate.coordinates[1]], zoom: Math.min(15, map.getZoom() + 2), duration: 250 });
-      onHint('Die Ziele liegen dicht zusammen. Die Karte zoomt näher heran; bitte erneut auswählen.');
+      onHint('These targets are close together. The map is zooming in; please select again.');
       return;
     }
     if (ids.length === 1) { onPick(ids[0]); return; }

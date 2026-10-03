@@ -18,7 +18,7 @@ Open the printed URL ending in `/learn-the-world/`. All geographic assets and th
 
 ## Learning games
 
-Use the top-left menu to open **Lernen**. Countries and capitals each offer **Auswahl** (ask each target once) and **Eliminierung** (retry until correct, then remove the target) for the world and every continent. Antarctica explains its empty scope. A first click marks a provisional choice; a second on the same target confirms it. Feedback stays until Continue, correct/incorrect sounds can be muted, and small targets have selectable points. The black interface matches the atlas; the game map is plain white with local vector geometry.
+Use the top-left menu to open **Learn**. Countries and capitals each offer **Selection** (ask each target once) and **Elimination** (retry until correct, then remove the target) for the world and every continent. Antarctica explains its empty scope. A first click marks a provisional choice; a second on the same target confirms it. Feedback stays until Continue, correct/incorrect sounds can be muted, and small targets have selectable points. The black interface matches the atlas; the game map is plain white with local vector geometry.
 
 The independently reviewed catalogue contains **196 country targets and 199 capital targets**, including multiple capital functions. It uses EU Publications Office reference names, pinned Natural Earth boundaries and GeoNames coordinates. See [learning geography rules, disputed cases, sources and limitations](data/learning/README.md). The data snapshot is 2026-10-03, not a live or legally authoritative map. Run `pnpm data:learning` to regenerate the frozen assets.
 

@@ -2,14 +2,14 @@ import type { FeatureCollection, MultiPolygon, Polygon, Position } from 'geojson
 export type Kind = 'countries' | 'capitals';
 export type Mode = 'selection' | 'elimination';
 export const regions = [
-  { id: 'world', name: 'Weltweit', bounds: [-180, -58, 180, 82] },
-  { id: 'europe', name: 'Europa', bounds: [-25, 33, 60, 72] },
-  { id: 'africa', name: 'Afrika', bounds: [-26, -37, 64, 39] },
-  { id: 'asia', name: 'Asien', bounds: [24, -12, 150, 61] },
-  { id: 'north-america', name: 'Nordamerika', bounds: [-170, 5, -48, 75] },
-  { id: 'south-america', name: 'Südamerika', bounds: [-84, -57, -32, 14] },
-  { id: 'oceania', name: 'Australien & Ozeanien', bounds: [110, -49, 210, 23] },
-  { id: 'antarctica', name: 'Antarktika', bounds: [-180, -85, 180, -60] },
+  { id: 'world', name: 'Worldwide', bounds: [-180, -58, 180, 82] },
+  { id: 'europe', name: 'Europe', bounds: [-25, 33, 60, 72] },
+  { id: 'africa', name: 'Africa', bounds: [-26, -37, 64, 39] },
+  { id: 'asia', name: 'Asia', bounds: [24, -12, 150, 61] },
+  { id: 'north-america', name: 'North America', bounds: [-170, 5, -48, 75] },
+  { id: 'south-america', name: 'South America', bounds: [-84, -57, -32, 14] },
+  { id: 'oceania', name: 'Australia & Oceania', bounds: [110, -49, 210, 23] },
+  { id: 'antarctica', name: 'Antarctica', bounds: [-180, -85, 180, -60] },
 ] as const;
 export type Region = typeof regions[number]['id'];
 export interface Capital { id: string; name: string; coordinates: [number, number]; geonamesId: string; role: string }
@@ -42,7 +42,7 @@ export class Game {
   provisional?: string;
   feedback?: Feedback;
   constructor(readonly targets: Target[], readonly mode: Mode, random = Math.random) {
-    if (new Set(targets.map(t => t.id)).size !== targets.length) throw new Error('Doppelte Spielziele');
+    if (new Set(targets.map(t => t.id)).size !== targets.length) throw new Error('Duplicate game targets');
     this.order = shuffle(targets, random);
   }
   get current() { return this.order[this.index] as Target | undefined; }
@@ -83,26 +83,26 @@ export function pointInGeometry(point: Position, geometry: Polygon | MultiPolygo
   return (geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates).some(p => inRing(p[0]) && !p.slice(1).some(inRing));
 }
 export function validateLearningData(data: LearningData) {
-  if (!Array.isArray(data.countries) || !data.countries.length || data.geometry?.type !== 'FeatureCollection' || !Array.isArray(data.geometry.features)) throw new Error('Lerndaten unvollständig.');
+  if (!Array.isArray(data.countries) || !data.countries.length || data.geometry?.type !== 'FeatureCollection' || !Array.isArray(data.geometry.features)) throw new Error('Learning data is incomplete.');
   const ids = new Set<string>();
   const positions: string[] = [];
   for (const c of data.countries) {
-    if (!c.id || !c.name || ids.has(c.id) || !regions.some(r => r.id === c.continent && !['world','antarctica'].includes(r.id)) || !Array.isArray(c.capitals) || !c.capitals.length) throw new Error('Ungültiger Ländereintrag.');
+    if (!c.id || !c.name || ids.has(c.id) || !regions.some(r => r.id === c.continent && !['world','antarctica'].includes(r.id)) || !Array.isArray(c.capitals) || !c.capitals.length) throw new Error('Invalid country entry.');
     ids.add(c.id);
     const geometry = data.geometry.features.filter(f => f.properties?.id === c.id);
-    if (geometry.length !== 1 || !pointInGeometry(c.anchor, geometry[0].geometry)) throw new Error(`Keine eindeutige Kartenfläche: ${c.name}`);
+    if (geometry.length !== 1 || !pointInGeometry(c.anchor, geometry[0].geometry)) throw new Error(`No unique map area: ${c.name}`);
     positions.push(`country:${c.anchor.join(',')}`);
     for (const cap of c.capitals) {
-      if (!cap.id || !cap.name || ids.has(cap.id) || !Array.isArray(cap.coordinates) || cap.coordinates.length !== 2 || !cap.coordinates.every(Number.isFinite) || Math.abs(cap.coordinates[0]) > 180 || Math.abs(cap.coordinates[1]) > 85) throw new Error(`Ungültige Hauptstadt: ${c.name}`);
+      if (!cap.id || !cap.name || ids.has(cap.id) || !Array.isArray(cap.coordinates) || cap.coordinates.length !== 2 || !cap.coordinates.every(Number.isFinite) || Math.abs(cap.coordinates[0]) > 180 || Math.abs(cap.coordinates[1]) > 85) throw new Error(`Invalid capital: ${c.name}`);
       ids.add(cap.id); positions.push(`capital:${cap.coordinates.join(',')}`);
     }
   }
-  if (new Set(positions).size !== positions.length) throw new Error('Kartenpunkte sind nicht eindeutig.');
+  if (new Set(positions).size !== positions.length) throw new Error('Map points are not unique.');
 }
 export async function loadLearningData(base: string, signal?: AbortSignal, fetcher: typeof fetch = fetch): Promise<LearningData> {
   const [countries, geometry] = await Promise.all(['catalogue.json', 'countries.geojson.gz'].map(async name => {
     const response = await fetcher(`${base}data/learning/${name}`, { signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(30000)]) : AbortSignal.timeout(30000) });
-    if (!response.ok) throw new Error(`Lerndaten konnten nicht geladen werden (${response.status}).`);
+    if (!response.ok) throw new Error(`Could not load learning data (${response.status}).`);
     if (!name.endsWith('.gz')) return response.json();
     const bytes = new Uint8Array(await response.arrayBuffer());
     return bytes[0] === 31 && bytes[1] === 139

@@ -63,3 +63,11 @@ Limits: viewport checks are not a physical iPhone/Safari device test; real-devic
 - User refinement: restored the original black UI and reduced overview to flat rows, smaller typography and brief text. The map canvas remains white as originally requested. Geographic notes and sources remain available.
 
 Detailed geographic evidence and limitations: [data/learning/README.md](data/learning/README.md).
+
+## English text and restored layout — 2026-10-04
+
+- Switched navigation, all game controls/states, accessibility labels, region names, country/capital names, capital functions, supplementary notes and the source documentation to English. Names now use the previously retrieved English EU Annex A5 snapshot; its URL and checksum are recorded in the manifest. The documented special cases remain explicit.
+- At the user’s request, reversed the additional minimalist refinement: restored the card grid, bordered buttons, larger typography, introductory explanations and always-visible game instructions. Kept the dark theme, white map canvas, supplementary information and mobile atlas navigation spacing.
+- All 29 tests pass; the existing EU-reference test now also checks English country names. Production build passes with the existing MapLibre chunk-size warning. Independent GEOS audit passes: 250 valid, non-overlapping polygons, 196 unique country anchors and the same 13 documented capital offsets.
+- Compared the revised catalogue and generated geometry against the preceding commit: country/capital IDs, coordinates, continents, geometry assignments, all 250 polygon geometries and the presence of all 21 country notes are unchanged.
+- Browser inspection at 1280 × 900 and 390 × 844: restored overview contains all 32 game links, with no horizontal overflow. English capital questions, country/function details, Russia’s supplementary note, mute/unmute controls and the 196-row source catalogue render correctly. Checked English notes for Switzerland, the Netherlands, Palestine and South Africa. These checks supplement the earlier gameplay tests; no gameplay logic changed.

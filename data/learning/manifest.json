@@ -4,9 +4,9 @@
   "capitalCount": 199,
   "sources": [
     {
-      "url": "https://style-guide.europa.eu/o/opportal-service/isg?resource=de/annex-a5-list-countries-territories-currencies.html",
+      "url": "https://style-guide.europa.eu/o/opportal-service/isg?resource=en/annex-a5-list-countries-territories-currencies.html",
       "retrieved": "2026-10-03",
-      "sha256": "bef494eb1c707e617bddb67b84ae8547ba953c5aba39ac4fe9fbec75210b5bda"
+      "sha256": "666ed4eee04c11c425ca463519fff9171ec4047ce3f8b3e3a1bb20788e1b9ba2"
     },
     {
       "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_10m_admin_0_countries_deu.geojson",

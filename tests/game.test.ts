@@ -83,11 +83,12 @@ test('every source geometry is polygonal with finite in-range coordinates and cl
     }
   }
 });
-test('country scope is explicit and all EU-reference capital matches or deviations are accounted for', () => {
-  const reference=JSON.parse(readFileSync(new URL('../data/learning/eu-reference.json',import.meta.url),'utf8')).rows as {id:string;capital:string}[];
+test('country scope is explicit and English EU country/capital names or deviations are accounted for', () => {
+  const reference=JSON.parse(readFileSync(new URL('../data/learning/eu-reference.json',import.meta.url),'utf8')).rows as {id:string;name:string;capital:string}[];
   for (const c of countries) {
     if (['PS','XK','IL'].includes(c.id)) { assert.ok(c.note); continue; }
     const row=reference.find(r=>r.id===({GR:'EL',GB:'UK'}[c.id]??c.id));assert.ok(row,`${c.id} missing EU reference`);
+    if (c.id !== 'VA') assert.equal(c.name,row.name,`${c.id} unaccounted country name difference`);
     if (['PW','VA'].includes(c.id)) assert.ok(c.note);
     else assert.equal(c.capitals[0].name,row.capital,`${c.id} unaccounted difference`);
   }

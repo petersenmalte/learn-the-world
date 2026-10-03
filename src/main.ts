@@ -3,7 +3,7 @@ import './learning.css';
 import { parseGameRoute } from './game-model';
 import { mountOverview, mountGame, mountSources } from './learning';
 const app = document.getElementById('app')!;
-app.innerHTML = `<nav class="site-nav" aria-label="Hauptnavigation"><label class="sr-only" for="page-picker">Bereich auswählen</label><select id="page-picker"><option value="atlas">Atlas</option><option value="games">Lernen</option><option value="sources">Quellen & Regeln</option></select></nav><div id="page"></div>`;
+app.innerHTML = `<nav class="site-nav" aria-label="Main navigation"><label class="sr-only" for="page-picker">Choose a section</label><select id="page-picker"><option value="atlas">Atlas</option><option value="games">Learn</option><option value="sources">Sources & rules</option></select></nav><div id="page"></div>`;
 const page = document.getElementById('page')!;
 const picker = document.getElementById('page-picker') as HTMLSelectElement;
 let dispose: (() => void) | undefined;
@@ -15,10 +15,10 @@ async function route() {
   const hash = location.hash;
   const atlas = !hash || hash === '#/atlas';
   document.body.classList.toggle('learning-page', !atlas);
-  document.documentElement.lang = atlas ? 'en' : 'de';
+  document.documentElement.lang = 'en';
   picker.value = atlas ? 'atlas' : hash === '#/sources' ? 'sources' : 'games';
   page.replaceChildren();
-  document.title = `${atlas ? 'Atlas' : hash === '#/sources' ? 'Quellen & Regeln' : 'Lernen'} · Learn the World`;
+  document.title = `${atlas ? 'Atlas' : hash === '#/sources' ? 'Sources & rules' : 'Learn'} · Learn the World`;
   if (atlas) {
     page.innerHTML = '<p class="route-loading" role="status">Loading atlas…</p>';
     try {
@@ -32,7 +32,7 @@ async function route() {
   else {
     const config = parseGameRoute(hash);
     if (config) dispose = mountGame(page, config);
-    else page.innerHTML = '<main class="learning-content"><h1>Seite nicht gefunden</h1><a href="#/games">Zur Spielübersicht</a></main>';
+    else page.innerHTML = '<main class="learning-content"><h1>Page not found</h1><a href="#/games">All games</a></main>';
   }
   window.scrollTo(0, 0);
 }
