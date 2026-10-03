@@ -5,8 +5,8 @@ import { categories, labelThreshold, type Place, type Category } from './search'
 import type { AtlasData } from './data';
 import { GIBS, registerSatelliteProtocol } from './satellite';
 setWorkerUrl(workerUrl);
-registerSatelliteProtocol();
 export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, onError: (message: string) => void) {
+  registerSatelliteProtocol(data.countries);
   const width = document.querySelector('#map')!.clientWidth;
   const makePoints = (places: Place[]): FeatureCollection<Point> => ({ type: 'FeatureCollection', features: places.map(p => ({ type: 'Feature', properties: { id: p.id, name: p.name, category: p.category, rank: p.rank, minZoom: labelThreshold(p, document.querySelector('#map')!.clientWidth) }, geometry: { type: 'Point', coordinates: p.coordinates } })) });
   let physical = data.physical;

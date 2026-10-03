@@ -1,5 +1,11 @@
 # Verification
 
+## Offshore Landsat scene artifacts — 2026-10-03
+
+- Fixed the reported rectangular ocean patches and clouds by clipping Landsat to Natural Earth's land polygons at every zoom. Ocean imagery now comes entirely from the underlying Blue Marble source, including inside otherwise valid Landsat frames.
+- Production build and all 14 tests pass. New checks cover North Sea water exclusion, land retention in Britain/Norway/Jutland/Zealand, finite polar projection and XYZ bounding-box filtering.
+- Production-preview browser check: searched North Sea, zoomed in and cleared the selection overlay. The reported scene strips/cloud rectangles are absent; coastline and island imagery remain visible. No warning/error console messages. The 1:10m coast mask does not resolve fine harbor details; inland source mosaic seams are not corrected by this change.
+
 ## Consistent overview and detail — 2026-10-03
 
 - Removed the local December 2004 winter overview from the active style. The Landsat annual mosaic and its Blue Marble ocean/no-data background now render from zoom 0, with constant opacity and color treatment; only tile resolution changes when zooming.

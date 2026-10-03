@@ -28,6 +28,8 @@ Open the printed URL ending in `/learn-the-world/`. All geographic assets and th
 
 ## Geographic scope and licenses
 
+Landsat is clipped to Natural Earth's land polygons so offshore satellite scene edges and clouds do not form patches over the ocean. The ocean uses Blue Marble continuously. Coastal precision follows the 1:10 million polygons; source-image seams and clouds over land can still occur.
+
 **242 countries/map units**: every feature in Natural Earth's 50m admin-0 countries list at the pinned revision, drawn with the 10m boundaries (a few extra tiny or disputed 10m units are drawn but not listed). Includes dependencies, Antarctica and disputed units; **not 242 sovereign states**. Boundaries follow Natural Earth's worldview and imply no position on sovereignty.
 
 **241 capital records**: every `PPLC` record in the GeoNames `cities500` download retrieved 2026-10-02. Includes capitals of dependencies. This source rule can omit small settlements and secondary/legislative seats; it is not a complete list of all national capital functions. See the [exact included names](data/INCLUDED.md).

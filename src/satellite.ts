@@ -1,4 +1,6 @@
 import { addProtocol } from 'maplibre-gl';
+import type { FeatureCollection } from 'geojson';
+import { createLandMask } from './land-mask';
 
 export const GIBS = 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best';
 export const LANDSAT_PATH = 'Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual/default/2000-12-01/GoogleMapsCompatible_Level12';
@@ -14,11 +16,12 @@ export function maskLandsatNoData(pixels: Uint8ClampedArray) {
   }
 }
 
-export function registerSatelliteProtocol() {
-  addProtocol('landsat', loadLandsatTile);
+export function registerSatelliteProtocol(countries: FeatureCollection) {
+  const landMask = createLandMask(countries);
+  addProtocol('landsat', (request, controller) => loadLandsatTile(request, controller, landMask));
 }
 
-export async function loadLandsatTile(request: { url: string }, controller: AbortController) {
+export async function loadLandsatTile(request: { url: string }, controller: AbortController, landMask?: ReturnType<typeof createLandMask>) {
   const path = request.url.replace(/^landsat:\/\//, '');
   if (!/^\d+\/\d+\/\d+$/.test(path)) throw new Error('Invalid satellite tile');
   // A timeout is a service failure, not MapLibre cancelling an offscreen tile.
@@ -40,6 +43,11 @@ export async function loadLandsatTile(request: { url: string }, controller: Abor
       const pixels = context.getImageData(0, 0, bitmap.width, bitmap.height);
       maskLandsatNoData(pixels.data);
       context.putImageData(pixels, 0, 0);
+      if (landMask) {
+        const [z, y, x] = path.split('/').map(Number);
+        context.globalCompositeOperation = 'destination-in';
+        context.drawImage(landMask(z, x, y, bitmap.width), 0, 0);
+      }
       return { data: await (await canvas.convertToBlob({ type: 'image/png' })).arrayBuffer() };
     } finally { bitmap.close(); }
   } catch (error) {
