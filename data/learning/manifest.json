@@ -1,0 +1,22 @@
+{
+  "checked": "2026-10-03",
+  "countryCount": 196,
+  "capitalCount": 199,
+  "sources": [
+    {
+      "url": "https://style-guide.europa.eu/o/opportal-service/isg?resource=de/annex-a5-list-countries-territories-currencies.html",
+      "retrieved": "2026-10-03",
+      "sha256": "bef494eb1c707e617bddb67b84ae8547ba953c5aba39ac4fe9fbec75210b5bda"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_10m_admin_0_countries_deu.geojson",
+      "revision": "ca96624a56bd078437bca8184e78163e5039ad19",
+      "sha256": "fc4d56c6bc256f779e0ba21579f81d64885f5296dba3c23c3e78a9b89a7aa0fb"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/cities500.zip",
+      "retrieved": "2026-10-02",
+      "sha256": "88b41c5f6ce2a69ac526bf70b54a27f9c1992d8cf29855536b853be63bde4d17"
+    }
+  ]
+}

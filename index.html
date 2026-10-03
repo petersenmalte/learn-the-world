@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -10,50 +10,14 @@
 </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <meta name="theme-color" content="#000000"/>
+  <meta name="theme-color" content="#ffffff"/>
   <meta name="description" content="An interactive globe of countries, capitals, and the natural world."/>
   <title>Learn the World</title>
   <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg"/>
 </head>
 <body>
 <div id="app">
-  <main>
-    <section class="map-stage" aria-label="Interactive world globe">
-      <div id="map"></div>
-      <span id="coordinates" aria-hidden="true" hidden></span>
-      <p id="detail-status" role="status"></p>
-      <div id="map-status" class="status-card" role="status"><span class="spinner"></span><span class="sr-only">Loading globe</span></div>
-      <div class="map-controls" aria-label="Globe controls">
-        <button id="zoom-in" class="icon-button" aria-label="Zoom in" disabled>+</button>
-        <button id="zoom-out" class="icon-button" aria-label="Zoom out" disabled>−</button>
-        <button id="reset" class="icon-button" aria-label="Reset globe view" title="Reset globe view" disabled>◎</button>
-      </div>
-      <div id="selection" hidden aria-live="polite">
-        <button id="close-selection" class="icon-button" aria-label="Clear selected place">×</button>
-        <p class="eyebrow" id="selection-category"></p>
-        <h2 id="selection-name"></h2>
-        <p id="selection-region"></p>
-        <div class="selection-bottom"><span id="selection-coords"></span><a id="selection-source" target="_blank" rel="noopener noreferrer" aria-label="Source">↗</a></div>
-      </div>
-      <div class="attribution"><a href="https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/" target="_blank" rel="noopener noreferrer">NASA Blue Marble</a> · <a href="https://www.earthdata.nasa.gov/data/tools/gibs" target="_blank" rel="noopener noreferrer">NASA GIBS · Landsat / WELD</a> · <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a> · <a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a> <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> · <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre</a></div>
-    </section>
-    <aside class="sidebar" aria-label="Map options">
-      <div class="search-wrap">
-        <label class="sr-only" for="search">Search all places</label>
-        <div class="search-box">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
-          <input id="search" type="search" placeholder="Search" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="results" aria-autocomplete="list" disabled/>
-        </div>
-        <div id="search-panel" hidden><div id="result-status" class="search-caption" role="status"></div><ul id="results" role="listbox" aria-label="Places"></ul></div>
-      </div>
-      <button id="layers-toggle" aria-expanded="false" aria-controls="layers">Layers <span id="active-count">2</span></button>
-      <section id="layers" aria-label="Map layers">
-        <div class="sheet-heading"><button id="close-layers" class="icon-button" aria-label="Close layers">×</button></div>
-        <div id="political-layers" class="layer-group"></div>
-        <div id="natural-layers" class="layer-group"></div>
-      </section>
-    </aside>
-  </main>
+
 </div>
 <noscript>This interactive atlas needs JavaScript enabled in your browser.</noscript>
 <script type="module" src="/src/main.ts"></script>
