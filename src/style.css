@@ -1,5 +1,14 @@
 @import 'maplibre-gl/dist/maplibre-gl.css';
 
+.earth-atmosphere {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 1px #bcecffb3, 0 0 14px 3px #318bdf66, 0 0 38px 5px #116ac62e,
+    inset 0 0 16px 4px #65bfff55;
+  background: radial-gradient(circle at 36% 30%, transparent 42%, #031b3840 78%, #010a1f99 100%);
+}
+
 /* Flat black and white. The globe is the only place with colour. */
 :root {
   --fg: #fff;

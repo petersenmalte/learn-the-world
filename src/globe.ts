@@ -1,15 +1,9 @@
 import { Map, Point as ScreenPoint, setWorkerUrl, type FilterSpecification, type StyleSpecification, type GeoJSONSource } from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import type { FeatureCollection, Geometry, Point, LineString } from 'geojson';
+import type { FeatureCollection, Geometry, Point } from 'geojson';
 import { categories, labelThreshold, type Place, type Category } from './search';
 import type { AtlasData } from './data';
 setWorkerUrl(workerUrl);
-function graticule(): FeatureCollection<LineString> {
-  const lines: number[][][] = [];
-  for (let lng = -180; lng < 180; lng += 30) lines.push(Array.from({ length: 171 }, (_, i) => [lng, i - 85]));
-  for (let lat = -60; lat <= 60; lat += 30) lines.push(Array.from({ length: 361 }, (_, i) => [i - 180, lat]));
-  return { type: 'FeatureCollection', features: lines.map(coordinates => ({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates } })) };
-}
 export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, onError: (message: string) => void) {
   const width = document.querySelector('#map')!.clientWidth;
   const makePoints = (places: Place[]): FeatureCollection<Point> => ({ type: 'FeatureCollection', features: places.map(p => ({ type: 'Feature', properties: { id: p.id, name: p.name, category: p.category, rank: p.rank, minZoom: labelThreshold(p, document.querySelector('#map')!.clientWidth) }, geometry: { type: 'Point', coordinates: p.coordinates } })) });
@@ -22,17 +16,17 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
     sources: {
       // Background geometry is independent of all learning labels and category visibility.
       basemap: { type: 'geojson', data: data.countries, tolerance: 0.6 },
-      graticule: { type: 'geojson', data: graticule() },
+      earth: { type: 'raster', tiles: [`${new URL(import.meta.env.BASE_URL, window.location.origin).href}earth/{z}/{x}/{y}.webp`], tileSize: 512, minzoom: 0, maxzoom: 3, attribution: 'NASA Blue Marble' },
       learning: { type: 'geojson', data: points },
       physical: { type: 'geojson', data: data.physical, tolerance: 0.6 },
       selected: { type: 'geojson', data: empty },
       'selected-shape': { type: 'geojson', data: empty },
     },
     layers: [
-      { id: 'ocean', type: 'background', paint: { 'background-color': '#0a56b3' } },
-      { id: 'graticule', type: 'line', source: 'graticule', paint: { 'line-color': '#ffffff', 'line-width': 0.5, 'line-opacity': 0.22 } },
-      { id: 'land', type: 'fill', source: 'basemap', paint: { 'fill-color': ['match', ['get', 'tone'], 1, '#7ccb5f', 2, '#f3d34c', 3, '#f59a4a', 4, '#ee7691', 5, '#a487e0', 6, '#42c4b8', '#c8e05a'], 'fill-opacity': 1 } },
-      { id: 'borders', type: 'line', source: 'basemap', paint: { 'line-color': '#ffffff', 'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.5, 5, 1.1, 9, 2], 'line-opacity': 0.9 } },
+      { id: 'ocean', type: 'background', paint: { 'background-color': '#063273' } },
+      { id: 'land', type: 'fill', source: 'basemap', paint: { 'fill-color': '#548864' } },
+      { id: 'earth-surface', type: 'raster', source: 'earth', paint: { 'raster-saturation': 0.22, 'raster-brightness-min': 0.025, 'raster-brightness-max': 1, 'raster-contrast': 0.08, 'raster-fade-duration': 250 } },
+      { id: 'borders', type: 'line', source: 'basemap', paint: { 'line-color': '#e2f5ff', 'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.35, 5, 0.8, 9, 1.4], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 0, 0.18, 3, 0.35, 6, 0.6] } },
       { id: 'selection-fill', type: 'fill', source: 'selected-shape', filter: ['==', ['geometry-type'], 'Polygon'], paint: { 'fill-color': '#ffffff', 'fill-opacity': 0.4 } },
       { id: 'selection-outline', type: 'line', source: 'selected-shape', paint: { 'line-color': '#ffffff', 'line-width': 2.5 } },
     ],
@@ -53,7 +47,7 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
         'text-max-width': 9, 'text-padding': width < 600 ? 9 : 5,
         'text-variable-anchor': cat.id === 'countries' ? ['center'] : ['top', 'bottom', 'left', 'right'], 'text-radial-offset': cat.id === 'countries' ? 0 : 0.65,
         'symbol-sort-key': ['get', 'rank'], 'text-allow-overlap': false,
-      }, paint: { 'text-color': cat.id === 'countries' ? '#0c1f33' : '#ffffff', 'text-halo-color': cat.id === 'countries' ? 'rgba(255,255,255,0.7)' : '#0b2540', 'text-halo-width': cat.id === 'countries' ? 1 : 1.6, 'text-halo-blur': 0.3 },
+      }, paint: { 'text-color': '#ffffff', 'text-halo-color': '#102a3d', 'text-halo-width': cat.id === 'countries' ? 1.4 : 1.6, 'text-halo-blur': 0.5 },
     });
   }
   // Reserve space for country names before placing secondary labels.
@@ -65,7 +59,12 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
     { id: 'selected-dot', type: 'circle', source: 'selected', paint: { 'circle-radius': 4.5, 'circle-color': '#ffffff', 'circle-stroke-color': '#000000', 'circle-stroke-width': 1.5 } },
     { id: 'selected-label', type: 'symbol', source: 'selected', layout: { 'text-field': ['get', 'name'], 'text-font': ['Arial', 'Helvetica', 'sans-serif'], 'text-size': 15, 'text-anchor': 'bottom', 'text-offset': [0, -1.1], 'text-allow-overlap': true }, paint: { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 } },
   );
-  const home = () => ({ center: [15, 20] as [number, number], zoom: Math.max(-0.2, Math.min(2.6, Math.log2(Math.min(document.querySelector('#map')!.clientWidth * 0.84, document.querySelector('#map')!.clientHeight * 0.81) / 164))), bearing: 0, pitch: 0 });
+  const home = () => {
+    const container = document.querySelector('#map')!;
+    const width = container.clientWidth;
+    const diameter = Math.min(width * (width < 600 ? 0.57 : 0.84), container.clientHeight * 0.81);
+    return { center: [15, 20] as [number, number], zoom: Math.max(-0.2, Math.min(2.6, Math.log2(diameter / 164))), bearing: 0, pitch: 0 };
+  };
   const map = new Map({ container: 'map', style, ...home(), minZoom: -0.5, maxZoom: 10, maxPitch: 0, pixelRatio: Math.min(3, Math.max(2, window.devicePixelRatio || 1)), attributionControl: false, canvasContextAttributes: { antialias: true }, renderWorldCopies: false });
   map.on('error', event => { console.error(event.error); onError('The globe could not finish rendering. Reload to try again.'); });
   map.on('webglcontextlost', () => onError('The browser paused the globe’s graphics. Reload to restore the atlas.'));
@@ -80,6 +79,14 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
   });
   // Labels near the horizon would spill onto the black page. Clip the canvas to the visible disc so they run out at the edge, like on a real sphere.
   const container = map.getContainer();
+  // Keep the atmospheric rim outside the clipped canvas; follow the actual disc
+  // during dragging, search flights and resize rather than using a fixed circle.
+  const atmosphere = document.createElement('div');
+  atmosphere.className = 'earth-atmosphere';
+  atmosphere.setAttribute('aria-hidden', 'true');
+  atmosphere.hidden = true;
+  container.after(atmosphere);
+  map.on('remove', () => atmosphere.remove());
   const onSurface = (x: number, y: number) => map._camera.transform.isPointOnMapSurface(new ScreenPoint(x, y));
   const reach = (x: number, y: number, dx: number, dy: number, max: number) => {
     if (onSurface(x + dx * max, y + dy * max)) return Infinity;
@@ -95,10 +102,19 @@ export function createGlobe(data: AtlasData, onSelect: (place: Place) => void, o
       const right = reach(sx, sy, 1, 0, max), left = reach(sx, sy, -1, 0, max);
       if (Number.isFinite(right + left)) {
         const cx = sx + (right - left) / 2, down = reach(cx, sy, 0, 1, max), up = reach(cx, sy, 0, -1, max);
-        if (Number.isFinite(down + up)) next = `circle(${(down + up) / 2 + 0.5}px at ${cx}px ${sy + (down - up) / 2}px)`;
+        if (Number.isFinite(down + up)) {
+          const radius = (down + up) / 2, cy = sy + (down - up) / 2;
+          next = `circle(${radius + 0.5}px at ${cx}px ${cy}px)`;
+          atmosphere.style.width = atmosphere.style.height = `${radius * 2}px`;
+          atmosphere.style.left = `${cx - radius}px`;
+          atmosphere.style.top = `${cy - radius}px`;
+        }
       }
     }
     if (next !== clip) { clip = next; container.style.clipPath = next; }
+    const glow = Math.max(0, Math.min(1, (5 - map.getZoom()) / 2));
+    atmosphere.hidden = !next || glow === 0;
+    atmosphere.style.opacity = String(glow);
   };
   map.on('render', fitLimb);
   let narrow = width < 600;

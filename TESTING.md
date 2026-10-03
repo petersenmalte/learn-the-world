@@ -1,5 +1,14 @@
 # Verification
 
+## Natural Earth appearance — 2026-10-03
+
+- Pulled `origin/main` at `28bee1b`; preserved the existing local phone globe-sizing change while resolving its overlap with the updated map options.
+- `pnpm build` and all nine `pnpm test` cases pass. Production preview checked under `/learn-the-world/`, including the self-hosted NASA WebP tiles. Vite still reports the existing MapLibre bundle-size warning.
+- Browser inspection at 1280 × 720 and 390 × 844: natural imagery, readable white labels, subtle borders, atmospheric rim and NASA attribution; no horizontal overflow on the phone viewport.
+- Search for Japan, select/fly/highlight, mobile layer sheet, switching country/capital labels off and dragging to the Americas checked. Imagery remains visible independently of learning-layer visibility; halo follows the globe.
+- No warning/error console messages during those checks. This is browser viewport testing, not a physical iPhone/Safari test.
+- Imagery is a static cloud-free composite, enlarged beyond zoom 3. See [imagery limitations](data/EARTH.md); no live clouds or sunlight are simulated.
+
 Checked 2026-10-02 against the production Vite preview at `/learn-the-world/`.
 
 - `pnpm install --frozen-lockfile`, `pnpm test`, `pnpm build`: pass. The nine test cases cover search normalization/ranking (including "Rhein" → Rhine), hidden labels, the curation limits (a few hundred rivers, lakes and mountains, not thousands) and coverage of famous features, source integrity, repository base paths, and failed/invalid data requests.
