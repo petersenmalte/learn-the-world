@@ -144,3 +144,16 @@ test('elimination completes as soon as the last target is removed', () => {
   const game=new Game(targets.slice(0,1),'elimination');const id=game.current!.id;
   game.choose(id);game.choose(id);assert.equal(game.complete,true);assert.equal(game.feedback?.correct,true);
 });
+test('place names are spoken only when sound is on and fail silently without speech support', () => {
+  const spoken: string[] = []; let cancelled = 0;
+  const g = globalThis as any;
+  g.speechSynthesis = { cancel: () => { cancelled++; }, speak: (u: { text: string }) => spoken.push(u.text), getVoices: () => [] };
+  g.SpeechSynthesisUtterance = class { lang = ''; rate = 1; voice?: unknown; constructor(readonly text: string) {} };
+  try {
+    const sound = new GameAudio(); sound.muted = false;
+    sound.say('Lima'); assert.deepEqual(spoken, ['Lima']);
+    sound.toggle(); assert.equal(sound.muted, true); assert.ok(cancelled >= 2);
+    sound.say('Quito'); assert.deepEqual(spoken, ['Lima']);
+    delete g.speechSynthesis; sound.muted = false; assert.doesNotThrow(() => sound.say('Bogotá'));
+  } finally { delete g.speechSynthesis; delete g.SpeechSynthesisUtterance; }
+});

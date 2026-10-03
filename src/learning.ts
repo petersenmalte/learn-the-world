@@ -25,20 +25,31 @@ export function mountGame(root: HTMLElement, config: GameConfig) {
   let game: Game | undefined;
   const sound = new GameAudio();
   const region = regions.find(r => r.id === config.region)!;
-  root.innerHTML = `<main class="game-page"><header class="game-heading"><a href="#/games" class="back-link">← All games</a><button class="sound-button" aria-pressed="false"></button><p class="learning-eyebrow">${region.name} · ${kindName[config.kind]} · ${modeName[config.mode]}</p><h1 id="question" tabindex="-1">Loading map…</h1><p id="question-detail"></p><p id="question-note" class="question-note"></p><div class="progress-row"><span id="progress-text"></span><progress id="game-progress" max="1" value="0" aria-label="Progress"></progress></div></header>
+  root.innerHTML = `<main class="game-page"><header class="game-heading"><a href="#/games" class="back-link">← All games</a><button class="sound-button" aria-pressed="false"></button><p class="learning-eyebrow">${region.name} · ${kindName[config.kind]} · ${modeName[config.mode]}</p><h1 id="question" tabindex="-1">Loading map…</h1><button id="say-again" class="say-again" hidden aria-label="Hear the name again">Hear again</button><p id="question-detail"></p><p id="question-note" class="question-note"></p><div class="progress-row"><span id="progress-text"></span><progress id="game-progress" max="1" value="0" aria-label="Progress"></progress></div></header>
   <div class="game-map-wrap"><div id="game-map" aria-label="Learning map"></div><span class="map-crosshair" aria-hidden="true">+</span><button id="map-reset" disabled>Reset view</button><div id="game-loading" role="status">Loading learning data…</div></div>
-  <section class="game-answer" aria-label="Answer"><div id="feedback" role="status" aria-live="polite" aria-atomic="true">One click selects. A second click on the same target confirms.</div><div class="answer-actions"><button id="show-answer" hidden>Show correct target</button><button id="next" hidden>Continue →</button><button id="restart" hidden>Play again</button></div></section>
-  <footer class="game-footer"><p>Markers make even small targets selectable. Zoom in for nearby places. Keyboard: focus the map, pan with arrow keys, zoom with +/−, and press Enter to select at the crosshair.</p><p><a href="#/sources">Sources & rules · As of 3 Oct 2026</a> · <a href="https://www.naturalearthdata.com/">Natural Earth</a> · <a href="https://www.geonames.org/">GeoNames</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) · <a href="https://maplibre.org/">MapLibre</a></p></footer></main>`;
+  <section class="game-answer" aria-label="Answer"><div id="feedback" role="status" aria-live="polite" aria-atomic="true">One click selects. A second click on the same target confirms. A third click continues.</div><div class="answer-actions"><button id="show-answer" hidden>Show correct target</button><button id="next" hidden>Continue →</button><button id="restart" hidden>Play again</button></div></section>
+  <footer class="game-footer"><p>Markers make even small targets selectable. Zoom in for nearby places. After an answer, click the map again (or press Continue) to move on. Keyboard: focus the map, pan with arrow keys, zoom with +/−, and press Enter to select at the crosshair, confirm and continue.</p><p><a href="#/sources">Sources & rules · As of 3 Oct 2026</a> · <a href="https://www.naturalearthdata.com/">Natural Earth</a> · <a href="https://www.geonames.org/">GeoNames</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) · <a href="https://maplibre.org/">MapLibre</a></p></footer></main>`;
   const feedback = $(root, '#feedback');
   const question = $(root, '#question');
   const next = $<HTMLButtonElement>(root, '#next');
   const restart = $(root, '#restart');
   const showAnswer = $(root, '#show-answer');
   const soundButton = $(root, '.sound-button');
+  const sayAgain = $(root, '#say-again');
   const updateSound = () => { soundButton.textContent = sound.muted ? 'Sound off' : 'Sound on'; soundButton.setAttribute('aria-label', sound.muted ? 'Unmute sound' : 'Mute sound'); soundButton.setAttribute('aria-pressed', String(sound.muted)); };
-  soundButton.onclick = () => { sound.toggle(); updateSound(); }; updateSound();
+  soundButton.onclick = () => { sound.toggle(); updateSound(); if (game) sayAgain.hidden = game.complete || sound.muted; }; updateSound();
+  let spoken: string | undefined;
+  const announce = (force = false) => {
+    const current = game && !game.complete && !game.feedback ? game.current : undefined;
+    const key = current ? `${game!.attempts}:${current.id}` : undefined;
+    if (current && (force || key !== spoken)) sound.say(current.name);
+    spoken = key;
+  };
+  sayAgain.onclick = () => { if (game?.current && !game.complete) sound.say(game.current.name); };
   const paint = () => {
     if (!game) return;
+    sayAgain.hidden = game.complete || sound.muted;
+    announce();
     map?.update(game);
     const total = game.targets.length;
     const answered = game.mode === 'selection' ? game.index + (game.feedback ? 1 : 0) : game.removed.size;
@@ -58,13 +69,15 @@ export function mountGame(root: HTMLElement, config: GameConfig) {
       feedback.textContent = result.correct ? `✓ Correct: ${result.expected.name}.${config.mode === 'elimination' ? ' Target removed.' : ''}`
         : `✕ Incorrect: You selected ${result.selected.name}.${config.mode === 'selection' ? ` The correct answer is ${result.expected.name} (marked in green).` : ' Try the same target again; nothing was removed.'}`;
       next.textContent = config.mode === 'elimination' && !result.correct ? 'Try again →' : game.index === total - 1 ? 'Results →' : 'Continue →';
+      feedback.textContent += ' Click the map again to continue.';
     } else {
       feedback.className = '';
-      feedback.textContent = game.provisional ? 'Target selected. Click it again to confirm; clicking another target changes the selection.' : 'One click selects. A second click on the same target confirms.';
+      feedback.textContent = game.provisional ? 'Target selected. Click it again to confirm; clicking another target changes the selection.' : 'One click selects. A second click on the same target confirms. A third click continues.';
     }
   };
-  next.onclick = () => { game?.next(); paint(); question.focus({ preventScroll: true }); };
-  restart.onclick = () => { if (!game) return; game = new Game(game.targets, config.mode); paint(); map?.reset(); question.focus({ preventScroll: true }); };
+  const advance = () => { game?.next(); paint(); };
+  next.onclick = () => { advance(); question.focus({ preventScroll: true }); };
+  restart.onclick = () => { if (!game) return; game = new Game(game.targets, config.mode); spoken = undefined; paint(); map?.reset(); question.focus({ preventScroll: true }); };
   showAnswer.onclick = () => { if (game?.feedback) map?.focus(game.feedback.expected); };
   $(root, '#map-reset').onclick = () => map?.reset();
   const fail = () => {
@@ -94,7 +107,11 @@ export function mountGame(root: HTMLElement, config: GameConfig) {
     }, text => { if (!game?.feedback) feedback.textContent = text; }, () => {
       if (disposed) return;
       ready = true; $(root, '#game-loading').hidden = true; $<HTMLButtonElement>(root, '#map-reset').disabled = false; paint();
-    }, fail);
+    }, fail, () => {
+      if (!ready || !game?.feedback || game.complete) return false;
+      advance();
+      return true;
+    });
   }).catch(() => { if (!abort.signal.aborted) fail(); });
   return () => { disposed = true; abort.abort(); map?.destroy(); sound.close(); };
 }

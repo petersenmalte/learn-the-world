@@ -22,6 +22,7 @@
 .empty-note { line-height: 1.6; }.learning-footer { margin-top: 36px; font-size: 11px; color: var(--dim); line-height: 2; }
 .game-page { padding: 84px 30px 16px; max-width: 1600px; margin: auto; }
 .game-heading { position: relative; max-width: 1100px; margin: 0 auto 16px; }.back-link { display: inline-block; font-size: 12px; text-decoration: none; margin: 0 0 26px; }.sound-button { position: absolute; top: 0; right: 0; font-size: 12px; }
+.learning-page .say-again { font-size: 12px; min-height: 32px; padding: 6px 12px; margin: 0 0 10px; }
 .game-heading h1 { font-size: clamp(25px, 3vw, 36px); margin-bottom: 8px; }.game-heading h1:focus { outline: none; }
 #question-detail { color: var(--dim); margin: 0; font-size: 13px; }#question-detail:empty, #question-note:empty { display: none; }
 .question-note { max-width: 880px; line-height: 1.5; font-size: 12px; color: var(--dim); margin: 10px 0; }
