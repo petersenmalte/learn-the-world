@@ -4,7 +4,7 @@ import type { FeatureCollection, Point } from 'geojson';
 import { regions, type GameConfig, type LearningData, type Target, type Game } from './game-model';
 setWorkerUrl(workerUrl);
 const empty: FeatureCollection = { type: 'FeatureCollection', features: [] };
-export function createGameMap(container: HTMLElement, data: LearningData, targets: Target[], config: GameConfig, onPick: (id: string) => void, onHint: (text: string) => void, onReady: () => void, onError: () => void) {
+export function createGameMap(container: HTMLElement, data: LearningData, targets: Target[], config: GameConfig, onPick: (id: string) => void, onHint: (text: string) => void, onReady: () => void, onError: () => void, onContinue: () => boolean = () => false) {
   const eligible = new Set(targets.map(t => t.countryId));
   const polygons = { ...data.geometry, features: data.geometry.features.filter(f => eligible.has(f.properties!.id)) };
   const context = { ...data.geometry, features: data.geometry.features.filter(f => !eligible.has(f.properties!.id)) };
@@ -33,13 +33,15 @@ export function createGameMap(container: HTMLElement, data: LearningData, target
   map.touchZoomRotate.disableRotation();
   map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
   const canvas = map.getCanvas();
-  canvas.setAttribute('aria-label', 'Game map. Arrow keys pan; plus and minus zoom. Enter selects the target at the crosshair; Enter again confirms.');
+  canvas.setAttribute('aria-label', 'Game map. Arrow keys pan; plus and minus zoom. Enter selects the target at the crosshair; Enter again confirms; Enter once more continues.');
   const reset = () => {
     const r = regions.find(r => r.id === config.region)!;
     map.fitBounds([[r.bounds[0], r.bounds[1]], [r.bounds[2], r.bounds[3]]], { padding: 35, duration: 0 });
   };
   const pick = (point: { x: number; y: number }) => {
     if (!loaded) return;
+    // Third click: after an answer has been confirmed, any click on the map moves on.
+    if (onContinue()) return;
     const near = map.queryRenderedFeatures([[point.x - 7, point.y - 7], [point.x + 7, point.y + 7]], { layers: ['targets'] });
     const ids = [...new Set(near.map(f => String(f.properties.id)).filter(id => visible.has(id)))];
     if (ids.length > 1) {

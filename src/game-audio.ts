@@ -3,7 +3,7 @@ export class GameAudio {
   muted = false;
   private context?: AudioContext;
   constructor() { try { this.muted = localStorage.getItem('learning-muted') === 'true'; } catch { /* Storage is optional. */ } }
-  toggle() { this.muted = !this.muted; try { localStorage.setItem('learning-muted', String(this.muted)); } catch { /* Private browsing. */ } return this.muted; }
+  toggle() { this.muted = !this.muted; if (this.muted) this.silence(); try { localStorage.setItem('learning-muted', String(this.muted)); } catch { /* Private browsing. */ } return this.muted; }
   async play(correct: boolean) {
     if (this.muted) return;
     try {
@@ -23,5 +23,21 @@ export class GameAudio {
       });
     } catch { /* Visual feedback remains usable if audio is unavailable. */ }
   }
-  close() { void this.context?.close().catch(() => {}); }
+  /** Reads a place name aloud with the browser's built-in speech synthesis (no network, no API key). */
+  say(text: string) {
+    if (this.muted || !text) return;
+    try {
+      const speech = globalThis.speechSynthesis;
+      if (!speech || typeof SpeechSynthesisUtterance === 'undefined') return;
+      speech.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-GB';
+      const voice = speech.getVoices().find(v => v.lang === 'en-GB') ?? speech.getVoices().find(v => v.lang.startsWith('en'));
+      if (voice) utterance.voice = voice;
+      utterance.rate = 0.95;
+      speech.speak(utterance);
+    } catch { /* The written question remains available if speech is unsupported. */ }
+  }
+  silence() { try { globalThis.speechSynthesis?.cancel(); } catch { /* Speech is optional. */ } }
+  close() { this.silence(); void this.context?.close().catch(() => {}); }
 }
