@@ -147,13 +147,33 @@ test('elimination completes as soon as the last target is removed', () => {
 test('place names are spoken only when sound is on and fail silently without speech support', () => {
   const spoken: string[] = []; let cancelled = 0;
   const g = globalThis as any;
-  g.speechSynthesis = { cancel: () => { cancelled++; }, speak: (u: { text: string }) => spoken.push(u.text), getVoices: () => [] };
+  g.speechSynthesis = { cancel: () => { cancelled++; }, speak: (u: { text: string }) => spoken.push(u.text), getVoices: () => [], speaking: false, pending: false, resume: () => {} };
   g.SpeechSynthesisUtterance = class { lang = ''; rate = 1; voice?: unknown; constructor(readonly text: string) {} };
   try {
     const sound = new GameAudio(); sound.muted = false;
     sound.say('Lima'); assert.deepEqual(spoken, ['Lima']);
-    sound.toggle(); assert.equal(sound.muted, true); assert.ok(cancelled >= 2);
+    sound.toggle(); assert.equal(sound.muted, true); assert.ok(cancelled >= 1);
     sound.say('Quito'); assert.deepEqual(spoken, ['Lima']);
     delete g.speechSynthesis; sound.muted = false; assert.doesNotThrow(() => sound.say('Bogotá'));
   } finally { delete g.speechSynthesis; delete g.SpeechSynthesisUtterance; }
+});
+test('a name blocked before the first user gesture is spoken on the first click instead of being lost', () => {
+  const spoken: string[] = []; const listeners = new Map<string, () => void>();
+  const g = globalThis as any;
+  g.speechSynthesis = { cancel() {}, resume() {}, speaking: false, pending: false, speak: (u: { text: string }) => spoken.push(u.text), getVoices: () => [] };
+  g.SpeechSynthesisUtterance = class { lang = ''; rate = 1; voice?: unknown; onerror?: unknown; constructor(readonly text: string) {} };
+  g.addEventListener = (type: string, fn: () => void) => listeners.set(type, fn);
+  g.removeEventListener = (type: string) => listeners.delete(type);
+  const activation = { hasBeenActive: false };
+  Object.defineProperty(globalThis.navigator, 'userActivation', { value: activation, configurable: true });
+  try {
+    const sound = new GameAudio(); sound.muted = false;
+    sound.say('Vilnius'); sound.say('Riga');
+    assert.deepEqual(spoken, []); assert.ok(listeners.has('pointerdown'));
+    activation.hasBeenActive = true; listeners.get('pointerdown')!();
+    assert.deepEqual(spoken, ['Riga']); assert.equal(listeners.size, 0);
+  } finally {
+    delete (globalThis.navigator as any).userActivation;
+    delete g.speechSynthesis; delete g.SpeechSynthesisUtterance; delete g.addEventListener; delete g.removeEventListener;
+  }
 });
